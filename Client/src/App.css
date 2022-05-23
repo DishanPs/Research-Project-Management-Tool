@@ -145,9 +145,9 @@ span{
 }
 
 
-.loginform {
-    height: 550px;
-    width: 500px;
+.creategroupform {
+    height: 700px;
+    width: 550px;
     display: flex;
     margin: 0 auto;
     justify-content: center;
@@ -158,6 +158,24 @@ span{
     color: white;
 }
 
+.topicregform {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(24, 43, 214);
+    margin-top: 50px;
+    background-color:rgba(0, 0, 0, 0.562);
+    color: white;
+}
+
+.topictable{
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color:rgba(0, 0, 0, 0.647);
+}
 
 .profile {
     height: 800px;
