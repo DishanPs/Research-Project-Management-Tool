@@ -17,3 +17,6 @@ connectDB();
 app.get("/", (req, res) => {
     res.send("Hello Node!");
 });
+
+const userApi = require("./src/api/user.api");
+app.use("/user", userApi());
