@@ -3,8 +3,8 @@ const User = require("../modal/user.modal");
 
 const registerUser = async (req, res) => {
     if (req.body) {
-        const User = new User(req.body);
-        await User.save()
+        const Users = new User(req.body);
+        await Users.save()
             .then(data => res.status(200).send({data: data}))
             .catch(err => res.status(200).send(err));
     }
@@ -23,7 +23,7 @@ const profileDetails = async (req, res) => {
 }
 
 const getAllUser = async (req, res) => {
-    await Customer.find()
+    await User.find()
         .then((data) => {
             res.status(200).send(data);
         })
