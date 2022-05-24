@@ -8,14 +8,17 @@ import Footer from "./component/Footer";
 import CreateStudentGroups from "./component/CreateStudentGroups";
 import RegisterResearchTopic from "./component/RegisterResearchTopic";
 import AcceptRejectTopic from "./component/AcceptRejectTopic";
+import ResearchGroups from "./component/ResearchGroups";
 
 function App(){
 return(
     <div>
         {/* <Home/> */}
         {/* <CreateStudentGroups /> */}
-        {/* <RegisterResearchTopic /> */}
-        <AcceptRejectTopic />
+        <RegisterResearchTopic />
+        {/* <AcceptRejectTopic /> */}
+        {/* <ResearchGroups /> */}
+
         {/*<Router>*/}
         {/*    <div className="App">*/}
         {/*        */}

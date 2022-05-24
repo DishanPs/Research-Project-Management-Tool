@@ -17,3 +17,13 @@ connectDB();
 app.get("/", (req, res) => {
     res.send("Hello Node!");
 });
+
+const groupApi = require("./src/api/groups.api");
+app.use("/group", groupApi());
+
+const topicApi = require("./src/api/topics.api");
+app.use("/topic", topicApi());
+
+app.listen(PORT, () => {
+    console.log(`App listening at http://localhost:${PORT}`);
+  });

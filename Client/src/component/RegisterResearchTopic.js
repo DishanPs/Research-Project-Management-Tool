@@ -2,6 +2,9 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from "react";
+import axios from 'axios'
+
+
 
 const RegisterResearchTopic = () => {
     const [validated, setvalidated] = useState(false);
@@ -12,35 +15,34 @@ const RegisterResearchTopic = () => {
     
     const checkSubmit = (event) => {
     
-      // const newCustomer = {
-      //     "firstName": gid,
-      //     "lastName": gname,
-      //     "email": topic,
-      //     
-      // }
+      const newRegTopic = {
+          "groupID": gid,
+          "groupName": gname,
+          "topic": topic,
+          
+      }
 
       
 
-      // const form = event.currentTarget;
-      // if (form.checkValidity() === false) {
-      //   event.preventDefault();
-      //   event.stopPropagation();
-      // }
-      // else {
-      //     
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      else {
+          
 
-      //     axios
-      //         .post("http://localhost:5000/customer/register", newCustomer)
-      //         .then((data) => console.log(data))
-      //         .catch((err) => alert(err));
+          axios
+              .post("http://localhost:5000/topic/add", newRegTopic)
+              .then(() => 
+                alert("Success")
+                
+              )
+              .catch((err) => alert(err));
 
-      //     axios
-      //         .post("http://localhost:5000/login/add", newLogin)
-      //         .then(() =>
-      //             swal("Submitted!", "Successfully Registered", "success"))
-      //         .catch((err) =>
-      //     
-      // }
+          
+          
+      }
       setvalidated(true);
     };
 

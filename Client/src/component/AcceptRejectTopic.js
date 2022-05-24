@@ -2,25 +2,37 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import axios from 'axios'
+import Badge from 'react-bootstrap/Badge'
 
 const AcceptRejectTopic = () => {
     const [topics, setTopic] = useState([]);
+    const [value,setValue] = useState("");
+    const [response,setResponse] = useState("");
 
    
-    // useEffect(() => {
-    //     const getCustomers = () => {
-    //       axios
-    //         .get("http://localhost:5000/customer")
-    //         .then((res) => {
-    //           setCustomer(res.data);
-    //         })
-    //         .catch((err) => {
-    //           alert(err.msg);
-    //         });
-    //     };
-    //     getCustomers();
-    //   },[]);
-    
+    useEffect(() => {
+        const getTopics = () => {
+          axios
+            .get("http://localhost:5000/topic")
+            .then((res) => {
+              setTopic(res.data);
+            })
+            .catch((err) => {
+              alert(err.msg);
+            });
+        };
+        getTopics();
+      },[]);
+
+
+    // const acceptClick = (val) => {
+    //     val = val;
+    //     //const [value,setValue] = useState("");
+    //     console.log(val);
+    // }
+
+
 
 
 
@@ -38,7 +50,7 @@ const AcceptRejectTopic = () => {
 
         <div className='topictable'>
             
-            <Table striped bordered hover style={{color:"white"}}>
+            <Table striped bordered hover variant='dark'>
                 <thead>
                 <tr>
                     <th>Group ID</th>
@@ -49,18 +61,18 @@ const AcceptRejectTopic = () => {
                    
                 </tr>
                 </thead>
-                {/* {customers.map((customer) => (
-                <tbody key={customer._id}>
+                {topics.map((topic) => (
+                <tbody key={topic._id}>
                     <tr>
-                    <td>{customer.CustomerID}</td>
-                    <td>{customer.firstName}</td>
-                    <td>{customer.lastName}</td>
-                    <td>{customer.email}</td>
-                    <td>{customer.contactNo}</td>
+                    <td>{topic.groupID}</td>
+                    <td>{topic.groupName}</td>
+                    <td>{topic.topic}  <Badge bg="info">{value == 1 ? "Accepted" : value == 2 ? "Rejected" : "Pending"}</Badge> </td>
+                    <td> <Button variant='success' onClick ={() => {setValue(1); setResponse(topic)}}>Accept</Button></td>
+                    <td> <Button variant='danger' onClick={() => {setValue(2); setResponse(topic)}}>Reject</Button></td>
                     
                     </tr>
                 </tbody>
-                ))} */}
+                ))}
              </Table>
 
         </div>
