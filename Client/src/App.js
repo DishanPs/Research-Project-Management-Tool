@@ -11,18 +11,13 @@ import AcceptRejectTopic from "./component/AcceptRejectTopic";
 import ResearchGroups from "./component/ResearchGroups";
 import StudentDashboard from "./component/StudentDashboard";
 import TopicApprovalStudent from "./component/TopicApprovalStudent";
+import RRChat from "./component/RRChat";
+import About from "./component/About";
 
 function App(){
 return(
     <div>
-        {/* <Home/> */}
-        {/* <CreateStudentGroups /> */}
-        {/* <RegisterResearchTopic /> */}
-        {/* <AcceptRejectTopic /> */}
-        {/* <ResearchGroups /> */}
-
         <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/creategroups" exact element={<CreateStudentGroups />} />
@@ -31,18 +26,11 @@ return(
           <Route path="/viewtopics" exact element={<AcceptRejectTopic />} />
           <Route path="/studentdashboard" exact element={<StudentDashboard />} />
           <Route path="/studenttopicapproval" exact element={<TopicApprovalStudent />} />
-
-          {/*<Route path="/adminmovies" exact element={<MovieAdminMovies/>}/>
-          <Route path="/Userprofile" exact element={<UserProfile/>}/>
-          <Route path="/Userreg" exact element={<UserReg/>}/>
-          <Route path="/Userlogin" exact element={<UserLogin/>}/>
-          <Route path="/cusprofile" exact element={<CusProfile/>}/> */}
-          
-          
-          
-        </Routes>
-        <Footer />
+        <Route path="/chat" exact element={<RRChat />} />
+        <Route path="/about" exact element={<About/>}/>     
+       </Routes>
       </BrowserRouter>
+
     </div>
 )
 }
