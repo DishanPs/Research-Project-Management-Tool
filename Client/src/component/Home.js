@@ -6,8 +6,8 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-      <div>
-          <Header/>
+    <div>
+      <Header />
       <Carousel>
         <Carousel.Item>
           <img
@@ -19,8 +19,8 @@ const Home = () => {
             <h3>Sri Lanka Institute of Information Technology</h3>
           </Carousel.Caption>
         </Carousel.Item>
-          </Carousel>
-          <Footer/>
+      </Carousel>
+      <Footer />
     </div>
   );
 };

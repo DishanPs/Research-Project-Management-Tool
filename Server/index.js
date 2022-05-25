@@ -1,11 +1,9 @@
 const express = require("express");
-const cors = require('cors');
-
+const cors = require("cors");
 const bodyParser = require("body-parser");
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 const connectDB = require("./src/config/config");
 const app = express();
-
 
 const PORT = process.env.PORT || 5000;
 
@@ -15,7 +13,7 @@ app.use(bodyParser.json());
 connectDB();
 
 app.get("/", (req, res) => {
-    res.send("Hello Node!");
+  res.send("Hello Node!");
 });
 
 const groupApi = require("./src/api/groups.api");
@@ -30,6 +28,18 @@ app.use("/sup", supApi());
 const cosupApi = require("./src/api/cosup.api");
 app.use("/cosup", cosupApi());
 
+const userApi = require("./src/api/admin.api");
+app.use("/admin", userApi());
+
+const loginApi = require("./src/api/login.api");
+app.use("/login", loginApi());
+
+const studentApi = require("./src/api/student.api");
+app.use("/student", studentApi());
+
+const staffApi = require("./src/api/staff.api");
+app.use("/staff", staffApi());
+
 app.listen(PORT, () => {
-    console.log(`App listening at http://localhost:${PORT}`);
-  });
+  console.log(`App listening at http://localhost:${PORT}`);
+});
