@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const LoginSchema = new mongoose.Schema({
    
-    id: {
+    iD: {
         type: String, 
         required: true
     },
