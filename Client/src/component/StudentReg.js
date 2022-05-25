@@ -55,7 +55,7 @@ const StudentReg = () => {
             if (cpassword == password){
 
             axios
-                .post("http://localhost:5000/user/register", newUser)
+                .post("http://localhost:5000/Student/register", newUser)
                 .then((data) => 
                 console.log(data),
                 swal("Submitted!", "Successfully Registered", "success"))

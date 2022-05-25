@@ -1,10 +1,10 @@
-const User = require("../modal/user.modal");
+const Staff = require("../modal/staff.modal");
+const mongoose = require("mongoose");
 
-
-const registerUser = async (req, res) => {
+const registerStaff = async (req, res) => {
     if (req.body) {
-        const Users = new User(req.body);
-        await Users.save()
+        const staff = new Staff(req.body);
+        await staff.save()
             .then(data => res.status(200).send({data: data}))
             .catch(err => res.status(200).send(err));
     }
@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
 
 const profileDetails = async (req, res) => {
     if (req.body){
-        await User.findOne({'email': req.params.email})
+        await Staff.findOne({'email': req.params.email})
         .then((data) => {
             res.status(200).send({ data });
         })
@@ -22,22 +22,12 @@ const profileDetails = async (req, res) => {
         }
 }
 
-const getAllUser = async (req, res) => {
-    await User.find()
-        .then((data) => {
-            res.status(200).send(data);
-        })
-        .catch(error => {
-            res.send(error);
-        });
-}
 
-
-const updateUser = async (req, res) => {
+const updateStaff = async (req, res) => {
     console.log(req.body)
     if (req.body) {
         let id = req.params.id;
-        await User.findByIdAndUpdate(id, req.body)
+        await Staff.findByIdAndUpdate(id, req.body)
             .then(data => {
                 res.status(200).send(data);
             })
@@ -47,8 +37,8 @@ const updateUser = async (req, res) => {
     }
 }
 
-const deleteUser = async (req, res) => {
-    await User.findByIdAndDelete(req.params.id)
+const deleteStaff = async (req, res) => {
+    await Staff.findByIdAndDelete(req.params.id)
       .then(() => {
         res.status(200).send({ status: "Deleted" });
       })
@@ -59,11 +49,9 @@ const deleteUser = async (req, res) => {
 
 
 module.exports = {
-    registerUser,
+    registerStaff,
+    updateStaff,
+    deleteStaff,
     profileDetails,
-    getAllUser,
-    updateUser,
-    deleteUser,
-    
     
 }

@@ -23,8 +23,14 @@ app.listen(PORT, () => {
 });
 
 
-const userApi = require("./src/api/user.api");
-app.use("/user", userApi());
+const userApi = require("./src/api/admin.api");
+app.use("/admin", userApi());
 
 const loginApi = require("./src/api/login.api");
 app.use("/login", loginApi());
+
+const studentApi = require("./src/api/student.api");
+app.use("/student", studentApi());
+
+const staffApi = require("./src/api/staff.api");
+app.use("/staff", staffApi());

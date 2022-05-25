@@ -12,17 +12,36 @@ const Profile = ({profile}) => {
     const token =JSON.parse(sessionStorage.getItem("token"));
 
             const[profiledetails, setProfiledetails] = useState([]);
+
             useEffect(() =>{
-            const email = token.email;
-                const details = {"email" :token.email}
-                axios.get(`http://localhost:5000/user/users/${token.email}`)
+            if (token.type == "Student"){
+                axios.get(`http://localhost:5000/student/students/${token.email}`)
                 .then((res) =>{
                     console.log(res.data.data);
                     setProfiledetails(res.data.data);
                 })
                 .catch ((err) => {alert(err.msg)})
+
+            } else if(token.type == "Admin"){
+                axios.get(`http://localhost:5000/Admin/admins/${token.email}`)
+                .then((res) =>{
+                    console.log(res.data.data);
+                    setProfiledetails(res.data.data);
+                })
+                .catch ((err) => {alert(err.msg)})
+            } else {
+                axios.get(`http://localhost:5000/staff/staffs/${token.email}`)
+                .then((res) =>{
+                    console.log(res.data.data);
+                    setProfiledetails(res.data.data);
+                })
+                .catch ((err) => {alert(err.msg)})
+
+            }
             },[]);
             
+            
+
     
     return (
         <div className="profile"> 
@@ -45,6 +64,12 @@ const Profile = ({profile}) => {
             <Card>
                 <Card.Body><ImLocation2 />{" "}{profiledetails.faculty}</Card.Body>
             </Card>
+            {/* {if (token.type == "Staff"){
+                <Card>
+                <Card.Body><BsPersonSquare />{" "}{profiledetails.researchInterest}</Card.Body>
+            </Card>
+
+            }else{}}, */}
             <Card>
                 <Card.Body><BsPersonSquare />{" "}{profiledetails.NIC}</Card.Body>
             </Card>

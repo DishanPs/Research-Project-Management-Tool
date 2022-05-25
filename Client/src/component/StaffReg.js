@@ -17,6 +17,7 @@ const StaffReg = () => {
     const [lname, setLastName] = useState("");
     const [contactno, setContactNo] = useState("");
     const [nic, setNIC] = useState("");
+    const [interest, setInterest] = useState("");
     const [fclty, setFaculty] = useState("");
     const [password, setPassword] = useState("");
     const [cpassword, setConfirmPassword] = useState();
@@ -27,20 +28,21 @@ const StaffReg = () => {
     const checkSubmit = (event) => {
         console.log(password);
         const newUser = {
-            "iD": ids,
+            "ID": ids,
             "email": email,
             "firstName": fname,
             "lastName": lname,
             "contactNo": contactno,
             "NIC": nic,
+            "researchInterest": interest,
             "faculty": fclty,
-            "type": "Student",
+            "type": "Staff",
         }
 
         const newLogin = {
             "iD":ids,
             "email": email,
-            "type": "Student",
+            "type": "Staff",
             "password": bcrypt.hashSync(password, bcrypt.genSaltSync()),
             
         } 
@@ -55,7 +57,7 @@ const StaffReg = () => {
             if (cpassword == password){
 
             axios
-                .post("http://localhost:5000/user/register", newUser)
+                .post("http://localhost:5000/staff/register", newUser)
                 .then((data) => 
                 console.log(data),
                 swal("Submitted!", "Successfully Registered", "success"))
@@ -164,6 +166,18 @@ const StaffReg = () => {
                     </Form.Control.Feedback>
                  </Form.Group>
                 </Row>
+
+                <Form.Group className="mb-3" controlId="interest">
+                 <Form.Label>Research Interest</Form.Label>
+                  <Form.Control
+                    as= "textarea" 
+                    placeholder="Enter your research interest"
+                    value={interest}
+                    onChange={(e) => setInterest(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+
 
                 
                  <Form.Group className="inputreg" controlId="faculty">
