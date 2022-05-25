@@ -22,6 +22,16 @@ const profileDetails = async (req, res) => {
         }
 }
 
+const getAllStudents = async (req, res) => {
+    await Student.find()
+        .then((data) => {
+            res.status(200).send(data);
+        })
+        .catch(error => {
+            res.send(error);
+        });
+}
+
 
 const updateStudent = async (req, res) => {
     console.log(req.body)
@@ -53,5 +63,6 @@ module.exports = {
     updateStudent,
     deleteStudent,
     profileDetails,
+    getAllStudents,
     
 }

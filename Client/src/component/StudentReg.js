@@ -165,16 +165,18 @@ const StudentReg = () => {
                  </Form.Group>
                 </Row>
 
-                
-                 <Form.Group className="inputreg" controlId="faculty">
-                  <Form.Label>Faculty</Form.Label>
-                   <Form.Control
-                     placeholder="Enter your faculty" 
-                     value={fclty}
-                     onChange={(e) => setFaculty(e.target.value)}
-                     required
-                   />
-                 </Form.Group>
+
+               <Form.Label>Faculty</Form.Label>
+                 <Form.Select aria-label="Feedback Type" value={fclty} onChange={(e) => setFaculty(e.target.value)}>
+                  <option selected disabled hidden>Faculty Type</option>
+                    <option>Computing</option>
+                    <option>Bussiness</option>
+                    <option>Engineering</option>
+                    <option>Humanaties and sciences</option>
+                    <option>School of Architecture</option>
+                    <option>Graduate studies and reseach</option>
+                    <option>School of Law</option>
+                 </Form.Select>
                 
               
 

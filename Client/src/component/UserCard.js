@@ -61,15 +61,16 @@ const Profile = ({profile}) => {
             <Card>
                 <Card.Body><FaEnvelope />{" "}{profiledetails.email}</Card.Body>
             </Card>
-            <Card>
+            {token.type == "Admin"? (""):(<Card>
                 <Card.Body><ImLocation2 />{" "}{profiledetails.faculty}</Card.Body>
-            </Card>
-            {/* {if (token.type == "Staff"){
-                <Card>
+            </Card>)
+            }
+        {token.type == "Staff"? ( <Card>
                 <Card.Body><BsPersonSquare />{" "}{profiledetails.researchInterest}</Card.Body>
-            </Card>
+            </Card>):("")
+               
 
-            }else{}}, */}
+            }
             <Card>
                 <Card.Body><BsPersonSquare />{" "}{profiledetails.NIC}</Card.Body>
             </Card>

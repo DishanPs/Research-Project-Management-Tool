@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { useState, useEffect } from 'react';
 //import Modalnew from './UserModalUpdate.js';
 import Profile from './UserCard.js';
-// import Modaldelete from './UserModalDelete.js';
+ import Modaldelete from './UserModalDelete.js';
 import axios from 'axios';
 
 import { useNavigate } from "react-router-dom";
@@ -21,15 +21,30 @@ const UserProfile = () => {
 
             const[profiledetails, setProfiledetails] = useState([]);
             useEffect(() =>{
-                const email = token.email;
-                console.log(token.email);
-                const details = {"email" :token.email}
-                axios.get(`http://localhost:5000/user/users/${token.email}`)
-                .then((res) =>{
-                    console.log(res.data.data);
-                    setProfiledetails(res.data.data);
-                })
-                .catch ((err) => {alert(err)})
+                if (token.type == "Student"){
+                    axios.get(`http://localhost:5000/student/students/${token.email}`)
+                    .then((res) =>{
+                        console.log(res.data.data);
+                        setProfiledetails(res.data.data);
+                    })
+                    .catch ((err) => {alert(err.msg)})
+    
+                } else if(token.type == "Admin"){
+                    axios.get(`http://localhost:5000/Admin/admins/${token.email}`)
+                    .then((res) =>{
+                        console.log(res.data.data);
+                        setProfiledetails(res.data.data);
+                    })
+                    .catch ((err) => {alert(err.msg)})
+                } else {
+                    axios.get(`http://localhost:5000/staff/staffs/${token.email}`)
+                    .then((res) =>{
+                        console.log(res.data.data);
+                        setProfiledetails(res.data.data);
+                    })
+                    .catch ((err) => {alert(err.msg)})
+    
+                }
             },[]);
             
             
@@ -61,13 +76,13 @@ const UserProfile = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 profile = {profiledetails}
-                />
+                /> */}
                 <Modaldelete
                         show={modalDelete}
                         type = {modleType}
                 onHide={() => setModalDelete(false)}
                 profile = {profiledetails}
-                /> */}
+                />
             
             </div></center>   
             </div>
