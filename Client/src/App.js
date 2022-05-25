@@ -9,7 +9,6 @@ import CreateStudentGroups from "./component/CreateStudentGroups";
 import RegisterResearchTopic from "./component/RegisterResearchTopic";
 import AcceptRejectTopic from "./component/AcceptRejectTopic";
 import ResearchGroups from "./component/ResearchGroups";
-import StudentDashboard from "./component/StudentDashboard";
 import TopicApprovalStudent from "./component/TopicApprovalStudent";
 import RRChat from "./component/RRChat";
 import About from "./component/About";
@@ -29,7 +28,6 @@ return(
             <Route path="/viewgroups" exact element={<ResearchGroups />}/>
             <Route path="/registertopic" exact element={<RegisterResearchTopic />} />
             <Route path="/viewtopics" exact element={<AcceptRejectTopic />} />
-            <Route path="/studentdashboard" exact element={<StudentDashboard />} />
             <Route path="/studenttopicapproval" exact element={<TopicApprovalStudent />} />
             <Route path="/chat" exact element={<RRChat />} />
             <Route path="/about" exact element={<About />} /> 

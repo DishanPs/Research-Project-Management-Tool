@@ -9,13 +9,13 @@ import {
 export const supervisorsidenavbarData = [
   {
     title: "Supervisor Requests",
-    path: "#topic",
+    path: "#supervisorrequest",
     icon: <FaCalendarCheck />,
     cName: "nav-text",
   },
   {
     title: "Co-Supevisor Requests",
-    path: "#evaluatepresentation",
+    path: "#cosuprequest",
     icon: <FaIndustry />,
     cName: "nav-text",
   },
@@ -36,7 +36,7 @@ export const supervisorsidenavbarData = [
 export const panelsidenavbarData = [
   {
     title: "Evaluate Topics",
-    path: "#topic",
+    path: "/viewtopics",
     icon: <FaCalendarCheck />,
     cName: "nav-text",
   },
@@ -51,25 +51,25 @@ export const panelsidenavbarData = [
 export const studentsidenavbarData = [
   {
     title: "Create Group",
-    path: "#topic",
+    path: "/creategroups",
     icon: <FaCalendarCheck />,
     cName: "nav-text",
   },
   {
     title: "Request Supervisor",
-    path: "/chat",
+    path: "#reqsup",
     icon: <FaUsers />,
     cName: "nav-text",
   },
   {
     title: "Ruquest Co-Supervisor",
-    path: "#evaluatedocument",
+    path: "#reqcosup",
     icon: <FaIndustry />,
     cName: "nav-text",
   },
   {
     title: "Register Topic",
-    path: "#evaluatepresentation",
+    path: "/registertopic",
     icon: <FaIndustry />,
     cName: "nav-text",
   },
