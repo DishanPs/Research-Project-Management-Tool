@@ -5,7 +5,7 @@ const StaffController = require('../controller/staff.controller');
 module.exports = function (){
     router.post('/register', StaffController.registerStaff);
     router.get('/staffs/:email', StaffController.profileDetails);
-    //router.get('/', StaffController.getAllStaff);
+    router.get('/', StaffController.getAllStaffs);
     router.put('/update/:id', StaffController.updateStaff);
     router.delete('/delete/:id', StaffController.deleteStaff);
     
