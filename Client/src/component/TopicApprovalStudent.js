@@ -1,14 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import Badge from 'react-bootstrap/Badge'
-import { useNavigate } from 'react-router-dom'
 
-const AcceptRejectTopic = () => {
+const TopicApprovalStudent = () => {
     const [topics, setTopic] = useState([]);
-    
 
     useEffect(() => {
         const getTopics = () => {
@@ -25,62 +22,6 @@ const AcceptRejectTopic = () => {
     },);
 
 
-      
-
-
-      const btnClick = (id, val) => {
-        if(val == 1){
-         
-          const updateStatus = {
-            status : "Accepted"
-          }
-  
-          axios
-          .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
-          .then(() => navigate('/viewtopics'))
-          .catch((err) => alert(err));
-          
-          
-        }
-
-        else if(val == 2){
-          
-          const updateStatus = {
-            status : "Rejected"
-          }
-  
-          axios
-          .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
-          .then(() => navigate('/viewtopics'))
-          .catch((err) => alert(err));
-           
-        }
-
-        else {
-
-          const updateStatus = {
-            status : "Pending"
-          }
-  
-          axios
-          .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
-          .then(() => navigate('/viewtopics'))
-          .catch((err) => alert(err));
-
-
-        }
-
-      
-      }  
-
-      const navigate = useNavigate();
-      
-      
-
-
-      
-
-     
 
 
   return (
@@ -105,9 +46,7 @@ const AcceptRejectTopic = () => {
                     <th>Supervisor Name</th>
                     <th>Co-Supervisor Name</th>
                     <th>Research Topic</th>
-                    <th>Accept</th>
-                    <th>Reject</th>
-                    <th>Reset</th>
+                   
                    
                 </tr>
                 </thead>
@@ -119,9 +58,7 @@ const AcceptRejectTopic = () => {
                     <td>{topic.supervisorName}</td>
                     <td>{topic.cosupervisorName}</td>
                     <td>{topic.topic}  <Badge bg="info">{topic.status}</Badge> </td>
-                    <td> <Button variant='success' onClick ={() => {btnClick(topic._id,1)}}>Accept</Button></td>
-                    <td> <Button variant='danger' onClick={() => {btnClick(topic._id,2)}}>Reject</Button></td>
-                    <td> <Button variant='primary' onClick={() => {btnClick(topic._id,3)}}>Reset</Button></td>
+                   
                     
                     </tr>
                 </tbody>
@@ -131,6 +68,7 @@ const AcceptRejectTopic = () => {
         </div>
     </div>
   )
+  
 }
 
-export default AcceptRejectTopic
+export default TopicApprovalStudent

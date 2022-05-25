@@ -5,6 +5,7 @@ import { useState } from "react";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 
 const CreateStudentGroups = () => {
@@ -24,40 +25,43 @@ const CreateStudentGroups = () => {
 
     const checkSubmit = (event) => {
     
-        // const newGroup = {
-        //     "leaderID": lid,
-        //     "leaderName": lname,
-        //     "contactNo": number,
-        //     "email": email,
-        //     "member2ID": m2id,
-        //     "member2Name": m2name,
-        //     "member3ID": m3id,
-        //     "member3Name": m3name,
-        //     "member4ID": m4id,
-        //     "member4Name": m4name,
-        //     "groupName": gname,
-        // }
+        const newGroup = {
+            "leaderID": lid,
+            "leaderName": lname,
+            "contactNo": number,
+            "email": email,
+            "member2ID": m2id,
+            "member2Name": m2name,
+            "member3ID": m3id,
+            "member3Name": m3name,
+            "member4ID": m4id,
+            "member4Name": m4name,
+            "groupName": gname,
+        }
 
     
 
-        // const form = event.currentTarget;
-        // if (form.checkValidity() === false) {
-        //   event.preventDefault();
-        //   event.stopPropagation();
-        // }
-        // else {
-        //     
-        // 
-        //     axios
-        //         .post("http://localhost:5000/group/register", newGroup)
-        //         .then(() =>
-        //             alert("Successful");
-        //         .catch((err) =>
-        //              alert(err));
-        //     
-        // }
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        else {
+            
+        
+            axios
+                .post("http://localhost:5000/group/register", newGroup)
+                .then(() =>
+                    alert("Successful"),
+                    navigate('/studentdashboard'))
+                .catch((err) =>
+                     alert(err));
+            
+        }
         setvalidated(true);
       };
+
+      const navigate = useNavigate();
 
 
 

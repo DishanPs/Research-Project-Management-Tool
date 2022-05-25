@@ -11,6 +11,8 @@ const RegisterResearchTopic = () => {
     const [gid, setGroupId] = useState("");
     const [gname, setGroupName] = useState("");
     const [topic, setResearchTopic] = useState("");
+    const [supname, setSupName] = useState("");
+    const [cosupname, setCoSupName] = useState("");
 
     
     const checkSubmit = (event) => {
@@ -19,6 +21,9 @@ const RegisterResearchTopic = () => {
           "groupID": gid,
           "groupName": gname,
           "topic": topic,
+          "supervisorName" : supname,
+          "cosupervisorName" : cosupname,
+          "status" : "Pending"
           
       }
 
@@ -75,6 +80,26 @@ const RegisterResearchTopic = () => {
                         placeholder="Group Name" 
                         value={gname}
                         onChange={(e) => setGroupName(e.target.value)}
+                        required
+                    />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="supname">
+                    <Form.Label>Supervisor Name</Form.Label>
+                    <Form.Control
+                        placeholder="Supervisor Name" 
+                        value={supname}
+                        onChange={(e) => setSupName(e.target.value)}
+                        required
+                    />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="cosupname">
+                    <Form.Label>Co-supervisor Name</Form.Label>
+                    <Form.Control
+                        placeholder="Co-supervisor Name" 
+                        value={cosupname}
+                        onChange={(e) => setCoSupName(e.target.value)}
                         required
                     />
           </Form.Group>

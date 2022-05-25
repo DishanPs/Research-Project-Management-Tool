@@ -24,10 +24,13 @@ const ResearchGroups = () => {
 
 
   return (
-    <div>
+    <div style = {{
+      backgroundImage: `url("https://wallpaperaccess.com/full/2053899.jpg")`,
+      height: "100vh",
+      backgroundSize: "cover",}}>
 
         <center>
-            <h3>Research Project Groups </h3>
+            <h3 style= {{color:"white"}}>Research Project Groups </h3>
         </center>
         <br />
 

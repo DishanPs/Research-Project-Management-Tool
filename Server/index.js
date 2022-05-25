@@ -24,6 +24,12 @@ app.use("/group", groupApi());
 const topicApi = require("./src/api/topics.api");
 app.use("/topic", topicApi());
 
+const supApi = require("./src/api/sup.api");
+app.use("/sup", supApi());
+
+const cosupApi = require("./src/api/cosup.api");
+app.use("/cosup", cosupApi());
+
 app.listen(PORT, () => {
     console.log(`App listening at http://localhost:${PORT}`);
   });
