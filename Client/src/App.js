@@ -12,13 +12,11 @@ function App(){
 return(
     <div>
         <BrowserRouter>
-            <Header />
             <Routes>
                 <Route path="/" exact element={<Home />} />
                 <Route path="/chat" exact element={<RRChat />} />
                 <Route path="/about" exact element={<About/>}/>
             </Routes>
-            <Footer/>
         </BrowserRouter>
     </div>
 )

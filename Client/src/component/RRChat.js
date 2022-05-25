@@ -13,6 +13,7 @@ import {
   ChannelList,
 } from "stream-chat-react";
 import "stream-chat-react/dist/css/index.css";
+import SupervisorSideNavBar from './SupervisorSideNavBar';
 
 const apiKey = "6atn2yf229tr";
 
@@ -60,22 +61,26 @@ const RRChat = () => {
 
   if (!client) return <LoadingIndicator/>;
 
-  return <div>
-    <Chat client={client} theme="messaging light">
-      <ChannelList
-        filters={filters}
-        sort={sort}
-      />
-      <Channel>
-        <Window>
-          <ChannelHeader />
-          <MessageList />
-          <MessageInput/>
-        </Window>
-        <Thread/>
-      </Channel>
-    </Chat>
-  </div>;
+  return (
+    <div>
+      <SupervisorSideNavBar />
+      <div
+        style={{ marginLeft: "200px",marginTop:"0px", marginRight: "0px", height:"400px" }}
+      >
+        <Chat client={client} theme="messaging dark">
+          <ChannelList filters={filters} sort={sort} />
+          <Channel>
+            <Window>
+              <ChannelHeader />
+              <MessageList />
+              <MessageInput />
+            </Window>
+            <Thread />
+          </Channel>
+        </Chat>
+      </div>
+    </div>
+  );
 };
 
 export default RRChat;
