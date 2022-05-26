@@ -21,17 +21,30 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="#submission">Submission</Nav.Link>
+              {token.type == "Admin" ? (
+                <Nav.Link href="#admin">Dashboard</Nav.Link>
+              ) : token.type == "Student" ? (
+                <>
+                  <Nav.Link href="#student">Dashboard</Nav.Link>
+                  <Nav.Link href="#submission">Submission</Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link href="#supdashboard">
+                    Supervisor/ Co-Supervisor Dashboard
+                  </Nav.Link>
+                  <Nav.Link href="#paneldashboard">Panel Dashboard</Nav.Link>
+                </>
+              )}
               <Nav.Link href="/about">About</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link eventKey={2}>
                 {token != null ? (
-                  <Link to="#profile">{token.name}</Link>
+                  <Link to="/Userprofile">{token.name}</Link>
                 ) : (
                   <Link
-                    to="#login"
+                    to="/Userlogin"
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     Login

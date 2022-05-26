@@ -73,4 +73,55 @@ export const studentsidenavbarData = [
     icon: <FaIndustry />,
     cName: "nav-text",
   },
+  {
+    title: "Topic Status",
+    path: "/studenttopicapproval",
+    icon: <FaIndustry />,
+    cName: "nav-text",
+  },
+  {
+    title: "Submissions",
+    path: "#submisson",
+    icon: <FaIndustry />,
+    cName: "nav-text",
+  },
+  {
+    title: "Templates",
+    path: "#template",
+    icon: <FaIndustry />,
+    cName: "nav-text",
+  },
+];
+
+export const adminsidenavbarData = [
+  {
+    title: "Users",
+    path: "#users",
+    icon: <FaCalendarCheck />,
+    cName: "nav-text",
+  },
+  {
+    title: "Submission Types",
+    path: "#cosuprequest",
+    icon: <FaIndustry />,
+    cName: "nav-text",
+  },
+  {
+    title: "Groups",
+    path: "/viewgroups",
+    icon: <FaUsers />,
+    cName: "nav-text",
+  },
+  {
+    title: "Marking Schemes",
+    path: "#evaluatedocument",
+    icon: <FaIndustry />,
+    cName: "nav-text",
+  },
+  {
+    title: "Templates",
+    path: "#evaluatedocument",
+    icon: <FaIndustry />,
+    cName: "nav-text",
+  },
 ];
