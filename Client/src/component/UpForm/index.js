@@ -4,11 +4,9 @@ import FileInput from '../FileInput';
 import styles from './styles.module.css'
 
 
-const SongForm = () => {
+const UpForm = () => {
     const [data, setData] = useState({
         name: "",
-        artist: "",
-        song: "",
         img: ""
       });
     
@@ -25,6 +23,7 @@ const SongForm = () => {
         try{
           const url = "http://localhost:5000/uploadDoc";
           const {data: res} = await axios.post(url, data)
+          alert("Successfully added");
           console.log(res)
         }catch (error){
           console.log(error)
@@ -38,41 +37,41 @@ const SongForm = () => {
           </center> */}
     
           <form className={styles.form}>
-            <h1 className={styles.heading}>Submission Form</h1>
+            <h1 className={styles.heading}>Upload Template</h1>
 
             <input
               type="text"
               className={styles.input}
-              placeholder="Song Name"
+              placeholder="Upload Type"
               name="name"
               onChange={handleChange}
               value={data.name}
             />
     
-            <input
+            {/* <input
               type="text"
               className={styles.input}
               placeholder="Artist Name"
               name="artist"
               onChange={handleChange}
               value={data.artist}
-            />
+            /> */}
 
             <FileInput
               name="img"
-              label="Choose image"
+              label="Choose from"
               handleInputState={handleInputState}
               type="image"
               value={data.img}
             />
 
-            <FileInput
+            {/* <FileInput
               name="song"
               label="Choose Song"
               handleInputState={handleInputState}
               type="audio"
               value={data.song}
-            />
+            /> */}
     
             <button type="submit" className={styles.submit_btn} onClick={handleSubmit}>
               Submit
@@ -82,4 +81,4 @@ const SongForm = () => {
       );
 };
 
-export default SongForm;
+export default UpForm;

@@ -8,6 +8,8 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 import SubDoc from "./component/SubDoc";
 import UploadDoc from "./component/UploadDoc";
+import UploadTemp from "./component/UploadTemp";
+import DownloadTemp from "./component/DownloadTemp";
 
 function App(){
 return(
@@ -20,6 +22,9 @@ return(
                 <Route path="/subtypes" exact element={<SubTypes/>} />
                 <Route path="/subdoc" exact element={<SubDoc/>} />
                 <Route path="/uploaddoc" exact element={<UploadDoc/>} />
+                <Route path="/uploadtemp" exact element={<UploadTemp/>} />
+                <Route path="/downloadtemp" exact element={<DownloadTemp/>} />
+
             </Routes>
             <Footer/>
         </BrowserRouter>

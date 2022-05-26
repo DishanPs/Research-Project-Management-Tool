@@ -31,7 +31,7 @@ const SubDoc = () => {
                 <Form.Label>No attempt</Form.Label>
           </Form.Group>
           
-          <Link to="/uploaddoc">
+          
           <button
                 type="submit"
                 style={{
@@ -43,7 +43,7 @@ const SubDoc = () => {
                 }}>
                 UPLOAD
           </button>
-          </Link>
+         
       </div>
     </div>
   )
