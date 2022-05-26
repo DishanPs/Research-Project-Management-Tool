@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import axios from 'axios'
 import StudentSideNavBar from './StudentSideNavBar';
+import swal from 'sweetalert';
 
 
 
@@ -41,10 +42,10 @@ const RegisterResearchTopic = () => {
           axios
               .post("http://localhost:5000/topic/add", newRegTopic)
               .then(() => 
-                alert("Success")
+                swal("Success!", "Details Submitted Successfully!", "success")
                 
               )
-              .catch((err) => alert(err));
+              .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
 
           
           

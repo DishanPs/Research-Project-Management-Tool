@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import StudentSideNavBar from './StudentSideNavBar';
+import swal from 'sweetalert';
 
 
 const CreateStudentGroups = () => {
@@ -53,10 +54,10 @@ const CreateStudentGroups = () => {
             axios
                 .post("http://localhost:5000/group/register", newGroup)
                 .then(() =>
-                    alert("Successful"),
+                    swal("Success!", "Details Submitted Successfully!", "success"),
                     navigate('/studentdashboard'))
                 .catch((err) =>
-                     alert(err));
+                    swal("Failed!", "Something Went Wrong!", "error"));
             
         }
         setvalidated(true);

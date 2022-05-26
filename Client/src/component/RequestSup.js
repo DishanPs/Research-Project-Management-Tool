@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import axios from 'axios'
+import swal from 'sweetalert';
 
 const RequestSup = () => {
     const [validated, setvalidated] = useState(false);
@@ -37,10 +38,10 @@ const RequestSup = () => {
           axios
               .post("http://localhost:5000/sup/request", newSupRequest)
               .then(() => 
-                alert("Success")
+                swal("Success!", "Request Sent Successfully!", "success")
                 
               )
-              .catch((err) => alert(err));
+              .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
 
           
           

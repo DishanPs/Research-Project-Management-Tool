@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from 'axios'
 
 import React from 'react'
+import swal from 'sweetalert';
 
 const RequestCoSup = () => {
     const [validated, setvalidated] = useState(false);
@@ -38,10 +39,10 @@ const RequestCoSup = () => {
           axios
               .post("http://localhost:5000/cosup/request", newCoSupRequest)
               .then(() => 
-                alert("Success")
+                swal("Success!", "Request Sent Successfully!", "success")
                 
               )
-              .catch((err) => alert(err));
+              .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
 
           
           
