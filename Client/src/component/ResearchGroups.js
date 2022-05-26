@@ -54,7 +54,6 @@ const ResearchGroups = () => {
                 <th>Member 3 Name</th>
                 <th>Member 4 ID</th>
                 <th>Member 4 Name</th>
-                <th>Group Name</th>
                 <th>Assign Panel Members</th>
               </tr>
             </thead>

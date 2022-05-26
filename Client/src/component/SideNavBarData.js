@@ -1,34 +1,44 @@
 import React from "react";
+import { FaUsers } from "react-icons/fa";
 import {
-  FaUsers,
-  FaCalendarCheck,
-  FaHistory,
-  FaIndustry,
-} from "react-icons/fa";
+  MdSupervisorAccount,
+  MdOutlineSupervisorAccount,
+  MdTopic,
+  MdOutlineTopic,
+} from "react-icons/md";
+import { AiOutlineWechat, AiFillFileAdd } from "react-icons/ai";
+import {
+  HiDocumentText,
+  HiPresentationChartBar,
+  HiTemplate,
+  HiUsers,
+  HiDocumentSearch,
+} from "react-icons/hi";
+import { GiFiles } from "react-icons/gi";
 
 export const supervisorsidenavbarData = [
   {
     title: "Supervisor Requests",
     path: "/supstaff",
-    icon: <FaCalendarCheck />,
+    icon: <MdSupervisorAccount />,
     cName: "nav-text",
   },
   {
     title: "Co-Supevisor Requests",
     path: "/cosupstaff",
-    icon: <FaIndustry />,
+    icon: <MdOutlineSupervisorAccount />,
     cName: "nav-text",
   },
   {
     title: "Chat with Groups",
     path: "/chat",
-    icon: <FaUsers />,
+    icon: <AiOutlineWechat />,
     cName: "nav-text",
   },
   {
     title: "Evaluate Documents",
     path: "#evaluatedocument",
-    icon: <FaIndustry />,
+    icon: <HiDocumentText />,
     cName: "nav-text",
   },
 ];
@@ -37,13 +47,13 @@ export const panelsidenavbarData = [
   {
     title: "Evaluate Topics",
     path: "/viewtopics",
-    icon: <FaCalendarCheck />,
+    icon: <MdTopic />,
     cName: "nav-text",
   },
   {
     title: "Evaluate Presentations",
     path: "#evaluatepresentation",
-    icon: <FaIndustry />,
+    icon: <HiPresentationChartBar />,
     cName: "nav-text",
   },
 ];
@@ -52,43 +62,43 @@ export const studentsidenavbarData = [
   {
     title: "Create Group",
     path: "/creategroups",
-    icon: <FaCalendarCheck />,
+    icon: <FaUsers />,
     cName: "nav-text",
   },
   {
     title: "Request Supervisor",
     path: "/supstudent",
-    icon: <FaUsers />,
+    icon: <MdSupervisorAccount />,
     cName: "nav-text",
   },
   {
     title: "Ruquest Co-Supervisor",
     path: "/cosupstudent",
-    icon: <FaIndustry />,
+    icon: <MdOutlineSupervisorAccount />,
     cName: "nav-text",
   },
   {
     title: "Register Topic",
     path: "/registertopic",
-    icon: <FaIndustry />,
+    icon: <MdTopic />,
     cName: "nav-text",
   },
   {
     title: "Topic Status",
     path: "/studenttopicapproval",
-    icon: <FaIndustry />,
+    icon: <MdOutlineTopic />,
     cName: "nav-text",
   },
   {
     title: "Submissions",
     path: "#submisson",
-    icon: <FaIndustry />,
+    icon: <AiFillFileAdd />,
     cName: "nav-text",
   },
   {
     title: "Templates",
     path: "#template",
-    icon: <FaIndustry />,
+    icon: <HiTemplate />,
     cName: "nav-text",
   },
 ];
@@ -97,13 +107,13 @@ export const adminsidenavbarData = [
   {
     title: "Users",
     path: "#users",
-    icon: <FaCalendarCheck />,
+    icon: <HiUsers />,
     cName: "nav-text",
   },
   {
     title: "Submission Types",
     path: "#cosuprequest",
-    icon: <FaIndustry />,
+    icon: <GiFiles />,
     cName: "nav-text",
   },
   {
@@ -115,13 +125,13 @@ export const adminsidenavbarData = [
   {
     title: "Marking Schemes",
     path: "#evaluatedocument",
-    icon: <FaIndustry />,
+    icon: <HiDocumentSearch />,
     cName: "nav-text",
   },
   {
     title: "Templates",
     path: "#evaluatedocument",
-    icon: <FaIndustry />,
+    icon: <HiTemplate />,
     cName: "nav-text",
   },
 ];

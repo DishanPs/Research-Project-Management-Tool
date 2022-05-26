@@ -33,7 +33,7 @@ const CoSupRequestsStudentView = () => {
       <StudentSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
-          <h3>Co-Supervisor Requests </h3>
+          <h3 style={{ color: "white" }}>Co-Supervisor Requests </h3>
         </center>
         <br />
 
