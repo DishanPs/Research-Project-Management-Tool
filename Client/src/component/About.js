@@ -4,25 +4,22 @@ import Header from "./Header";
 import "./Homestyle.css";
 import Footer from "./Footer";
 
-const Home = () => {
+const About = () => {
   return (
     <div>
-      <Header />
+      <Header/>
       <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="../Images/Home.jpg"
-            alt="Home Image"
+            src="../Images/About.jpg"
+            alt="Project Guidlines"
           />
-          <Carousel.Caption>
-            <h3>Sri Lanka Institute of Information Technology</h3>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Footer />
+      <Footer/>
     </div>
   );
 };
 
-export default Home;
+export default About;
