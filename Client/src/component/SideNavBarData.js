@@ -9,13 +9,13 @@ import {
 export const supervisorsidenavbarData = [
   {
     title: "Supervisor Requests",
-    path: "#supervisorrequest",
+    path: "/supstaff",
     icon: <FaCalendarCheck />,
     cName: "nav-text",
   },
   {
     title: "Co-Supevisor Requests",
-    path: "#cosuprequest",
+    path: "/cosupstaff",
     icon: <FaIndustry />,
     cName: "nav-text",
   },
@@ -57,13 +57,13 @@ export const studentsidenavbarData = [
   },
   {
     title: "Request Supervisor",
-    path: "#reqsup",
+    path: "/supstudent",
     icon: <FaUsers />,
     cName: "nav-text",
   },
   {
     title: "Ruquest Co-Supervisor",
-    path: "#reqcosup",
+    path: "/cosupstudent",
     icon: <FaIndustry />,
     cName: "nav-text",
   },

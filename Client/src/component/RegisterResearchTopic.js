@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import axios from 'axios'
+import StudentSideNavBar from './StudentSideNavBar';
 
 
 
@@ -54,77 +55,80 @@ const RegisterResearchTopic = () => {
 
 
   return (
-    <div style = {{
-      backgroundImage: `url("https://foundation.caionline.org/wp-content/uploads/2017/06/research.jpg")`,
-      height: "100vh",
-      backgroundSize: "cover",}}
+    <div
+      style={{
+        backgroundImage: `url("https://foundation.caionline.org/wp-content/uploads/2017/06/research.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
     >
-      <center><h2>Register Research Topic</h2></center>
+      <StudentSideNavBar />
+      <div style={{ marginLeft: "200px" }}>
+        <center>
+          <h2>Register Research Topic</h2>
+        </center>
 
-      <div className='topicregform'>
-        <Form noValidate validated={validated} onSubmit= {checkSubmit}>
+        <div className="topicregform">
+          <Form noValidate validated={validated} onSubmit={checkSubmit}>
+            <Form.Group className="mb-3" controlId="gid">
+              <Form.Label>Group ID</Form.Label>
+              <Form.Control
+                placeholder="Group ID"
+                value={gid}
+                onChange={(e) => setGroupId(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="gid">
-                    <Form.Label>Group ID</Form.Label>
-                    <Form.Control
-                        placeholder="Group ID" 
-                        value={gid}
-                        onChange={(e) => setGroupId(e.target.value)}
-                        required
-                    />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="gname">
+              <Form.Label>Group Name</Form.Label>
+              <Form.Control
+                placeholder="Group Name"
+                value={gname}
+                onChange={(e) => setGroupName(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="gname">
-                    <Form.Label>Group Name</Form.Label>
-                    <Form.Control
-                        placeholder="Group Name" 
-                        value={gname}
-                        onChange={(e) => setGroupName(e.target.value)}
-                        required
-                    />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="supname">
+              <Form.Label>Supervisor Name</Form.Label>
+              <Form.Control
+                placeholder="Supervisor Name"
+                value={supname}
+                onChange={(e) => setSupName(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="supname">
-                    <Form.Label>Supervisor Name</Form.Label>
-                    <Form.Control
-                        placeholder="Supervisor Name" 
-                        value={supname}
-                        onChange={(e) => setSupName(e.target.value)}
-                        required
-                    />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="cosupname">
+              <Form.Label>Co-supervisor Name</Form.Label>
+              <Form.Control
+                placeholder="Co-supervisor Name"
+                value={cosupname}
+                onChange={(e) => setCoSupName(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="cosupname">
-                    <Form.Label>Co-supervisor Name</Form.Label>
-                    <Form.Control
-                        placeholder="Co-supervisor Name" 
-                        value={cosupname}
-                        onChange={(e) => setCoSupName(e.target.value)}
-                        required
-                    />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="topic">
+              <Form.Label>Research Topic</Form.Label>
+              <Form.Control
+                placeholder="Research Topic"
+                value={topic}
+                onChange={(e) => setResearchTopic(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="topic">
-                    <Form.Label>Research Topic</Form.Label>
-                    <Form.Control
-                        placeholder="Research Topic" 
-                        value={topic}
-                        onChange={(e) => setResearchTopic(e.target.value)}
-                        required
-                    />
-          </Form.Group>
-
-          <Button variant="primary" type="submit">
-           Submit
-          </Button>
-          
-
-        </Form> 
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </div>
+        <br />
       </div>
-      <br />
-
     </div>
-  )
+  );
 }
 
 export default RegisterResearchTopic

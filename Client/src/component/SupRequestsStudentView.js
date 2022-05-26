@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Table from 'react-bootstrap/Table'
 import axios from 'axios'
 import Badge from 'react-bootstrap/Badge'
+import StudentSideNavBar from './StudentSideNavBar';
 
 
 const SupRequestsStudentView = () => {
@@ -26,42 +27,41 @@ const SupRequestsStudentView = () => {
 
 
   return (
-    <div>
+    <>
+      <StudentSideNavBar />
+      <div style={{ marginLeft: "200px" }}>
         <center>
-            <h3>Supervisor Requests </h3>
+          <h3>Supervisor Requests </h3>
         </center>
         <br />
 
-        <div className='topictable'>
-            
-            <Table striped bordered hover variant='dark'>
-                <thead>
+        <div className="topictable">
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+                <th>Group ID</th>
+                <th>Group Name</th>
+                <th>Field</th>
+                <th>Supervisor Name</th>
+              </tr>
+            </thead>
+            {sups.map((sup) => (
+              <tbody key={sup._id}>
                 <tr>
-                    <th>Group ID</th>
-                    <th>Group Name</th>
-                    <th>Field</th>
-                    <th>Supervisor Name</th>
-                 
-                   
+                  <td>{sup.groupID}</td>
+                  <td>{sup.groupName}</td>
+                  <td>{sup.field}</td>
+                  <td>
+                    {sup.supervisorName} <Badge bg="info">{sup.status}</Badge>{" "}
+                  </td>
                 </tr>
-                </thead>
-                {sups.map((sup) => (
-                <tbody key={sup._id}>
-                    <tr>
-                    <td>{sup.groupID}</td>
-                    <td>{sup.groupName}</td>
-                    <td>{sup.field}</td>
-                    <td>{sup.supervisorName} <Badge bg="info">{sup.status}</Badge> </td>
-                    
-                    </tr>
-                </tbody>
-                ))}
-             </Table>
-
+              </tbody>
+            ))}
+          </Table>
         </div>
-
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
 export default SupRequestsStudentView

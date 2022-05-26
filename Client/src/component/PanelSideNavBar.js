@@ -27,30 +27,31 @@ const PanelSideNavBar = () => {
             style={{
               color: "white",
               marginLeft: "250px",
-              fontSize: "20px",
-              marginTop: "15px",
+              fontSize: "30px",
+              marginTop: "8px",
             }}
           >
-            Panel Member
+            Research Project Management Tool
           </div>
           <div
             style={{
               color: "white",
-              marginLeft: "540px",
-              fontSize: "20px",
-              marginTop: "15px",
+              marginLeft: "450px",
+              fontSize: "18px",
+              marginTop: "20px",
+              cursor: "pointer",
             }}
-            onClick={() => navigate("#profile")}
+            onClick={() => navigate("/Userprofile")}
           >
-            Profile
-            {/* {token.email} */}
+            {token.email}
           </div>
           <div
             style={{
               color: "white",
               marginRight: "30px",
-              fontSize: "20px",
-              marginTop: "15px",
+              fontSize: "18px",
+              marginTop: "20px",
+              cursor: "pointer",
             }}
           >
             <FiLogOut onClick={logout} />

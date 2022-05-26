@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import Badge from 'react-bootstrap/Badge'
 import { useNavigate } from 'react-router-dom'
+import SupervisorSideNavBar from './SupervisorSideNavBar';
 
 const SupRequestsStaffView = () => {
     const [sups, setSupervisor] = useState([]);
@@ -74,57 +75,78 @@ const SupRequestsStaffView = () => {
       }  
 
       const navigate = useNavigate();
-      
-      
-
-
-      
-
-     
-
-
   return (
-    <div >
-
+    <>
+      <SupervisorSideNavBar/>
+      <div style={{ marginLeft: "200px" }}>
         <center>
-            <h3>Supervisor Requests </h3>
+          <h3>Supervisor Requests </h3>
         </center>
         <br />
 
-        <div className='topictable'>
-            
-            <Table striped bordered hover variant='dark'>
-                <thead>
+        <div className="topictable">
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+                <th>Group ID</th>
+                <th>Group Name</th>
+                <th>Field</th>
+                <th>Supervisor Name</th>
+                <th>Accept</th>
+                <th>Reject</th>
+                <th>Reset</th>
+              </tr>
+            </thead>
+            {sups.map((sup) => (
+              <tbody key={sup._id}>
                 <tr>
-                    <th>Group ID</th>
-                    <th>Group Name</th>
-                    <th>Field</th>
-                    <th>Supervisor Name</th>
-                    <th>Accept</th>
-                    <th>Reject</th>
-                    <th>Reset</th>
-                   
+                  <td>{sup.groupID}</td>
+                  <td>{sup.groupName}</td>
+                  <td>{sup.field}</td>
+                  <td>
+                    {sup.supervisorName} <Badge bg="info">{sup.status}</Badge>{" "}
+                  </td>
+                  <td>
+                    {" "}
+                    <Button
+                      variant="success"
+                      onClick={() => {
+                        btnClick(sup._id, 1);
+                      }}
+                    >
+                      Accept
+                    </Button>
+                  </td>
+                  <td>
+                    {" "}
+                    <Button
+                      variant="danger"
+                      onClick={() => {
+                        btnClick(sup._id, 2);
+                      }}
+                    >
+                      Reject
+                    </Button>
+                  </td>
+                  <td>
+                    {" "}
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        btnClick(sup._id, 3);
+                      }}
+                    >
+                      Reset
+                    </Button>
+                  </td>
                 </tr>
-                </thead>
-                {sups.map((sup) => (
-                <tbody key={sup._id}>
-                    <tr>
-                    <td>{sup.groupID}</td>
-                    <td>{sup.groupName}</td>
-                    <td>{sup.field}</td>
-                    <td>{sup.supervisorName} <Badge bg="info">{sup.status}</Badge> </td>
-                    <td> <Button variant='success' onClick ={() => {btnClick(sup._id,1)}}>Accept</Button></td>
-                    <td> <Button variant='danger' onClick={() => {btnClick(sup._id,2)}}>Reject</Button></td>
-                    <td> <Button variant='primary' onClick={() => {btnClick(sup._id,3)}}>Reset</Button></td>
-                    
-                    </tr>
-                </tbody>
-                ))}
-             </Table>
-
+              </tbody>
+            ))}
+          </Table>
         </div>
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
 export default SupRequestsStaffView

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import Badge from 'react-bootstrap/Badge'
 import { useNavigate } from 'react-router-dom'
+import SupervisorSideNavBar from './SupervisorSideNavBar';
 
 
 const CoSupRequestsStaffView = () => {
@@ -82,46 +83,78 @@ const CoSupRequestsStaffView = () => {
 
 
   return (
-    <div>
-         <center>
-            <h3>Co-Supervisor Requests </h3>
+    <>
+      <SupervisorSideNavBar />
+      <div style={{ marginLeft: "200px" }}>
+        <center>
+          <h3>Co-Supervisor Requests </h3>
         </center>
         <br />
 
-        <div className='topictable'>
-            
-            <Table striped bordered hover variant='dark'>
-                <thead>
+        <div className="topictable">
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+                <th>Group ID</th>
+                <th>Group Name</th>
+                <th>Field</th>
+                <th>Co-Supervisor Name</th>
+                <th>Accept</th>
+                <th>Reject</th>
+                <th>Reset</th>
+              </tr>
+            </thead>
+            {cosups.map((cosup) => (
+              <tbody key={cosup._id}>
                 <tr>
-                    <th>Group ID</th>
-                    <th>Group Name</th>
-                    <th>Field</th>
-                    <th>Co-Supervisor Name</th>
-                    <th>Accept</th>
-                    <th>Reject</th>
-                    <th>Reset</th>
-                   
+                  <td>{cosup.groupID}</td>
+                  <td>{cosup.groupName}</td>
+                  <td>{cosup.field}</td>
+                  <td>
+                    {cosup.co_supervisorName}{" "}
+                    <Badge bg="info">{cosup.status}</Badge>{" "}
+                  </td>
+                  <td>
+                    {" "}
+                    <Button
+                      variant="success"
+                      onClick={() => {
+                        btnClick(cosup._id, 1);
+                      }}
+                    >
+                      Accept
+                    </Button>
+                  </td>
+                  <td>
+                    {" "}
+                    <Button
+                      variant="danger"
+                      onClick={() => {
+                        btnClick(cosup._id, 2);
+                      }}
+                    >
+                      Reject
+                    </Button>
+                  </td>
+                  <td>
+                    {" "}
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        btnClick(cosup._id, 3);
+                      }}
+                    >
+                      Reset
+                    </Button>
+                  </td>
                 </tr>
-                </thead>
-                {cosups.map((cosup) => (
-                <tbody key={cosup._id}>
-                    <tr>
-                    <td>{cosup.groupID}</td>
-                    <td>{cosup.groupName}</td>
-                    <td>{cosup.field}</td>
-                    <td>{cosup.co_supervisorName} <Badge bg="info">{cosup.status}</Badge> </td>
-                    <td> <Button variant='success' onClick ={() => {btnClick(cosup._id,1)}}>Accept</Button></td>
-                    <td> <Button variant='danger' onClick={() => {btnClick(cosup._id,2)}}>Reject</Button></td>
-                    <td> <Button variant='primary' onClick={() => {btnClick(cosup._id,3)}}>Reset</Button></td>
-                    
-                    </tr>
-                </tbody>
-                ))}
-             </Table>
-
+              </tbody>
+            ))}
+          </Table>
         </div>
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
 export default CoSupRequestsStaffView
