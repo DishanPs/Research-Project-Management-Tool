@@ -26,9 +26,13 @@ const SupRequestsStudentView = () => {
 
 
   return (
-    <div>
+    <div style = {{
+      backgroundImage: `url("https://cdn.wallpapersafari.com/50/35/iZb0jc.jpg")`,
+      height: "100vh",
+      backgroundSize: "cover",}}>
+
         <center>
-            <h3>Supervisor Requests </h3>
+            <h3 style = {{color:"white"}}>Supervisor Requests </h3>
         </center>
         <br />
 

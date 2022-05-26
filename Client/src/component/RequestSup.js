@@ -53,8 +53,12 @@ const RequestSup = () => {
 
 
   return (
-    <div>
-        <center><h2>Request a Supervisor</h2></center>
+    <div  style = {{
+      backgroundImage: `url("https://wallpapercave.com/wp/wp2015619.jpg")`,
+      height: "100vh",
+      backgroundSize: "cover",}}>
+
+        <center><h2 style = {{color :"white"}}>Request a Supervisor</h2></center>
 
         <div className='topicregform'>
         <Form noValidate validated={validated} onSubmit= {checkSubmit}>

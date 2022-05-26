@@ -24,9 +24,13 @@ const CoSupRequestsStudentView = () => {
     },);
 
   return (
-    <div>
+    <div style = {{
+      backgroundImage: `url("https://g3x4f7b5.stackpathcdn.com/images/inner_banner/market_research_firms.jpg")`,
+      height: "100vh",
+      backgroundSize: "cover",}}>
+
         <center>
-            <h3>Co-Supervisor Requests </h3>
+            <h3 style = {{color : "white"}}>Co-Supervisor Requests </h3>
         </center>
         <br />
 

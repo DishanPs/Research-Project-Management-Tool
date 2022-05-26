@@ -55,9 +55,12 @@ const RequestCoSup = () => {
 
 
   return (
-    <div>
+    <div style = {{
+      backgroundImage: `url("https://wallpapercave.com/wp/wp2015619.jpg")`,
+      height: "100vh",
+      backgroundSize: "cover",}}>
 
-        <center><h2>Request a Co-Supervisor</h2></center>
+        <center><h2 style={{color:"white"}}>Request a Co-Supervisor</h2></center>
 
         <div className='topicregform'>
         <Form noValidate validated={validated} onSubmit= {checkSubmit}>
@@ -86,7 +89,7 @@ const RequestCoSup = () => {
                     <Form.Label>Co-Supervisor Name</Form.Label>
                     <Form.Control
                         placeholder="Co-Supervisor Name" 
-                        value={supname}
+                        value={cosupname}
                         onChange={(e) => setCoSupName(e.target.value)}
                         required
                     />

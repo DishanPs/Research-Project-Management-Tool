@@ -84,10 +84,13 @@ const SupRequestsStaffView = () => {
 
 
   return (
-    <div >
+    <div style = {{
+      backgroundImage: `url("https://cdn.wallpapersafari.com/95/72/O1V2Mk.jpg")`,
+      height: "100vh",
+      backgroundSize: "cover",}} >
 
         <center>
-            <h3>Supervisor Requests </h3>
+            <h3 style = {{color:"white"}}>Supervisor Requests </h3>
         </center>
         <br />
 
