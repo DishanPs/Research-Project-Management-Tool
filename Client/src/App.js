@@ -11,15 +11,20 @@ import AcceptRejectTopic from "./component/AcceptRejectTopic";
 import ResearchGroups from "./component/ResearchGroups";
 import StudentDashboard from "./component/StudentDashboard";
 import TopicApprovalStudent from "./component/TopicApprovalStudent";
+import SupRequestsStaffView from "./component/SupRequestsStaffView";
+import SupRequestsStudentView from "./component/SupRequestsStudentView";
+import CoSupRequestsStaffView from "./component/CoSupRequestsStaffView";
+import CoSupRequestsStudentView from "./component/CoSupRequestsStudentView";
+import RequestSup from "./component/RequestSup";
+import RequestCoSup from "./component/RequestCoSup";
+
+
+
 
 function App(){
 return(
     <div>
-        {/* <Home/> */}
-        {/* <CreateStudentGroups /> */}
-        {/* <RegisterResearchTopic /> */}
-        {/* <AcceptRejectTopic /> */}
-        {/* <ResearchGroups /> */}
+        
 
         <BrowserRouter>
         <Header />
@@ -32,11 +37,12 @@ return(
           <Route path="/studentdashboard" exact element={<StudentDashboard />} />
           <Route path="/studenttopicapproval" exact element={<TopicApprovalStudent />} />
 
-          {/*<Route path="/adminmovies" exact element={<MovieAdminMovies/>}/>
-          <Route path="/Userprofile" exact element={<UserProfile/>}/>
-          <Route path="/Userreg" exact element={<UserReg/>}/>
-          <Route path="/Userlogin" exact element={<UserLogin/>}/>
-          <Route path="/cusprofile" exact element={<CusProfile/>}/> */}
+          <Route path="/requestsup" exact element={<RequestSup />}/>
+          <Route path="/requestcosup" exact element={<RequestCoSup />}/>
+          <Route path="/supstaff" exact element={<SupRequestsStaffView />}/>
+          <Route path="/supstudent" exact element={<SupRequestsStudentView />}/>
+          <Route path="/cosupstaff" exact element={<CoSupRequestsStaffView />}/>
+          <Route path="/cosupstudent" exact element={<CoSupRequestsStudentView />}/>
           
           
           

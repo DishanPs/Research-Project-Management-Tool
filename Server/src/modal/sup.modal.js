@@ -5,6 +5,7 @@ const SupSchema = new mongoose.Schema({
     groupName: {type: String, required: true},
     field: {type: String, required:true},
     supervisorName: {type: String, required:true},
+    status: {type: String, required:true}
    
 });
 
