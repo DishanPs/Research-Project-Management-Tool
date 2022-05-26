@@ -11,13 +11,15 @@ import UserLogin from "./component/UserLogin";
 import StaffReg from "./component/StaffReg";
 import UserCard from "./component/UserCard";
 import UserProfile from "./component/UserProfile";
+import AdminStudentView from "./component/AdminStudentView";
+import StudentStaffView from "./component/StudentStaffView";
 
 function App(){
 return(
     <div>
         
        <BrowserRouter>
-        <Header/>
+        
           <Routes>
             <Route path="/" exact element={<Home/>}/>            
             
@@ -26,11 +28,13 @@ return(
           <Route path="/Staffreg" exact element={<StaffReg/>}/>
           <Route path="/Usercard" exact element={<UserCard/>}/>
           <Route path="/Userprofile" exact element={<UserProfile/>}/>
+          <Route path="/Adminstudentview" exact element={<AdminStudentView/>}/>
+          <Route path="/Studentstaffview" exact element={<StudentStaffView/>}/>
           
           
      
         </Routes>
-        <Footer/>
+       
       </BrowserRouter>
     </div>
 )

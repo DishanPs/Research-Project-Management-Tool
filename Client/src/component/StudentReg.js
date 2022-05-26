@@ -26,7 +26,7 @@ const StudentReg = () => {
 
     const checkSubmit = (event) => {
         console.log(password);
-        const newUser = {
+        const newStudent = {
             "ID": ids,
             "email": email,
             "firstName": fname,
@@ -52,13 +52,31 @@ const StudentReg = () => {
         }
     
         else {
-            if (cpassword == password){
+          if (cpassword == password){
+
+            // axios
+            //     .post("http://localhost:5000/student/register", newStudent)
+            //     .then((data) => 
+            //     console.log(data),
+            //     swal("Submitted!", "Successfully Registered", "success"))
+            //     .catch((err) => alert(err));
+
+            // axios
+            //     .post("http://localhost:5000/student/register", newStudent)
+            //     .then(() => {
+            //       swal("Submitted!", "Successfully Registered", "success")
+            //         navigate("/UserLogin")
+            //       }).catch((err) => {
+            //         alert(err)
+            //       })
 
             axios
-                .post("http://localhost:5000/Student/register", newUser)
+                .post("http://localhost:5000/student/register", newStudent)
                 .then((data) => 
                 console.log(data),
-                swal("Submitted!", "Successfully Registered", "success"))
+                swal("Submitted!", "Successfully Registered", "success"),
+                navigate("/UserLogin")
+                )
                 .catch((err) => alert(err));
 
             axios
@@ -91,6 +109,7 @@ const StudentReg = () => {
                    <Form.Label>Student ID</Form.Label>
                     <Form.Control
                       placeholder="Enter your student ID" 
+                      pattern="[A-Z]{2}\d{8}"
                       value={ids}
                       onChange={(e) => setId(e.target.value)}
                       required
@@ -101,8 +120,9 @@ const StudentReg = () => {
                    <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email" 
-                      placeholder="Enter a Email"
-                      pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" 
+                      placeholder="Enter a Sliit Email"
+                      pattern="[a-z]{2}\d{8}@my.sliit.lk"
+                      
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -169,6 +189,7 @@ const StudentReg = () => {
                <Form.Label>Faculty</Form.Label>
                  <Form.Select aria-label="Feedback Type" value={fclty} onChange={(e) => setFaculty(e.target.value)}>
                   <option selected disabled hidden>Faculty Type</option>
+                  <option>Select your faculty</option>
                     <option>Computing</option>
                     <option>Bussiness</option>
                     <option>Engineering</option>

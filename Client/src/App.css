@@ -269,3 +269,37 @@ span{
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.562);
 }
+
+/* .editform{
+    width: 100vw;
+  height: 150vh;
+} */
+
+.uprofile{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("https://vistapointe.net/images/tea-plantation-1.jpg") center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapperprofile{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height:65%;
+    width: 120%;
+  padding: 20px;
+  background-color: grey;
+  border-radius: 20px;
+}
+
+.stable{
+    margin-left: 200px;
+    margin-right: 20px;
+}
