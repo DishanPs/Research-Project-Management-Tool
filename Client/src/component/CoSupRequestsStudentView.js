@@ -1,31 +1,35 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import axios from 'axios'
-import Badge from 'react-bootstrap/Badge'
-import StudentSideNavBar from './StudentSideNavBar';
+import Table from "react-bootstrap/Table";
+import axios from "axios";
+import Badge from "react-bootstrap/Badge";
+import StudentSideNavBar from "./StudentSideNavBar";
 
 const CoSupRequestsStudentView = () => {
+  const [cosups, setCoSupervisor] = useState([]);
 
-    const [cosups, setCoSupervisor] = useState([]);
-    
-
-    useEffect(() => {
-        const getCoSupervisors = () => {
-          axios
-            .get("http://localhost:5000/cosup")
-            .then((res) => {
-              setCoSupervisor(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getCoSupervisors();
-    },);
+  useEffect(() => {
+    const getCoSupervisors = () => {
+      axios
+        .get("http://localhost:5000/cosup")
+        .then((res) => {
+          setCoSupervisor(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getCoSupervisors();
+  });
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url("https://g3x4f7b5.stackpathcdn.com/images/inner_banner/market_research_firms.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
+    >
       <StudentSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
@@ -59,8 +63,8 @@ const CoSupRequestsStudentView = () => {
           </Table>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
-export default CoSupRequestsStudentView
+export default CoSupRequestsStudentView;

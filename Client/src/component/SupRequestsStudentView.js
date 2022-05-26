@@ -1,33 +1,35 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import axios from 'axios'
-import Badge from 'react-bootstrap/Badge'
-import StudentSideNavBar from './StudentSideNavBar';
-
+import Table from "react-bootstrap/Table";
+import axios from "axios";
+import Badge from "react-bootstrap/Badge";
+import StudentSideNavBar from "./StudentSideNavBar";
 
 const SupRequestsStudentView = () => {
+  const [sups, setSupervisor] = useState([]);
 
-    const [sups, setSupervisor] = useState([]);
-    
-
-    useEffect(() => {
-        const getSupervisors = () => {
-          axios
-            .get("http://localhost:5000/sup")
-            .then((res) => {
-              setSupervisor(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getSupervisors();
-    },);
-
+  useEffect(() => {
+    const getSupervisors = () => {
+      axios
+        .get("http://localhost:5000/sup")
+        .then((res) => {
+          setSupervisor(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getSupervisors();
+  });
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url("https://cdn.wallpapersafari.com/50/35/iZb0jc.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
+    >
       <StudentSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
@@ -60,8 +62,8 @@ const SupRequestsStudentView = () => {
           </Table>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
-export default SupRequestsStudentView
+export default SupRequestsStudentView;

@@ -1,83 +1,70 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
-import axios from 'axios'
-import Badge from 'react-bootstrap/Badge'
-import { useNavigate } from 'react-router-dom'
-import SupervisorSideNavBar from './SupervisorSideNavBar';
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
+import Badge from "react-bootstrap/Badge";
+import { useNavigate } from "react-router-dom";
+import SupervisorSideNavBar from "./SupervisorSideNavBar";
 
 const SupRequestsStaffView = () => {
-    const [sups, setSupervisor] = useState([]);
-    
+  const [sups, setSupervisor] = useState([]);
 
-    useEffect(() => {
-        const getSupervisors = () => {
-          axios
-            .get("http://localhost:5000/sup")
-            .then((res) => {
-              setSupervisor(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getSupervisors();
-    },);
+  useEffect(() => {
+    const getSupervisors = () => {
+      axios
+        .get("http://localhost:5000/sup")
+        .then((res) => {
+          setSupervisor(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getSupervisors();
+  });
 
+  const btnClick = (id, val) => {
+    if (val == 1) {
+      const updateStatus = {
+        status: "Accepted",
+      };
 
-      
+      axios
+        .put(`http://localhost:5000/sup/update/${id}`, updateStatus)
+        .then(() => navigate("/supstaff"))
+        .catch((err) => alert(err));
+    } else if (val == 2) {
+      const updateStatus = {
+        status: "Rejected",
+      };
 
+      axios
+        .put(`http://localhost:5000/sup/update/${id}`, updateStatus)
+        .then(() => navigate("/supstaff"))
+        .catch((err) => alert(err));
+    } else {
+      const updateStatus = {
+        status: "Pending",
+      };
 
-      const btnClick = (id, val) => {
-        if(val == 1){
-         
-          const updateStatus = {
-            status : "Accepted"
-          }
-  
-          axios
-          .put(`http://localhost:5000/sup/update/${id}`, updateStatus)
-          .then(() => navigate('/supstaff'))
-          .catch((err) => alert(err));
-          
-          
-        }
+      axios
+        .put(`http://localhost:5000/sup/update/${id}`, updateStatus)
+        .then(() => navigate("/supstaff"))
+        .catch((err) => alert(err));
+    }
+  };
 
-        else if(val == 2){
-          
-          const updateStatus = {
-            status : "Rejected"
-          }
-  
-          axios
-          .put(`http://localhost:5000/sup/update/${id}`, updateStatus)
-          .then(() => navigate('/supstaff'))
-          .catch((err) => alert(err));
-           
-        }
-
-        else {
-
-          const updateStatus = {
-            status : "Pending"
-          }
-  
-          axios
-          .put(`http://localhost:5000/sup/update/${id}`, updateStatus)
-          .then(() => navigate('/supstaff'))
-          .catch((err) => alert(err));
-
-
-        }
-
-      
-      }  
-
-      const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <>
-      <SupervisorSideNavBar/>
+    <div
+      style={{
+        backgroundImage: `url("https://cdn.wallpapersafari.com/95/72/O1V2Mk.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
+    >
+      <SupervisorSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
           <h3>Supervisor Requests </h3>
@@ -145,8 +132,8 @@ const SupRequestsStaffView = () => {
           </Table>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
-export default SupRequestsStaffView
+export default SupRequestsStaffView;

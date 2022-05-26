@@ -1,93 +1,74 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
-import axios from 'axios'
-import Badge from 'react-bootstrap/Badge'
-import { useNavigate } from 'react-router-dom'
-import SupervisorSideNavBar from './SupervisorSideNavBar';
-
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
+import Badge from "react-bootstrap/Badge";
+import { useNavigate } from "react-router-dom";
+import SupervisorSideNavBar from "./SupervisorSideNavBar";
 
 const CoSupRequestsStaffView = () => {
-    const [cosups, setCoSupervisor] = useState([]);
-    
+  const [cosups, setCoSupervisor] = useState([]);
 
-    useEffect(() => {
-        const getCoSupervisors = () => {
-          axios
-            .get("http://localhost:5000/cosup")
-            .then((res) => {
-              setCoSupervisor(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getCoSupervisors();
-    },);
+  useEffect(() => {
+    const getCoSupervisors = () => {
+      axios
+        .get("http://localhost:5000/cosup")
+        .then((res) => {
+          setCoSupervisor(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getCoSupervisors();
+  });
 
+  const btnClick = (id, val) => {
+    if (val == 1) {
+      const updateStatus = {
+        status: "Accepted",
+      };
 
-      
+      axios
+        .put(`http://localhost:5000/cosup/update/${id}`, updateStatus)
+        .then(() => navigate("/cosupstaff"))
+        .catch((err) => alert(err));
+    } else if (val == 2) {
+      const updateStatus = {
+        status: "Rejected",
+      };
 
+      axios
+        .put(`http://localhost:5000/cosup/update/${id}`, updateStatus)
+        .then(() => navigate("/cosupstaff"))
+        .catch((err) => alert(err));
+    } else {
+      const updateStatus = {
+        status: "Pending",
+      };
 
-      const btnClick = (id, val) => {
-        if(val == 1){
-         
-          const updateStatus = {
-            status : "Accepted"
-          }
-  
-          axios
-          .put(`http://localhost:5000/cosup/update/${id}`, updateStatus)
-          .then(() => navigate('/cosupstaff'))
-          .catch((err) => alert(err));
-          
-          
-        }
+      axios
+        .put(`http://localhost:5000/cosup/update/${id}`, updateStatus)
+        .then(() => navigate("/cosupstaff"))
+        .catch((err) => alert(err));
+    }
+  };
 
-        else if(val == 2){
-          
-          const updateStatus = {
-            status : "Rejected"
-          }
-  
-          axios
-          .put(`http://localhost:5000/cosup/update/${id}`, updateStatus)
-          .then(() => navigate('/cosupstaff'))
-          .catch((err) => alert(err));
-           
-        }
-
-        else {
-
-          const updateStatus = {
-            status : "Pending"
-          }
-  
-          axios
-          .put(`http://localhost:5000/cosup/update/${id}`, updateStatus)
-          .then(() => navigate('/cosupstaff'))
-          .catch((err) => alert(err));
-
-
-        }
-
-      
-      }  
-
-      const navigate = useNavigate();
-      
-      
-
-
-
+  const navigate = useNavigate();
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url("https://cdn.wallpapersafari.com/95/72/O1V2Mk.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
+    >
       <SupervisorSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
-          <h3>Co-Supervisor Requests </h3>
+          <h3 style={{ color: "white" }}>Co-Supervisor Requests </h3>
         </center>
         <br />
 
@@ -153,8 +134,8 @@ const CoSupRequestsStaffView = () => {
           </Table>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
-export default CoSupRequestsStaffView
+export default CoSupRequestsStaffView;
