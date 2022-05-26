@@ -17,3 +17,15 @@ connectDB();
 app.get("/", (req, res) => {
     res.send("Hello Node!");
 });
+
+const subTypeApi = require("./src/api/subTypes.api");
+app.use("/subtype", subTypeApi());
+
+const uploadDocApi = require("./src/api/uploadDoc.api");
+app.use("/uploadDoc", uploadDocApi());
+
+app.listen(PORT,() => {
+
+    console.log(`App listening at http://localhost:${PORT}`);
+    
+});

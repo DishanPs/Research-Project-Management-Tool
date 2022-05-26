@@ -6,8 +6,7 @@ import Footer from "./Footer";
 const Home = () => {
     return(
         <div>
-            <Header/>
-            <Footer/>
+            <h1>hello</h1>
         </div>
     )
 }
