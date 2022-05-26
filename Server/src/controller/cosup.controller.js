@@ -21,10 +21,24 @@ const getAllCoSupRequests = async (req, res) => {
         });
 }
 
+const updateStatus = async (req, res) => {
+    console.log(req.body);
+    if (req.body) {
+      let id = req.params.id;
+      await CoSupervisor.findByIdAndUpdate(id, req.body)
+        .then((data) => {
+          res.status(200).send(data);
+        })
+        .catch((err) => {
+          res.status(500).send(err);
+        });
+    }
+  };
 
 module.exports = {
     requestCoSup,
     getAllCoSupRequests,
+    updateStatus,
     
     
 }

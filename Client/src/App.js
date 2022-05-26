@@ -3,8 +3,6 @@ import "./App.css";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./component/Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "./component/Header";
-import Footer from "./component/Footer";
 import CreateStudentGroups from "./component/CreateStudentGroups";
 import RegisterResearchTopic from "./component/RegisterResearchTopic";
 import AcceptRejectTopic from "./component/AcceptRejectTopic";
@@ -17,6 +15,12 @@ import UserLogin from "./component/UserLogin";
 import StaffReg from "./component/StaffReg";
 import UserCard from "./component/UserCard";
 import UserProfile from "./component/UserProfile";
+import SupRequestsStaffView from "./component/SupRequestsStaffView";
+import SupRequestsStudentView from "./component/SupRequestsStudentView";
+import CoSupRequestsStaffView from "./component/CoSupRequestsStaffView";
+import CoSupRequestsStudentView from "./component/CoSupRequestsStudentView";
+import RequestSup from "./component/RequestSup";
+import RequestCoSup from "./component/RequestCoSup";
 
 function App(){
 return(
@@ -35,8 +39,14 @@ return(
             <Route path="/Studentreg" exact element={<StudentReg/>}/>
             <Route path="/Staffreg" exact element={<StaffReg/>}/>
             <Route path="/Usercard" exact element={<UserCard/>}/>
-            <Route path="/Userprofile" exact element={<UserProfile/>}/>        
-       </Routes>
+            <Route path="/Userprofile" exact element={<UserProfile />} />
+            <Route path="/requestsup" exact element={<RequestSup />}/>
+            <Route path="/requestcosup" exact element={<RequestCoSup />}/>
+            <Route path="/supstaff" exact element={<SupRequestsStaffView />}/>
+            <Route path="/supstudent" exact element={<SupRequestsStudentView />}/>
+            <Route path="/cosupstaff" exact element={<CoSupRequestsStaffView />}/>
+            <Route path="/cosupstudent" exact element={<CoSupRequestsStudentView />}/>     
+        </Routes>
       </BrowserRouter>
     </div>
 )
