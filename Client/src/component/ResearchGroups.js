@@ -72,7 +72,6 @@ const ResearchGroups = () => {
                   <td>{group.member3Name}</td>
                   <td>{group.member4ID}</td>
                   <td>{group.member4Name}</td>
-                  <td>{group.groupName}</td>
                   <td>
                     {" "}
                     <Button variant="primary">Assign</Button>
