@@ -301,3 +301,8 @@ span {
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.562);
 }
+
+.cp1{
+    height: 400px;
+    width : 450px;
+}
