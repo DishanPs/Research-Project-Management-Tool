@@ -5,6 +5,8 @@ import Templates from "./Templates";
 import { Link } from "react-router-dom";
 import "./UploadDoc";
 import Table from "react-bootstrap/Table";
+import StudentSideNavBar from "./StudentSideNavBar";
+
 
 const DownloadTemp = () => {
   const [temps, setTemps] = useState([]);
@@ -30,7 +32,13 @@ const DownloadTemp = () => {
   }
 
   return (
-    <div className="cp2">
+    <div>
+      <StudentSideNavBar />
+      <div
+        style={{
+          marginLeft: "200px",
+        }}
+      >
       <center>
         <h1>Templates</h1>
       </center>
@@ -73,6 +81,7 @@ const DownloadTemp = () => {
       <br />
 
       <br />
+    </div>
     </div>
   );
 };

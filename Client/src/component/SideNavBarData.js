@@ -91,13 +91,13 @@ export const studentsidenavbarData = [
   },
   {
     title: "Submissions",
-    path: "#submisson",
+    path: "/sublinks",
     icon: <AiFillFileAdd />,
     cName: "nav-text",
   },
   {
     title: "Templates",
-    path: "#template",
+    path: "/downloadtemp",
     icon: <HiTemplate />,
     cName: "nav-text",
   },
@@ -112,7 +112,7 @@ export const adminsidenavbarData = [
   },
   {
     title: "Submission Types",
-    path: "#cosuprequest",
+    path: "/subtypes",
     icon: <GiFiles />,
     cName: "nav-text",
   },
@@ -130,7 +130,7 @@ export const adminsidenavbarData = [
   },
   {
     title: "Templates",
-    path: "#evaluatedocument",
+    path: "/uploadtemp",
     icon: <HiTemplate />,
     cName: "nav-text",
   },

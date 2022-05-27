@@ -306,3 +306,30 @@ span {
     height: 400px;
     width : 450px;
 }
+
+.cp5{
+  margin-top: -100px;
+  font-size:larger
+}
+
+.createsubform{
+  height: 500px;
+  width: 550px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.562);
+  color: white;
+}
+
+.cp6{
+  background-color: rgba(0, 0, 0, 0.562);
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
+}

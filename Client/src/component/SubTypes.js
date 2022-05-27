@@ -3,6 +3,8 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import axios from "axios";
+import AdminSideNavBar from "./AdminSideNavBar";
+
 
 const SubTypes = ({upd}) => {
 
@@ -52,8 +54,14 @@ const SubTypes = ({upd}) => {
 };
     
   return (
-    <div>
-      <Modal.Dialog>
+    <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/2624528.jpg")`, backgroundSize: "cover", height: "100vh"}}>
+      <AdminSideNavBar />
+      <div
+        style={{
+          marginLeft: "200px",
+        }}
+      >
+      <Modal.Dialog className='cp6'>
         <Modal.Header closeButton>
             <Modal.Title>Create Submission Types</Modal.Title>
         </Modal.Header>
@@ -109,6 +117,7 @@ const SubTypes = ({upd}) => {
             </Button>
         </Modal.Footer>
       </Modal.Dialog>
+    </div>
     </div>
   )
 }

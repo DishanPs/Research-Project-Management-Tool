@@ -6,7 +6,8 @@
 
 .form{
     width: 450px;
-    background: white;
+    height: 500px;
+    background-color:azure;
     border-radius: 2px;
     padding: 10px;
     display: flex;
@@ -33,7 +34,7 @@
     outline: none;
     font-size: 14px;
     font-weight: bold;
-    background: transparent;
+    background-color: rgba(20, 158, 233, 0.851);
     padding: 10px 20px;
     border: 1px solid black;
     border-radius: 2px;
