@@ -26,6 +26,10 @@ import CoSupRequestsStaffView from "./component/CoSupRequestsStaffView";
 import CoSupRequestsStudentView from "./component/CoSupRequestsStudentView";
 import RequestSup from "./component/RequestSup";
 import RequestCoSup from "./component/RequestCoSup";
+import CreateChatChannel from "./component/CreateChatChannel";
+import EvaluateDocument from "./component/EvaluateDocument";
+import EvaluatePresentation from "./component/EvaluatePresentation";
+import CreateMarkingScheme from "./component/CreateMarkingScheme";
 
 function App(){
 return(
@@ -40,6 +44,10 @@ return(
             <Route path="/studenttopicapproval" exact element={<TopicApprovalStudent />} />
             <Route path="/chat" exact element={<RRChat />} />
             <Route path="/about" exact element={<About />} /> 
+            <Route path="/createchanel" exact element={<CreateChatChannel />} />
+            <Route path="/evaluatedocument" exact element={<EvaluateDocument />} />
+            <Route path="/evaluatepresentation" exact element={<EvaluatePresentation />} />
+            <Route path="/createmarking" exact element={<CreateMarkingScheme/>}/>
             <Route path="/Userlogin" exact element={<UserLogin/>}/>
             <Route path="/Studentreg" exact element={<StudentReg/>}/>
             <Route path="/Staffreg" exact element={<StaffReg/>}/>
