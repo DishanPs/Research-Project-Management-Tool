@@ -46,6 +46,10 @@ app.use("/subtype", subTypeApi());
 const uploadDocApi = require("./src/api/uploadDoc.api");
 app.use("/uploadDoc", uploadDocApi());
 
+const panelApi = require("./src/api/panel.api");
+app.use("/panel", panelApi());
+
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });

@@ -4,9 +4,11 @@ import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import AdminSideNavBar from './AdminSideNavBar';
+import PanelAssignModal from './PanelAssignModal';
 
 const ResearchGroups = () => {
     const [groups, setGroup] = useState([]);
+    const [modalShow, setModalShow] = React.useState(false);
 
     useEffect(() => {
         const getGroups = () => {
@@ -73,12 +75,17 @@ const ResearchGroups = () => {
                   <td>{group.member4Name}</td>
                   <td>
                     {" "}
-                    <Button variant="primary">Assign</Button>
+                    <Button variant="primary" onClick={() => setModalShow(true)}>Assign</Button>
                   </td>
                 </tr>
               </tbody>
             ))}
           </Table>
+          <PanelAssignModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                
+          />
         </div>
       </div>
     </div>
