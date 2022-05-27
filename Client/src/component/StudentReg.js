@@ -97,8 +97,8 @@ const StudentReg = () => {
 
     return (
         <div>
-         <div className='Containerreg'>
-          <div className='wrapperreg'>
+         <div className='Containerregstu'>
+          <div className='wrapperregstu'>
            <div className='titlereg'>
              <h1 >Create Profile</h1>
               <div className="loginformreg">
@@ -185,7 +185,7 @@ const StudentReg = () => {
                  </Form.Group>
                 </Row>
 
-
+                <Form.Group className="inputreg">
                <Form.Label>Faculty</Form.Label>
                  <Form.Select aria-label="Feedback Type" value={fclty} onChange={(e) => setFaculty(e.target.value)}>
                   <option selected disabled hidden>Faculty Type</option>
@@ -198,7 +198,7 @@ const StudentReg = () => {
                     <option>Graduate studies and reseach</option>
                     <option>School of Law</option>
                  </Form.Select>
-                
+                 </Form.Group>
               
 
                 <Row>

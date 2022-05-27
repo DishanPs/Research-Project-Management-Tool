@@ -12,7 +12,7 @@ const StudentProEdit = ({ det }) => {
   const [lname, setLastName] = useState(det.lastName);
   const [contactno, setContactNo] = useState(det.contactNo);
   const [nic, setNIC] = useState(det.NIC);
-  const [fclty, setFaculty] = useState(det.faculty);
+  
 
   const handleSubmit = (event) => {
     const updateStudent = {
@@ -21,7 +21,7 @@ const StudentProEdit = ({ det }) => {
       lastName: lname,
       contactNo: contactno,
       NIC: nic,
-      faculty: fclty,
+      
     };
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -29,7 +29,7 @@ const StudentProEdit = ({ det }) => {
       event.stopPropagation();
     } else {
       axios
-        .put(`http://localhost:5000/student/update/${det._id}`, updateStudent)
+        .put(`http://localhost:5000/admin/update/${det._id}`, updateStudent)
         .then((data) => 
         console.log(data),
         swal("Updated!", "Successfully Updated", "success"))
@@ -42,9 +42,9 @@ const StudentProEdit = ({ det }) => {
     <div className="editform">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="inputreg" controlId="iD">
-          <Form.Label>Student ID</Form.Label>
+          <Form.Label>Admin ID</Form.Label>
           <Form.Control
-            placeholder="Enter your student ID"
+            placeholder="Enter your Admin ID"
             value={ids}
             onChange={(e) => setId(e.target.value)}
             required
@@ -95,24 +95,6 @@ const StudentProEdit = ({ det }) => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Label>Faculty</Form.Label>
-        <Form.Select
-          aria-label="Feedback Type"
-          value={fclty}
-          onChange={(e) => setFaculty(e.target.value)}
-        >
-          <option selected disabled hidden>
-            Faculty Type
-          </option>
-          <option>Select your faculty</option>
-          <option>Computing</option>
-          <option>Bussiness</option>
-          <option>Engineering</option>
-          <option>Humanaties and sciences</option>
-          <option>School of Architecture</option>
-          <option>Graduate studies and reseach</option>
-          <option>School of Law</option>
-        </Form.Select>
 
         <Button variant="primary" type="submit">
           Save Changes

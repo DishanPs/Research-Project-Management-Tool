@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import {FaPencilAlt,FaTrash,} from "react-icons/fa";
 import {useState, useEffect } from "react";
 import ModleStudentDelete from "./AdminModalDelStudents";
- 
+import AdminSideNavBar from './AdminSideNavBar';
 import ModalnewStudent from './AdminModalUpdStudent';
 import axios from "axios";
 
@@ -37,9 +37,18 @@ const AdminStudentView = () => {
     
     
     return (
+      <div 
+      style={{
+        backgroundImage: `url("https://img.wallpapersafari.com/desktop/1024/576/90/30/9oCdMj.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
+      >
+      <AdminSideNavBar />
       <div className='stable'> 
-        
-            <center><h1>Students</h1></center>
+         <br></br>
+            <center><h1 style={{ color: "white" }}>Students</h1></center>
+            <hr></hr>
 
            <Table striped bordered hover variant='dark'>
              <thead>
@@ -79,7 +88,7 @@ const AdminStudentView = () => {
                         setupdateAdminStudentView(AdminStudentView);
                       }}
                       style={{ cursor: "pointer", color: "blue" }}
-                      title="Delete Product Stock"
+                      title="Update the student details"
                     />
                    </span>
                   </div>
@@ -95,7 +104,7 @@ const AdminStudentView = () => {
                         setdeleteAdminStudentView(AdminStudentView);
                       }}
                       style={{ cursor: "pointer", color: "red" }}
-                      title="Delete Product Stock"
+                      title="Delete the student"
                     />
                    </span>
                   </div>
@@ -118,7 +127,7 @@ const AdminStudentView = () => {
             deleteAdminStudentView={deleteAdminStudentView}
           />
           </div>  
-        
+          </div>
     )
 }
 

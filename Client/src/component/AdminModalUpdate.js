@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
-import StudentProEdit from './StudentProEdit'
+import AdminProEdit from './AdminProEdit'
 import { ModalBody } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 
@@ -18,7 +18,7 @@ const Modalnew3 = (props) => {
           </Modal.Title>
         </Modal.Header>
         <ModalBody>
-          <StudentProEdit det = {props.profile} />
+          <AdminProEdit det = {props.profile} />
           
 
         </ModalBody>

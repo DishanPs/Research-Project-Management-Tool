@@ -32,7 +32,9 @@ const StaffProEdit = ({ det }) => {
     } else {
       axios
         .put(`http://localhost:5000/staff/update/${det._id}`, updateUser)
-        .then(() => swal("Updated!", "Successfully Updated", "success"))
+        .then((data) => 
+        console.log(data),
+        swal("Updated!", "Successfully Updated", "success"))
         .catch((err) => alert(err));
     }
     setvalidated(true);

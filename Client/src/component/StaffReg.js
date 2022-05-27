@@ -77,8 +77,8 @@ const StaffReg = () => {
 
   return (
     <div>
-      <div className="Containerreg">
-        <div className="wrapperreg">
+      <div className="Containerregstf">
+        <div className="wrapperregstf">
           <div className="titlereg">
             <h1>Create Profile</h1>
             <div className="loginformreg">
@@ -88,7 +88,7 @@ const StaffReg = () => {
                     <Form.Label>Staff ID</Form.Label>
                     <Form.Control
                       placeholder="Enter your staff ID"
-                      pattern="[A-Z]{4}\d{6}"
+                      pattern="STF[A-Z]{1}\d{6}"
                       value={ids}
                       onChange={(e) => setId(e.target.value)}
                       required
@@ -100,7 +100,7 @@ const StaffReg = () => {
                     <Form.Control
                       type="email"
                       placeholder="Enter a Email"
-                      //pattern="[a-z]{2}\d{8}@my.sliit.lk"
+                      //pattern="[a-z]\@sliit.lk"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -162,7 +162,7 @@ const StaffReg = () => {
                   </Form.Group>
                 </Row>
 
-                <Form.Group className="mb-3" controlId="interest">
+                <Form.Group className="inputreg" controlId="interest">
                   <Form.Label>Research Interest</Form.Label>
                   <Form.Control
                     as="textarea"
@@ -173,6 +173,7 @@ const StaffReg = () => {
                   />
                 </Form.Group>
 
+               <Form.Group className="inputreg">
                 <Form.Label>Faculty</Form.Label>
                 <Form.Select
                   aria-label="Feedback Type"
@@ -191,6 +192,7 @@ const StaffReg = () => {
                   <option>Graduate studies and reseach</option>
                   <option>School of Law</option>
                 </Form.Select>
+                </Form.Group>
 
                 <Row>
                   <Form.Group className="inputreg" controlId="password">

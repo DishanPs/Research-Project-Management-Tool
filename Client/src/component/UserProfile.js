@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { useState, useEffect } from 'react';
 import Modalnew1 from './StudentModalUpdate.js';
 import Modalnew2 from './StaffModalUpdate.js';
+import Modalnew3 from './AdminModalUpdate.js';
 import Profile from './UserCard.js';
  import Modaldelete from './UserModalDelete.js';
 import axios from 'axios';
@@ -17,6 +18,7 @@ const UserProfile = () => {
         const[modleType,setModaltype] = useState("")
             const [modalShow1, setModalShow1] = React.useState(false);
             const [modalShow2, setModalShow2] = React.useState(false);
+            const [modalShow3, setModalShow3] = React.useState(false);
             const [modalDelete, setModalDelete] = React.useState(false);
 
             const token =JSON.parse(sessionStorage.getItem("token"));
@@ -60,10 +62,11 @@ const UserProfile = () => {
                 <center> 
                 <div className='wrapperprofile'>
                 
-                 <h3>User Profile</h3><br /><br />
+                <b> <i><h2 style={{ color: "white" }}>USER PROFILE</h2></i></b><br /><br />
                 <Profile profile = {profiledetails.data} /><br />
 
-                <Button variant="primary" onClick={token.type == "Student" ? () => setModalShow1(true) : () => setModalShow2(true)}>
+                {/* <Button variant="primary" onClick={token.type == "Student" ? () => setModalShow1(true) : () => setModalShow2(true)}> */}
+                <Button variant="primary" onClick={token.type == "Student" ? () => setModalShow1(true) : token.type == "Staff" ? () => setModalShow2(true) : () => setModalShow3(true)}>
                     Update Details
                 </Button>
                 &nbsp;&nbsp;
@@ -84,6 +87,12 @@ const UserProfile = () => {
                 onHide={() => setModalShow2(false)}
                 profile = {profiledetails}
                 />
+                <Modalnew3
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+                profile = {profiledetails}
+                />
+
                 <Modaldelete
                         show={modalDelete}
                         type = {modleType}

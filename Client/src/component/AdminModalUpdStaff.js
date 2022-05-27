@@ -1,10 +1,10 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
-import StudentProEdit from './StudentProEdit'
+import StaffProEdit from './StaffProEdit'
 import { ModalBody } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 
-const Modalnew3 = (props) => {
+const ModalnewStaff = (props) => {
     return (
         <Modal
         {...props}
@@ -18,7 +18,7 @@ const Modalnew3 = (props) => {
           </Modal.Title>
         </Modal.Header>
         <ModalBody>
-          <StudentProEdit det = {props.profile} />
+          <StaffProEdit det = {props.profile} />
           
 
         </ModalBody>
@@ -29,4 +29,4 @@ const Modalnew3 = (props) => {
     )
 }
 
-export default Modalnew3
+export default ModalnewStaff
