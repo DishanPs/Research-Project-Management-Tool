@@ -3,6 +3,11 @@ import "./App.css";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./component/Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SubTypes from "./component/SubTypes";
+import SubDoc from "./component/SubDoc";
+import UploadDoc from "./component/UploadDoc";
+import UploadTemp from "./component/UploadTemp";
+import DownloadTemp from "./component/DownloadTemp";
 import CreateStudentGroups from "./component/CreateStudentGroups";
 import RegisterResearchTopic from "./component/RegisterResearchTopic";
 import AcceptRejectTopic from "./component/AcceptRejectTopic";
@@ -45,7 +50,12 @@ return(
             <Route path="/supstaff" exact element={<SupRequestsStaffView />}/>
             <Route path="/supstudent" exact element={<SupRequestsStudentView />}/>
             <Route path="/cosupstaff" exact element={<CoSupRequestsStaffView />}/>
-            <Route path="/cosupstudent" exact element={<CoSupRequestsStudentView />}/>     
+            <Route path="/cosupstudent" exact element={<CoSupRequestsStudentView />}/>
+            <Route path="/subtypes" exact element={<SubTypes/>} />
+            <Route path="/subdoc" exact element={<SubDoc/>} />
+            <Route path="/uploaddoc" exact element={<UploadDoc/>} />
+            <Route path="/uploadtemp" exact element={<UploadTemp/>} />
+            <Route path="/downloadtemp" exact element={<DownloadTemp/>} />     
         </Routes>
       </BrowserRouter>
     </div>
