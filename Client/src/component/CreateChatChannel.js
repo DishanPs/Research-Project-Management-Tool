@@ -15,8 +15,8 @@ const CreateChatChannel = () => {
   const apiKey = "6atn2yf229tr";
 
   const ChatUser = {
-    id: token,
-    email: token,
+    id: token.iD,
+    email: token.email,
   };
 
   const cMembers = [ChatUser.id];

@@ -18,11 +18,11 @@ import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 const ChatOption = (open) => {
   const navigate = useNavigate();
 
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     right: false,
   });
 
-  const toggleDrawer = (anchor, open) => {
+  const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
       event.type === "keydown" &&
@@ -30,6 +30,7 @@ const ChatOption = (open) => {
     ) {
       return;
     }
+    console.log("navindu ")
     setState({ ...state, [anchor]: open });
   };
 
@@ -51,7 +52,7 @@ const ChatOption = (open) => {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/creategroup")}>
+          <ListItemButton onClick={() => navigate("/createchanel")}>
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
@@ -59,7 +60,7 @@ const ChatOption = (open) => {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/creategroup")}>
+          <ListItemButton onClick={() => navigate("/createchanel")}>
             <ListItemIcon>
               <EditIcon />
             </ListItemIcon>
@@ -73,12 +74,13 @@ const ChatOption = (open) => {
 
   return (
     <div>
-      <SettingsIcon
+      <Button
         sx={{ position: "sticky", right: 0, left: 5000 }}
         onClick={toggleDrawer("right", true)}
       >
-        Right
-      </SettingsIcon>
+        <ChatBubbleIcon />
+        &nbsp;New Chat
+      </Button>
       <SwipeableDrawer
         anchor={"right"}
         open={state["right"]}

@@ -37,7 +37,7 @@ export const supervisorsidenavbarData = [
   },
   {
     title: "Evaluate Documents",
-    path: "#evaluatedocument",
+    path: "/evaluatedocument",
     icon: <HiDocumentText />,
     cName: "nav-text",
   },
@@ -52,7 +52,7 @@ export const panelsidenavbarData = [
   },
   {
     title: "Evaluate Presentations",
-    path: "#evaluatepresentation",
+    path: "/evaluatepresentation",
     icon: <HiPresentationChartBar />,
     cName: "nav-text",
   },
@@ -130,7 +130,7 @@ export const adminsidenavbarData = [
   },
   {
     title: "Marking Schemes",
-    path: "#evaluatedocument",
+    path: "/createmarking",
     icon: <HiDocumentSearch />,
     cName: "nav-text",
   },

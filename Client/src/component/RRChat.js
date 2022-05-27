@@ -19,21 +19,22 @@ import { Button } from "@mui/material";
 import CreateChatChannel from './CreateChatChannel';
 import ChatOption from './ChatOption';
 import SupervisorSideNavBar from './SupervisorSideNavBar';
+import StudentSideNavBar from './StudentSideNavBar';
 
 const RRChat = () => {
   const token = JSON.parse(sessionStorage.getItem("token"));
-  const filters = { members: { $in: [token] } };
+  const filters = { members: { $in: [token.iD] } };
   const sort = { last_message_at: -1 };
   const options = { limit: 10 };
 
   const apiKey = "6atn2yf229tr";
 
   const user = {
-    id: token,
+    id: token.iD,
     email: token,
   };
   console.log(token)
-  console.log(user)
+  console.log(user.id)
   const [client, setClient] = useState(null);
   const [option, setOption] = useState(false);
 
@@ -54,12 +55,17 @@ const RRChat = () => {
 
   return (
     <div>
-      <SupervisorSideNavBar />
+      {token.type == "Staff" ? (<SupervisorSideNavBar />) : (<StudentSideNavBar/>)}
       <div
-        style={{ marginLeft: "200px",marginTop:"0px", marginRight: "0px", height:"400px" }}
+        style={{
+          marginLeft: "200px",
+          marginTop: "0px",
+          marginRight: "0px",
+          height: "400px",
+        }}
       >
-        <ChatOption/>
-        <Chat client={client} theme="messaging dark">
+        <Chat client={client} theme="messaging light">
+          <ChatOption />
           <ChannelList filters={filters} sort={sort} options={options} />
           <Channel>
             <Window>
