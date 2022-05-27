@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send("Hello Node!");
+    res.send("Hello Node!");
 });
 
 const groupApi = require("./src/api/groups.api");
@@ -39,6 +39,12 @@ app.use("/student", studentApi());
 
 const staffApi = require("./src/api/staff.api");
 app.use("/staff", staffApi());
+
+const subTypeApi = require("./src/api/subTypes.api");
+app.use("/subtype", subTypeApi());
+
+const uploadDocApi = require("./src/api/uploadDoc.api");
+app.use("/uploadDoc", uploadDocApi());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
