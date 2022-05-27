@@ -21,6 +21,7 @@ import CoSupRequestsStaffView from "./component/CoSupRequestsStaffView";
 import CoSupRequestsStudentView from "./component/CoSupRequestsStudentView";
 import RequestSup from "./component/RequestSup";
 import RequestCoSup from "./component/RequestCoSup";
+import CreateChatChannel from "./component/CreateChatChannel";
 
 function App(){
 return(
@@ -34,7 +35,8 @@ return(
             <Route path="/viewtopics" exact element={<AcceptRejectTopic />} />
             <Route path="/studenttopicapproval" exact element={<TopicApprovalStudent />} />
             <Route path="/chat" exact element={<RRChat />} />
-            <Route path="/about" exact element={<About />} /> 
+                <Route path="/about" exact element={<About />} /> 
+                <Route path="/creategroup" exaxt element={<CreateChatChannel/>}/>
             <Route path="/Userlogin" exact element={<UserLogin/>}/>
             <Route path="/Studentreg" exact element={<StudentReg/>}/>
             <Route path="/Staffreg" exact element={<StaffReg/>}/>

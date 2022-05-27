@@ -90,6 +90,12 @@ export const studentsidenavbarData = [
     cName: "nav-text",
   },
   {
+    title: "Chat",
+    path: "/chat",
+    icon: <AiOutlineWechat />,
+    cName: "nav-text",
+  },
+  {
     title: "Submissions",
     path: "#submisson",
     icon: <AiFillFileAdd />,
