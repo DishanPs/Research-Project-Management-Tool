@@ -46,6 +46,12 @@ app.use("/subtype", subTypeApi());
 const uploadDocApi = require("./src/api/uploadDoc.api");
 app.use("/uploadDoc", uploadDocApi());
 
+const documentmarkingAPI = require("./src/api/documentmarking.api");
+app.use("/documentmarking", documentmarkingAPI());
+
+const presentationmarkingAPI = require("./src/api/presentationmarking.api");
+app.use("/presentationmarking", presentationmarkingAPI());
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });

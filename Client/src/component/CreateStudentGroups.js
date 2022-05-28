@@ -52,12 +52,19 @@ const CreateStudentGroups = () => {
             
         
             axios
-                .post("http://localhost:5000/group/register", newGroup)
-                .then(() =>
-                    swal("Success!", "Details Submitted Successfully!", "success"),
-                    navigate('/studentdashboard'))
-                .catch((err) =>
-                    swal("Failed!", "Something Went Wrong!", "error"));
+              .post("http://localhost:5000/group/register", newGroup)
+              .then(
+                () =>
+                  swal(
+                    "Success!",
+                    "Details Submitted Successfully!",
+                    "success"
+                  ),
+                navigate("/creategroups")
+              )
+              .catch((err) =>
+                swal("Failed!", "Something Went Wrong!", "error")
+              );
             
         }
         setvalidated(true);
