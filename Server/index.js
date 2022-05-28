@@ -52,6 +52,10 @@ app.use("/documentmarking", documentmarkingAPI());
 const presentationmarkingAPI = require("./src/api/presentationmarking.api");
 app.use("/presentationmarking", presentationmarkingAPI());
 
+const panelApi = require("./src/api/panel.api");
+app.use("/panel", panelApi());
+
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });

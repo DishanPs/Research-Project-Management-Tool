@@ -66,13 +66,19 @@ export const studentsidenavbarData = [
     cName: "nav-text",
   },
   {
-    title: "Request Supervisor",
+    title: "Request Supervisor/Co-supervisor",
+    path: "#users",
+    icon: <MdSupervisorAccount />,
+    cName: "nav-text",
+  },
+  {
+    title: "Supervisor Response",
     path: "/supstudent",
     icon: <MdSupervisorAccount />,
     cName: "nav-text",
   },
   {
-    title: "Ruquest Co-Supervisor",
+    title: "Co-Supervisor Response",
     path: "/cosupstudent",
     icon: <MdOutlineSupervisorAccount />,
     cName: "nav-text",
@@ -97,13 +103,13 @@ export const studentsidenavbarData = [
   },
   {
     title: "Submissions",
-    path: "#submisson",
+    path: "/subdoc",
     icon: <AiFillFileAdd />,
     cName: "nav-text",
   },
   {
     title: "Templates",
-    path: "#template",
+    path: "/downloadtemp",
     icon: <HiTemplate />,
     cName: "nav-text",
   },
@@ -118,7 +124,7 @@ export const adminsidenavbarData = [
   },
   {
     title: "Submission Types",
-    path: "#cosuprequest",
+    path: "/subtypes",
     icon: <GiFiles />,
     cName: "nav-text",
   },
@@ -136,7 +142,7 @@ export const adminsidenavbarData = [
   },
   {
     title: "Templates",
-    path: "#evaluatedocument",
+    path: "/uploadtemp",
     icon: <HiTemplate />,
     cName: "nav-text",
   },
