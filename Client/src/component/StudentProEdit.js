@@ -30,9 +30,10 @@ const StudentProEdit = ({ det }) => {
     } else {
       axios
         .put(`http://localhost:5000/student/update/${det._id}`, updateStudent)
-        .then((data) => 
-        console.log(data),
-        swal("Updated!", "Successfully Updated", "success"))
+        .then(
+          (data) => console.log(data),
+          swal("Updated!", "Successfully Updated", "success")
+        )
         .catch((err) => alert(err));
     }
     setvalidated(true);
@@ -96,24 +97,24 @@ const StudentProEdit = ({ det }) => {
         </Form.Group>
 
         <Form.Group className="inputreg">
-        <Form.Label>Faculty</Form.Label>
-        <Form.Select
-          aria-label="Feedback Type"
-          value={fclty}
-          onChange={(e) => setFaculty(e.target.value)}
-        >
-          <option selected disabled hidden>
-            Faculty Type
-          </option>
-          <option>Select your faculty</option>
-          <option>Computing</option>
-          <option>Bussiness</option>
-          <option>Engineering</option>
-          <option>Humanaties and sciences</option>
-          <option>School of Architecture</option>
-          <option>Graduate studies and reseach</option>
-          <option>School of Law</option>
-        </Form.Select>
+          <Form.Label>Faculty</Form.Label>
+          <Form.Select
+            aria-label="Feedback Type"
+            value={fclty}
+            onChange={(e) => setFaculty(e.target.value)}
+          >
+            <option selected disabled hidden>
+              Faculty Type
+            </option>
+            <option>Select your faculty</option>
+            <option>Computing</option>
+            <option>Bussiness</option>
+            <option>Engineering</option>
+            <option>Humanaties and sciences</option>
+            <option>School of Architecture</option>
+            <option>Graduate studies and reseach</option>
+            <option>School of Law</option>
+          </Form.Select>
         </Form.Group>
 
         <Button variant="primary" type="submit">

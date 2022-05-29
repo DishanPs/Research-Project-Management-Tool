@@ -1,59 +1,43 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import React from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import axios from 'axios'
-import StudentSideNavBar from './StudentSideNavBar';
-import swal from 'sweetalert';
-
-
+import axios from "axios";
+import StudentSideNavBar from "./StudentSideNavBar";
+import swal from "sweetalert";
 
 const RegisterResearchTopic = () => {
-    const [validated, setvalidated] = useState(false);
-    const [gid, setGroupId] = useState("");
-    const [gname, setGroupName] = useState("");
-    const [topic, setResearchTopic] = useState("");
-    const [supname, setSupName] = useState("");
-    const [cosupname, setCoSupName] = useState("");
+  const [validated, setvalidated] = useState(false);
+  const [gid, setGroupId] = useState("");
+  const [gname, setGroupName] = useState("");
+  const [topic, setResearchTopic] = useState("");
+  const [supname, setSupName] = useState("");
+  const [cosupname, setCoSupName] = useState("");
 
-    
-    const checkSubmit = (event) => {
-    
-      const newRegTopic = {
-          "groupID": gid,
-          "groupName": gname,
-          "topic": topic,
-          "supervisorName" : supname,
-          "cosupervisorName" : cosupname,
-          "status" : "Pending"
-          
-      }
-
-      
-
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      else {
-          
-
-          axios
-              .post("http://localhost:5000/topic/add", newRegTopic)
-              .then(() => 
-                swal("Success!", "Details Submitted Successfully!", "success")
-                
-              )
-              .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
-
-          
-          
-      }
-      setvalidated(true);
+  const checkSubmit = (event) => {
+    const newRegTopic = {
+      groupID: gid,
+      groupName: gname,
+      topic: topic,
+      supervisorName: supname,
+      cosupervisorName: cosupname,
+      status: "Pending",
     };
 
-
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      axios
+        .post("http://localhost:5000/topic/add", newRegTopic)
+        .then(() =>
+          swal("Success!", "Details Submitted Successfully!", "success")
+        )
+        .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
+    }
+    setvalidated(true);
+  };
 
   return (
     <div
@@ -130,6 +114,6 @@ const RegisterResearchTopic = () => {
       </div>
     </div>
   );
-}
+};
 
-export default RegisterResearchTopic
+export default RegisterResearchTopic;

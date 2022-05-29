@@ -25,9 +25,9 @@ const DownloadTemp = () => {
   }, []);
 
   const downloadFile = (temp) => {
-    window.location.href = temp.img
-    console.log(temp.img)
-  }
+    window.location.href = temp.img;
+    console.log(temp.img);
+  };
 
   return (
     <div className="cp2">
@@ -52,7 +52,6 @@ const DownloadTemp = () => {
               <td>{temp.name}</td>
               <td>
                 <button
-                  
                   style={{
                     backgroundColor: "#336699",
                     width: "130px",

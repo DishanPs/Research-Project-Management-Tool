@@ -1,30 +1,28 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
-import axios from 'axios'
-import AdminSideNavBar from './AdminSideNavBar';
-import PanelAssignModal from './PanelAssignModal';
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
+import AdminSideNavBar from "./AdminSideNavBar";
+import PanelAssignModal from "./PanelAssignModal";
 
 const ResearchGroups = () => {
-    const [groups, setGroup] = useState([]);
-    const [modalShow, setModalShow] = React.useState(false);
+  const [groups, setGroup] = useState([]);
+  const [modalShow, setModalShow] = React.useState(false);
 
-    useEffect(() => {
-        const getGroups = () => {
-          axios
-            .get("http://localhost:5000/group")
-            .then((res) => {
-              setGroup(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getGroups();
-      },[]);
-    
-
+  useEffect(() => {
+    const getGroups = () => {
+      axios
+        .get("http://localhost:5000/group")
+        .then((res) => {
+          setGroup(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getGroups();
+  }, []);
 
   return (
     <div
@@ -35,7 +33,7 @@ const ResearchGroups = () => {
       }}
     >
       <AdminSideNavBar />
-      <div style={{ marginLeft: "200px", marginRight:"10px" }}>
+      <div style={{ marginLeft: "200px", marginRight: "10px" }}>
         <center>
           <h3 style={{ color: "white" }}>Research Project Groups </h3>
         </center>
@@ -75,21 +73,25 @@ const ResearchGroups = () => {
                   <td>{group.member4Name}</td>
                   <td>
                     {" "}
-                    <Button variant="primary" onClick={() => setModalShow(true)}>Assign</Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => setModalShow(true)}
+                    >
+                      Assign
+                    </Button>
                   </td>
                 </tr>
               </tbody>
             ))}
           </Table>
           <PanelAssignModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                
+            show={modalShow}
+            onHide={() => setModalShow(false)}
           />
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default ResearchGroups
+export default ResearchGroups;

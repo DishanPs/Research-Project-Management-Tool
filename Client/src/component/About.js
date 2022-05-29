@@ -7,7 +7,7 @@ import Footer from "./Footer";
 const About = () => {
   return (
     <div>
-      <Header/>
+      <Header />
       <Carousel>
         <Carousel.Item>
           <img
@@ -17,7 +17,7 @@ const About = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

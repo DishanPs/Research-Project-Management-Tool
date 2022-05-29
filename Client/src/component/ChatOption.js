@@ -30,7 +30,7 @@ const ChatOption = (open) => {
     ) {
       return;
     }
-    console.log("navindu ")
+    console.log("navindu ");
     setState({ ...state, [anchor]: open });
   };
 
