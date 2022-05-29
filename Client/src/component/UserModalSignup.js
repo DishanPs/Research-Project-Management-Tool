@@ -16,14 +16,10 @@ const UserModalSignup = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title>
-          Sign Up
+          Register as
         </Modal.Title>
       </Modal.Header>
-      <ModalBody>
-        do you want to register as a STUDENT or STAFF.<br/>
-      
-        
-      </ModalBody>
+     
       <ModalFooter>
       
       <Link to="/Studentreg"><Button  variant="success" >STUDENT</Button></Link>

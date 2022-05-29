@@ -28,6 +28,12 @@ const AdminStudentView = () => {
     
     
     return (
+      <div>
+        style={{
+        backgroundImage: `url("https://cdn.wallpapersafari.com/20/19/z4ugYj.jpg")`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
       <div className='stable'> 
         
             <center><h1>Staff</h1></center>
@@ -73,7 +79,7 @@ const AdminStudentView = () => {
           
 
           </div>  
-        
+          </div>
     )
 }
 

@@ -216,12 +216,12 @@ span {
 
 .Containerregstu {
   width: 100vw;
-  height: 150vh;
+  height: 140vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.022),
+      rgba(255, 255, 255, 0.59)
     ),
-    url("https://wallpaperaccess.com/full/2053899.jpg")
+    url("https://cdn1.vectorstock.com/i/1000x1000/53/00/blue-medical-background-with-text-space-vector-25875300.jpg")
       center;
   background-size: cover;
   display: flex;
@@ -367,4 +367,8 @@ span {
 .cp1{
     height: 400px;
     width : 450px;
+}
+
+.lbtn{
+  margin-top:2%;
 }

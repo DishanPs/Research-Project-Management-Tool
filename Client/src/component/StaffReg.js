@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 import Row from "react-bootstrap/Row";
+import Header from "./Header";
+import Footer from "./Footer";
 
 
 const bcrypt = require("bcryptjs");
@@ -77,6 +79,7 @@ const StaffReg = () => {
 
   return (
     <div>
+      <Header />
       <div className="Containerregstf">
         <div className="wrapperregstf">
           <div className="titlereg">
@@ -87,7 +90,7 @@ const StaffReg = () => {
                   <Form.Group className="inputreg" controlId="iD">
                     <Form.Label>Staff ID</Form.Label>
                     <Form.Control
-                      placeholder="Enter your staff ID"
+                      placeholder="STFC123456"
                       pattern="STF[A-Z]{1}\d{6}"
                       value={ids}
                       onChange={(e) => setId(e.target.value)}
@@ -99,8 +102,8 @@ const StaffReg = () => {
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="Enter a Email"
-                      //pattern="[a-z]\@sliit.lk"
+                      placeholder="abcccc.d@sliit.lk"
+                      pattern="[a-z]{2,}.[a-z]{1}@sliit.lk"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -239,6 +242,7 @@ const StaffReg = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

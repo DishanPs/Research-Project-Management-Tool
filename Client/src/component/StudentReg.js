@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import swal from 'sweetalert';
 import Row from 'react-bootstrap/Row'
+import Header from "./Header";
+import Footer from "./Footer";
 
 
 const bcrypt = require('bcryptjs');
@@ -54,29 +56,11 @@ const StudentReg = () => {
         else {
           if (cpassword == password){
 
-            // axios
-            //     .post("http://localhost:5000/student/register", newStudent)
-            //     .then((data) => 
-            //     console.log(data),
-            //     swal("Submitted!", "Successfully Registered", "success"))
-            //     .catch((err) => alert(err));
-
-            // axios
-            //     .post("http://localhost:5000/student/register", newStudent)
-            //     .then(() => {
-            //       swal("Submitted!", "Successfully Registered", "success")
-            //         navigate("/UserLogin")
-            //       }).catch((err) => {
-            //         alert(err)
-            //       })
-
             axios
                 .post("http://localhost:5000/student/register", newStudent)
                 .then((data) => 
                 console.log(data),
-                swal("Submitted!", "Successfully Registered", "success"),
-                navigate("/UserLogin")
-                )
+                swal("Submitted!", "Successfully Registered", "success"))
                 .catch((err) => alert(err));
 
             axios
@@ -97,10 +81,13 @@ const StudentReg = () => {
 
     return (
         <div>
+          <Header />
          <div className='Containerregstu'>
+         
           <div className='wrapperregstu'>
            <div className='titlereg'>
              <h1 >Create Profile</h1>
+             
               <div className="loginformreg">
             
                <Form noValidate validated={validated} onSubmit= {checkSubmit}>
@@ -108,7 +95,7 @@ const StudentReg = () => {
                  <Form.Group className="inputreg" controlId="iD">
                    <Form.Label>Student ID</Form.Label>
                     <Form.Control
-                      placeholder="Enter your student ID" 
+                      placeholder="IT12345678" 
                       pattern="[A-Z]{2}\d{8}"
                       value={ids}
                       onChange={(e) => setId(e.target.value)}
@@ -120,7 +107,7 @@ const StudentReg = () => {
                    <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email" 
-                      placeholder="Enter a Sliit Email"
+                      placeholder="it12345678@my.sliit.lk"
                       pattern="[a-z]{2}\d{8}@my.sliit.lk"
                       
                       value={email}
@@ -159,7 +146,7 @@ const StudentReg = () => {
                   <Form.Group className="inputreg" controlId="contactno">
                    <Form.Label>Contact No.</Form.Label>
                     <Form.Control
-                      placeholder="Enter Contact No."
+                      placeholder="0123456789"
                       pattern="[0-9]{10}"
                       value={contactno}
                       onChange={(e) => setContactNo(e.target.value)}
@@ -245,7 +232,8 @@ const StudentReg = () => {
              </div>
             </div>
            </div>
-        </div>
+           <Footer />
+           </div>
                 
     )
 }
