@@ -51,7 +51,7 @@ const StudentProEdit = ({ det }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="fname">
+        <Form.Group className="inputreg" controlId="fname">
           <Form.Label>First Name</Form.Label>
           <Form.Control
             value={fname}
@@ -60,7 +60,7 @@ const StudentProEdit = ({ det }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="lname">
+        <Form.Group className="inputreg" controlId="lname">
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             value={lname}
@@ -69,7 +69,7 @@ const StudentProEdit = ({ det }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="contactno">
+        <Form.Group className="inputreg" controlId="contactno">
           <Form.Label>Contact No.</Form.Label>
           <Form.Control
             pattern="[0-9]{10}"
@@ -82,7 +82,7 @@ const StudentProEdit = ({ det }) => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="nic">
+        <Form.Group className="inputreg" controlId="nic">
           <Form.Label>NIC</Form.Label>
           <Form.Control
             pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"

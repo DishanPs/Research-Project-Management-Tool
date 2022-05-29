@@ -67,7 +67,7 @@ export const studentsidenavbarData = [
   },
   {
     title: "Request Supervisor/Co-supervisor",
-    path: "#users",
+    path: "/Studentstaffview",
     icon: <MdSupervisorAccount />,
     cName: "nav-text",
   },

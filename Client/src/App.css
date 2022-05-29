@@ -340,8 +340,8 @@ span {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(
-        rgba(255, 255, 255, 0.345),
-        rgba(255, 255, 255, 0)
+        rgba(255, 255, 255, 0.685),
+        rgba(255, 255, 255, 0.245)
       ),
       url("https://wallpaperaccess.com/full/4208194.jpg") center;
     background-size: cover;
@@ -356,7 +356,7 @@ span {
     height:65%;
     width: 120%;
   padding: 20px;
-  background-color: grey;
+  background-color: rgba(0,0,0, 0.5);
   border-radius: 20px;
 }
 
