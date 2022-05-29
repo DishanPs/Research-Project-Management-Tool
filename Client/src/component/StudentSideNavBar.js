@@ -54,12 +54,12 @@ const StudentSideNavBar = () => {
               cursor: "pointer",
             }}
           >
-            <FiLogOut onClick={logout} />
+            <FiLogOut onClick={logout} title="Log Out" />
           </div>
         </div>
 
-        <nav className={"nav-menu active"}>
-          <ul className="nav-menu-items">
+        <nav className="nav-menu active">
+          <ul style={{ height: "130" }} className="nav-menu-items">
             <li className="navbar-toggle">
               <div>
                 <a href="/">

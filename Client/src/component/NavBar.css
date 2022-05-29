@@ -16,7 +16,8 @@
 .nav-menu {
   background-color: #060b26;
   width: 210px;
-  height: 100vh;
+  height:auto;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -28,6 +29,7 @@
 .nav-menu.active {
   left: 0;
   transition: 350ms;
+  
 }
 
 .nav-text {

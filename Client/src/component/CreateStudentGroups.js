@@ -52,12 +52,19 @@ const CreateStudentGroups = () => {
             
         
             axios
-                .post("http://localhost:5000/group/register", newGroup)
-                .then(() =>
-                    swal("Success!", "Details Submitted Successfully!", "success"),
-                    navigate('/studentdashboard'))
-                .catch((err) =>
-                    swal("Failed!", "Something Went Wrong!", "error"));
+              .post("http://localhost:5000/group/register", newGroup)
+              .then(
+                () =>
+                  swal(
+                    "Success!",
+                    "Details Submitted Successfully!",
+                    "success"
+                  ),
+                navigate("/creategroups")
+              )
+              .catch((err) =>
+                swal("Failed!", "Something Went Wrong!", "error")
+              );
             
         }
         setvalidated(true);
@@ -71,7 +78,7 @@ const CreateStudentGroups = () => {
   return (
     <div
       style={{
-        backgroundImage: `url("https://previews.123rf.com/images/pitinan/pitinan1906/pitinan190602138/124697511-team-of-young-students-studying-in-a-group-project-in-the-park-of-university-or-school-happy-learnin.jpg")`,
+        backgroundImage: `url("https://www.printawallpaper.com/wp-content/uploads/2020/07/think_different_detail.jpg")`,
         height: "130vh",
         backgroundSize: "cover",
       }}
@@ -227,7 +234,7 @@ const CreateStudentGroups = () => {
               />
             </Form.Group>
 
-            <Button variant="success" type="submit">
+            <Button variant="primary" type="submit">
               Create Group
             </Button>
           </Form>
