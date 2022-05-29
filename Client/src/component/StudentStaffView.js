@@ -2,9 +2,9 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import {useState, useEffect } from "react";
-
+import StudentSideNavBar from './StudentSideNavBar';
 import axios from "axios";
-
+import { Link } from "react-router-dom";
  
 
 
@@ -24,24 +24,27 @@ const AdminStudentView = () => {
           });
       };
       getAdminStudentViews();
-    });
+    },[]);
     
     
     return (
-      <div>
+      <div
         style={{
         backgroundImage: `url("https://cdn.wallpapersafari.com/20/19/z4ugYj.jpg")`,
         height: "100vh",
         backgroundSize: "cover",
-      }}
+      }} 
+      >
+       
+      <StudentSideNavBar />
       <div className='stable'> 
         
-            <center><h1>Staff</h1></center>
+            <center><h1 style={{ color: "white" }}>Lecturers</h1></center>
 
             <hr></hr>
             <center>
-            <Button   variant="danger">Request Supervisor</Button> 
-            <Button   variant="success">Request Corsupervisor</Button> 
+            <Link to="/requestsup"><Button   variant="primary">Request Supervisor</Button> </Link>
+            <Link  to="/requestcosup"><Button   variant="primary">Request Corsupervisor</Button> </Link>
             </center>
             <hr></hr>
 

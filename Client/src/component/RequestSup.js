@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import axios from 'axios'
 import swal from 'sweetalert';
+import StudentSideNavBar from './StudentSideNavBar';
+
 
 const RequestSup = () => {
     const [validated, setvalidated] = useState(false);
@@ -55,10 +57,10 @@ const RequestSup = () => {
 
   return (
     <div  style = {{
-      backgroundImage: `url("https://wallpapercave.com/wp/wp2015619.jpg")`,
+      backgroundImage: `url("https://wallpaperaccess.com/full/1616109.jpg")`,
       height: "100vh",
       backgroundSize: "cover",}}>
-
+       <StudentSideNavBar/>
         <center><h2 style = {{color :"white"}}>Request a Supervisor</h2></center>
 
         <div className='topicregform'>

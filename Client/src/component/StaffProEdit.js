@@ -54,7 +54,7 @@ const StaffProEdit = ({ det }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="fname">
+        <Form.Group className="inputreg" controlId="fname">
           <Form.Label>First Name</Form.Label>
           <Form.Control
             value={fname}
@@ -63,7 +63,7 @@ const StaffProEdit = ({ det }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="lname">
+        <Form.Group className="inputreg" controlId="lname">
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             value={lname}
@@ -72,7 +72,7 @@ const StaffProEdit = ({ det }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="contactno">
+        <Form.Group className="inputreg" controlId="contactno">
           <Form.Label>Contact No.</Form.Label>
           <Form.Control
             pattern="[0-9]{10}"
@@ -85,7 +85,7 @@ const StaffProEdit = ({ det }) => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="nic">
+        <Form.Group className="inputreg" controlId="nic">
           <Form.Label>NIC</Form.Label>
           <Form.Control
             pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"
@@ -98,7 +98,7 @@ const StaffProEdit = ({ det }) => {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="interest">
+        <Form.Group className="inputreg" controlId="interest">
           <Form.Label>Research Interest</Form.Label>
           <Form.Control
             as="textarea"
@@ -109,6 +109,7 @@ const StaffProEdit = ({ det }) => {
           />
         </Form.Group>
 
+        <Form.Group className="inputreg">
         <Form.Label>Faculty</Form.Label>
         <Form.Select
           aria-label="Feedback Type"
@@ -127,10 +128,12 @@ const StaffProEdit = ({ det }) => {
           <option>Graduate studies and reseach</option>
           <option>School of Law</option>
         </Form.Select>
+        </Form.Group>
 
         <Button variant="primary" type="submit">
           Save Changes
         </Button>
+        
       </Form>
     </div>
   );

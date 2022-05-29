@@ -66,14 +66,14 @@ const UserProfile = () => {
                 <Profile profile = {profiledetails.data} /><br />
 
                 {/* <Button variant="primary" onClick={token.type == "Student" ? () => setModalShow1(true) : () => setModalShow2(true)}> */}
-                <Button variant="primary" onClick={token.type == "Student" ? () => setModalShow1(true) : token.type == "Staff" ? () => setModalShow2(true) : () => setModalShow3(true)}>
+                <Button style={{width:"130px"}} variant="success" onClick={token.type == "Student" ? () => setModalShow1(true) : token.type == "Staff" ? () => setModalShow2(true) : () => setModalShow3(true)}>
                     Update Details
                 </Button>
-                &nbsp;&nbsp;
-                <Button variant="danger" onClick={() => { setModalDelete(true); setModaltype("delete")}}>
+                
+                <Button  style={{width:"140px"}} variant="danger" onClick={() => { setModalDelete(true); setModaltype("delete")}}>
                     Delete Account
                 </Button>
-                <Button variant="danger" onClick={() => { setModalDelete(true); setModaltype("logout")}}>
+                <Button style={{width:"130px"}} variant="primary" onClick={() => { setModalDelete(true); setModaltype("logout")}}>
                     Logout
                 </Button>
                 <br /><br />
