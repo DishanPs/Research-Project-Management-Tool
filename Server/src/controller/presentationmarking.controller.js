@@ -1,7 +1,7 @@
 const PresentationMarking = require("../modal/presentationmarking.modal");
 
 const createMarkingScheme = async (req, res) => {
-  if ((req.body)) {
+  if (req.body) {
     const presentationmarking = new PresentationMarking(req.body);
     await presentationmarking
       .save()

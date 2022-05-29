@@ -161,7 +161,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c1marks}
                   onChange={(e) => setC1Marks(e.target.value)}
                   required
@@ -179,7 +179,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c2marks}
                   onChange={(e) => setC2Marks(e.target.value)}
                 />
@@ -196,7 +196,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c3marks}
                   onChange={(e) => setC3Marks(e.target.value)}
                 />
@@ -213,7 +213,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c4marks}
                   onChange={(e) => setC4Marks(e.target.value)}
                 />
@@ -230,7 +230,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c5marks}
                   onChange={(e) => setC5Marks(e.target.value)}
                 />
@@ -247,7 +247,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c6marks}
                   onChange={(e) => setC6Marks(e.target.value)}
                 />
@@ -264,7 +264,7 @@ const CreateMarkingScheme = () => {
               <Col>
                 <Form.Control
                   type="number"
-                  placeholder="Mark (%)"
+                  placeholder="Mark"
                   value={c7marks}
                   onChange={(e) => setC7Marks(e.target.value)}
                 />

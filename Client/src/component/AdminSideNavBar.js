@@ -54,7 +54,7 @@ const AdminSideNavBar = () => {
               cursor: "pointer",
             }}
           >
-            <FiLogOut onClick={logout} />
+            <FiLogOut onClick={logout} title="Log Out" />
           </div>
         </div>
 
