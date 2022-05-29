@@ -214,14 +214,14 @@ span {
   border-style: none;
 }
 
-.Containerreg {
+.Containerregstu {
   width: 100vw;
-  height: 150vh;
+  height: 140vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.022),
+      rgba(255, 255, 255, 0.59)
     ),
-    url("https://us.123rf.com/450wm/hugolacasse/hugolacasse1603/hugolacasse160300013/53756518-illustration-of-a-film-stripe-reel-on-abstract-movie-background.jpg?ver=6")
+    url("https://cdn1.vectorstock.com/i/1000x1000/53/00/blue-medical-background-with-text-space-vector-25875300.jpg")
       center;
   background-size: cover;
   display: flex;
@@ -229,13 +229,38 @@ span {
   justify-content: center;
 }
 
-.wrapperreg {
+.Containerregstf {
+  width: 100vw;
+  height: 150vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.479),
+      rgba(255, 255, 255, 0.089)
+    ),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7MbDWObo8na0TiWJa_HBoI1_ACoVG82OJ4A&usqp=CAU")
+      center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperregstu {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 75%;
+  width: 50%;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.482);
+  border-radius: 10px;
+}
+
+.wrapperregstf {
   margin-top: 0px;
   margin-bottom: 0px;
   height: 85%;
   width: 50%;
   padding: 20px;
-  background-color: grey;
+  background-color: rgba(245, 245, 245, 0.482);
   border-radius: 10px;
 }
 
@@ -249,10 +274,14 @@ span {
 }
 
 .inputreg {
+  /* font-weight: 10px; */
+  font-style: oblique;
+  font-weight:400;
+
   flex: 1;
   min-width: 40%;
   margin: 10px 0px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .butnreg {
@@ -270,10 +299,10 @@ span {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.355)
     ),
-    url("https://media.istockphoto.com/vectors/realistic-3d-film-strips-in-perspective-modern-cinema-background-vector-id1292150773?k=20&m=1292150773&s=612x612&w=0&h=YBbad_KZmFFBnml7W8X-ABSHapXaFKMM0q_pYw-wmq0=")
+    url("https://i.pinimg.com/originals/f2/65/4c/f2654cdb5044ab78e8ffafbd0b60d4f5.jpg")
       center;
   background-size: cover;
   display: flex;
@@ -302,7 +331,44 @@ span {
   background-color: rgba(0, 0, 0, 0.562);
 }
 
+/* .editform{
+    width: 100vw;
+  height: 150vh;
+} */
+
+.uprofile{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.345),
+        rgba(255, 255, 255, 0)
+      ),
+      url("https://wallpaperaccess.com/full/4208194.jpg") center;
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapperprofile{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height:65%;
+    width: 120%;
+  padding: 20px;
+  background-color: grey;
+  border-radius: 20px;
+}
+
+.stable{
+    margin-left: 215px;
+    margin-right: 15px;
+}
 .cp1{
     height: 400px;
     width : 450px;
+}
+
+.lbtn{
+  margin-top:2%;
 }

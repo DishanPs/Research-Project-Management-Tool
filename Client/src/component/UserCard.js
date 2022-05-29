@@ -5,6 +5,9 @@ import { useState } from 'react';
 import { FaEnvelope } from "react-icons/fa";
 import { ImLocation2, ImPhone } from "react-icons/im";
 import { BsPersonSquare } from "react-icons/bs";
+import { MdPermIdentity } from "react-icons/md";
+import { MdArticle } from "react-icons/md";
+import { MdHolidayVillage } from "react-icons/md";
 
 
 const Profile = ({profile}) => {
@@ -44,7 +47,7 @@ const Profile = ({profile}) => {
 
     
     return (
-        <div className="profile"> 
+        <div > 
            
             <div>
             
@@ -56,17 +59,17 @@ const Profile = ({profile}) => {
             </Card>
             <br />
             <Card>
-                <Card.Body><FaEnvelope />{" "}{profiledetails.ID}</Card.Body>
+                <Card.Body><MdPermIdentity />{" "}{profiledetails.ID}</Card.Body>
             </Card>
             <Card>
                 <Card.Body><FaEnvelope />{" "}{profiledetails.email}</Card.Body>
             </Card>
             {token.type == "Admin"? (""):(<Card>
-                <Card.Body><ImLocation2 />{" "}{profiledetails.faculty}</Card.Body>
+                <Card.Body><MdHolidayVillage />{" "}{profiledetails.faculty}</Card.Body>
             </Card>)
             }
         {token.type == "Staff"? ( <Card>
-                <Card.Body><BsPersonSquare />{" "}{profiledetails.researchInterest}</Card.Body>
+                <Card.Body><MdArticle />{" "}{profiledetails.researchInterest}</Card.Body>
             </Card>):("")
                
 

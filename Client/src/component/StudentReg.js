@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import swal from 'sweetalert';
 import Row from 'react-bootstrap/Row'
+import Header from "./Header";
+import Footer from "./Footer";
 
 
 const bcrypt = require('bcryptjs');
@@ -26,7 +28,7 @@ const StudentReg = () => {
 
     const checkSubmit = (event) => {
         console.log(password);
-        const newUser = {
+        const newStudent = {
             "ID": ids,
             "email": email,
             "firstName": fname,
@@ -52,10 +54,10 @@ const StudentReg = () => {
         }
     
         else {
-            if (cpassword == password){
+          if (cpassword == password){
 
             axios
-                .post("http://localhost:5000/Student/register", newUser)
+                .post("http://localhost:5000/student/register", newStudent)
                 .then((data) => 
                 console.log(data),
                 swal("Submitted!", "Successfully Registered", "success"))
@@ -79,10 +81,13 @@ const StudentReg = () => {
 
     return (
         <div>
-         <div className='Containerreg'>
-          <div className='wrapperreg'>
+          <Header />
+         <div className='Containerregstu'>
+         
+          <div className='wrapperregstu'>
            <div className='titlereg'>
              <h1 >Create Profile</h1>
+             
               <div className="loginformreg">
             
                <Form noValidate validated={validated} onSubmit= {checkSubmit}>
@@ -90,7 +95,8 @@ const StudentReg = () => {
                  <Form.Group className="inputreg" controlId="iD">
                    <Form.Label>Student ID</Form.Label>
                     <Form.Control
-                      placeholder="Enter your student ID" 
+                      placeholder="IT12345678" 
+                      pattern="[A-Z]{2}\d{8}"
                       value={ids}
                       onChange={(e) => setId(e.target.value)}
                       required
@@ -101,8 +107,9 @@ const StudentReg = () => {
                    <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email" 
-                      placeholder="Enter a Email"
-                      pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" 
+                      placeholder="it12345678@my.sliit.lk"
+                      pattern="[a-z]{2}\d{8}@my.sliit.lk"
+                      
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -139,7 +146,7 @@ const StudentReg = () => {
                   <Form.Group className="inputreg" controlId="contactno">
                    <Form.Label>Contact No.</Form.Label>
                     <Form.Control
-                      placeholder="Enter Contact No."
+                      placeholder="0123456789"
                       pattern="[0-9]{10}"
                       value={contactno}
                       onChange={(e) => setContactNo(e.target.value)}
@@ -165,10 +172,11 @@ const StudentReg = () => {
                  </Form.Group>
                 </Row>
 
-
+                <Form.Group className="inputreg">
                <Form.Label>Faculty</Form.Label>
                  <Form.Select aria-label="Feedback Type" value={fclty} onChange={(e) => setFaculty(e.target.value)}>
                   <option selected disabled hidden>Faculty Type</option>
+                  <option>Select your faculty</option>
                     <option>Computing</option>
                     <option>Bussiness</option>
                     <option>Engineering</option>
@@ -177,7 +185,7 @@ const StudentReg = () => {
                     <option>Graduate studies and reseach</option>
                     <option>School of Law</option>
                  </Form.Select>
-                
+                 </Form.Group>
               
 
                 <Row>
@@ -224,7 +232,8 @@ const StudentReg = () => {
              </div>
             </div>
            </div>
-        </div>
+           <Footer />
+           </div>
                 
     )
 }

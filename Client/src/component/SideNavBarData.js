@@ -117,8 +117,14 @@ export const studentsidenavbarData = [
 
 export const adminsidenavbarData = [
   {
-    title: "Users",
-    path: "#users",
+    title: "Students",
+    path: "/Adminstudentview",
+    icon: <HiUsers />,
+    cName: "nav-text",
+  },
+  {
+    title: "Staff",
+    path: "/Adminstaffview",
     icon: <HiUsers />,
     cName: "nav-text",
   },

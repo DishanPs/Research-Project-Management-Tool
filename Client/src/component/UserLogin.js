@@ -4,12 +4,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import bcrypt from 'bcryptjs';
 import swal from 'sweetalert';
-
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import UserModalSignup from './UserModalSignup';
 
 const UserLogin = () => {
  
+     const [Modalsignup, setModalsignup] = useState("");
 
    
     const [password, setPassword] = useState("");
@@ -114,11 +115,19 @@ const UserLogin = () => {
                      <br/><br/>
 
                      <h5>Don't have an account ? </h5>
-                     <Link to="/Studentreg"><Button  variant="success" >Sign Up</Button></Link>
-                
+                     {/* <Link to="/Studentreg"><Button  variant="success" >Sign Up</Button></Link> */}
+                     <Button  variant="success" onClick={() => setModalsignup(true)} >Sign Up</Button>
+
+                    
+                    
             
                   </Form>
+                  <UserModalSignup
+                show={Modalsignup}
+                onHide={() => setModalsignup(false)}
+                />
                 </div>
+                
               </div>
            </div>
          </div>

@@ -20,6 +20,9 @@ import UserLogin from "./component/UserLogin";
 import StaffReg from "./component/StaffReg";
 import UserCard from "./component/UserCard";
 import UserProfile from "./component/UserProfile";
+import AdminStudentView from "./component/AdminStudentView";
+import AdminStaffView from "./component/AdminStaffView";
+import StudentStaffView from "./component/StudentStaffView";
 import SupRequestsStaffView from "./component/SupRequestsStaffView";
 import SupRequestsStudentView from "./component/SupRequestsStudentView";
 import CoSupRequestsStaffView from "./component/CoSupRequestsStaffView";
@@ -34,6 +37,9 @@ import CreateMarkingScheme from "./component/CreateMarkingScheme";
 function App(){
 return(
     <div>
+        
+      
+       
         <BrowserRouter>
         <Routes>
             <Route path="/" exact element={<Home />} />
@@ -53,6 +59,9 @@ return(
             <Route path="/Staffreg" exact element={<StaffReg/>}/>
             <Route path="/Usercard" exact element={<UserCard/>}/>
             <Route path="/Userprofile" exact element={<UserProfile />} />
+            <Route path="/Adminstudentview" exact element={<AdminStudentView/>}/>
+            <Route path="/Adminstaffview" exact element={<AdminStaffView/>}/>
+            <Route path="/Studentstaffview" exact element={<StudentStaffView/>}/>
             <Route path="/requestsup" exact element={<RequestSup />}/>
             <Route path="/requestcosup" exact element={<RequestCoSup />}/>
             <Route path="/supstaff" exact element={<SupRequestsStaffView />}/>
