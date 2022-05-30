@@ -16,7 +16,9 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
 
     const storageRef = ref(
       storage,
-      type === "audio" ? `/audio/${fileName}` : `/templates/${fileName}`
+      type === "submission"
+        ? `/submission/${fileName}`
+        : `/templates/${fileName}`
     );
 
     const uploadTask = uploadBytesResumable(storageRef, value);
@@ -66,12 +68,13 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
           className={styles.preview_img}
         />
       )}
-      {/* {type === "audio" && value && (
-                <audio
-                    src={typeof value === "string" ? value : URL.createObjectURL(value)}
-                    controls
-                />
-            )} */}
+      {type === "submission" && value && (
+        <audio
+          src={typeof value === "string" ? value : URL.createObjectURL(value)}
+          // controls
+        />
+      )}
+
       {value !== null && !progressShow && typeof value !== "string" && (
         <button onClick={handleUpload} className={styles.button}>
           Upload

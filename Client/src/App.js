@@ -29,6 +29,8 @@ import CoSupRequestsStaffView from "./component/CoSupRequestsStaffView";
 import CoSupRequestsStudentView from "./component/CoSupRequestsStudentView";
 import RequestSup from "./component/RequestSup";
 import RequestCoSup from "./component/RequestCoSup";
+import StudentSub from "./component/UpForm/StudentSub";
+import SubLinks from "./component/SubLinks";
 import CreateChatChannel from "./component/CreateChatChannel";
 import EvaluateDocument from "./component/EvaluateDocument";
 import EvaluatePresentation from "./component/EvaluatePresentation";
@@ -67,9 +69,13 @@ return(
             <Route path="/cosupstaff" exact element={<CoSupRequestsStaffView />}/>
             <Route path="/cosupstudent" exact element={<CoSupRequestsStudentView />}/>
             <Route path="/subtypes" exact element={<SubTypes/>} />
+            <Route path="/subtypes/:id" exact element={<SubDoc/>} />
             <Route path="/subdoc" exact element={<SubDoc/>} />
             <Route path="/uploaddoc" exact element={<UploadDoc/>} />
             <Route path="/uploadtemp" exact element={<UploadTemp/>} />
+            <Route path="/downloadtemp" exact element={<DownloadTemp/>} />
+            <Route path="/studentsub" exact element={<StudentSub/>} />    
+            <Route path="/sublinks" exact element={<SubLinks/>} />
             <Route path="/downloadtemp" exact element={<DownloadTemp/>} />    
             <Route path="/viewgroupsstd" exact element={<ResearchGroupsStudents/>} />  
         </Routes>

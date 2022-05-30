@@ -103,7 +103,7 @@ export const studentsidenavbarData = [
   },
   {
     title: "Submissions",
-    path: "/subdoc",
+    path: "/sublinks",
     icon: <AiFillFileAdd />,
     cName: "nav-text",
   },

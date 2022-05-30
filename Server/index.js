@@ -46,6 +46,9 @@ app.use("/subtype", subTypeApi());
 const uploadDocApi = require("./src/api/uploadDoc.api");
 app.use("/uploadDoc", uploadDocApi());
 
+const uploadSubApi = require("./src/api/submission.api");
+app.use("/submission", uploadSubApi());
+
 const documentmarkingAPI = require("./src/api/documentmarking.api");
 app.use("/documentmarking", documentmarkingAPI());
 
