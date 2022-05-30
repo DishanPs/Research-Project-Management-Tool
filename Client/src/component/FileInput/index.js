@@ -68,7 +68,7 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest}) => {
             {type === "submission" && value && (
                 <audio
                     src={typeof value === "string" ? value : URL.createObjectURL(value)}
-                    controls
+                    // controls
                 />
             )}
             {value !== null && !progressShow && typeof value !== "string" &&(

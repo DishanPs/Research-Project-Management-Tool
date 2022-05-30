@@ -26,11 +26,6 @@ const DownloadTemp = () => {
     getAllUpDocs();
   }, []);
 
-  const downloadFile = (temp) => {
-    window.location.href = temp.img
-    console.log(temp.img)
-  }
-
   return (
     <div>
       <StudentSideNavBar />
@@ -66,10 +61,8 @@ const DownloadTemp = () => {
                     width: "130px",
                     height: "35px",
                     fontWeight: "bold",
-                  }}
-                  onClick={downloadFile}
-                >
-                  Download
+                  }}>
+                    <a href={temp.img}>download</a>
                 </button>
               </td>
             </tr>

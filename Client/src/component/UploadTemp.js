@@ -7,7 +7,7 @@ import AdminSideNavBar from "./AdminSideNavBar";
 
 const UploadTemp = () => {
   return (
-    <div style={{backgroundImage: `url("https://i.pinimg.com/originals/58/54/23/58542340effa27e4941369bd76c70e15.jpg")`, backgroundSize: "cover", height: "100vh", marginLeft:"20vh"}}>
+    <div style={{backgroundImage: `url("https://i.pinimg.com/originals/58/54/23/58542340effa27e4941369bd76c70e15.jpg")`, backgroundSize: "cover", height: "110vh", marginLeft:"20vh"}}>
       <AdminSideNavBar />
       <div
         style={{

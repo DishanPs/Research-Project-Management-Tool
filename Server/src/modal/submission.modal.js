@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 const SubmissionSchema = new Schema(
     {
-        groupId: {type: String},
-        subType: {type: String},
-        file: {type: String}
+        groupId: {type: String, required: true},
+        subType: {type: String, required: true},
+        file: {type: String, required: true}
     },
     { timestamps: true }
 );

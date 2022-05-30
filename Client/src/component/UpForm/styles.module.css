@@ -7,8 +7,8 @@
 .form{
     width: 450px;
     height: 500px;
-    background-color:azure;
-    border-radius: 2px;
+    background-color: rgba(0,0,0,0.56);
+    border-radius: 15px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@
 
 .heading{
     margin: 10px;
+    color: white;
 }
 
 .input{
@@ -35,6 +36,7 @@
     font-size: 14px;
     font-weight: bold;
     background-color: rgba(20, 158, 233, 0.851);
+    color: white;
     padding: 10px 20px;
     border: 1px solid black;
     border-radius: 2px;

@@ -11,7 +11,7 @@ import axios from "axios";
 const SubDoc = () => {
   const [links, setLinks] = useState([]);
   const params = useParams();
-
+  
   useEffect(() => {
     const getAllSubTypes = () => {
       axios
@@ -27,6 +27,30 @@ const SubDoc = () => {
     };
     getAllSubTypes();
   }, []);
+
+  const dateDifference = () => {
+    const date1 = new Date();
+    const date2 = new Date(links.Date);
+
+    const timeDif = date2.getTime(links.Time) - date1.getTime();
+    const dateDif = Math.ceil(timeDif/(3600*1000*24));
+
+    return dateDif;
+  };
+
+  const timeDifference = () => {
+    const date1 = new Date();
+    const date2 = new Date(links.Date);
+
+    const timeDif = date1.getTime();
+    const dateDif = Math.floor(timeDif/(3600*1000*24));
+
+    const time = timeDif - dateDif*3600*1000*24;
+
+    console.log(timeDif)
+
+    return time/(3600*1000);
+  };
 
   return (
     <div>
@@ -56,7 +80,7 @@ const SubDoc = () => {
                 </Col>
                 <Col>
                   <Form.Group className="mb-3">
-                    <Form.Label>No attempt</Form.Label>
+                    <Form.Label>{links.Status}</Form.Label>
                   </Form.Group>
                 </Col>
               </Row>
@@ -80,7 +104,7 @@ const SubDoc = () => {
                 </Col>
                 <Col>
                   <Form.Group className="mb-3">
-                    <Form.Label>{links.Time}</Form.Label>
+                    <Form.Label>{dateDifference()}{' days '}{timeDifference()}{' hours '}</Form.Label>
                   </Form.Group>
                 </Col>
               </Row>{" "}
@@ -98,6 +122,7 @@ const SubDoc = () => {
                       fontWeight: "bold",
                       marginLeft: "50%",
                     }}
+                    
                   >
                     UPLOAD
                   </button>

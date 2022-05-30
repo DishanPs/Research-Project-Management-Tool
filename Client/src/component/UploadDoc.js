@@ -8,7 +8,7 @@ const UploadDoc = () => {
   
 
   return(
-    <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/958467.jpg")`, backgroundSize: "cover", height: "100vh"}}>
+    <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/958467.jpg")`, backgroundSize: "cover", height: "120vh"}}>
       <AdminSideNavBar />
       <div
         style={{

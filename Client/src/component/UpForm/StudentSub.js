@@ -3,18 +3,19 @@ import axios from "axios";
 import FileInput from "../FileInput";
 import swal from 'sweetalert';
 import styles from "./styles.module.css";
+import TextField from '@material-ui/core/TextField';
 
 
 const StudentSub = () => {
 
   const [sdata, setSData] = useState({
-    groupId,
-    subType,
-    file,
+    groupId: '',
+    subType: '',
+    file: '',
   });
 
-  const handleTChange = ({ currentTarget: inp }) => {
-    setSData({ ...sdata, [inp.name]: inp.value });
+  const handleTChange = ({currentTarget: input}) => {
+    setSData({ ...sdata, [input.name]: input.value });
   };
 
   const handleInputState = (name, value) => {
@@ -39,13 +40,13 @@ const StudentSub = () => {
       {/* <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/958467.jpg")`, backgroundSize: "cover"}}> */}
 
       <form className={styles.form}>
-        <h1 className={styles.heading}>Upload Template</h1>
+        <h1 className={styles.heading}>Upload Submission</h1>
 
         <input
           type="text"
           value={sdata.groupId}
           placeholder="Submission Title"
-          name="id"
+          name="groupId"
           onChange={handleTChange}
         />
 
@@ -54,17 +55,18 @@ const StudentSub = () => {
         <input
               type="text"
               placeholder="Submission Type"
-              name="type"
+              name="subType"
               onChange={handleTChange}
               value={sdata.subType}
             />
 
         <FileInput
-          name="img"
+          name="file"
           label="Choose from"
-          handleInputState={handleInputState}
-          type="submission"
           value={sdata.file}
+          type="submission"
+          handleInputState={handleInputState}
+          
         />
 
         <button

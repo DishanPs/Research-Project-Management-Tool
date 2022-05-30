@@ -29,6 +29,7 @@ const SubTypes = ({upd}) => {
         "SubmissionType":SubmissionType,
         "Date": date,
         "Time": Time,
+        "Status": "No attempt",
     };
 
     const form = event.currentTarget;
@@ -62,7 +63,7 @@ const SubTypes = ({upd}) => {
         }}
       >
       <Modal.Dialog className='cp6'>
-        <Modal.Header closeButton>
+        <Modal.Header>
             <Modal.Title>Create Submission Types</Modal.Title>
         </Modal.Header>
 
@@ -111,7 +112,6 @@ const SubTypes = ({upd}) => {
         </Modal.Body>
 
         <Modal.Footer>
-            <Button variant="secondary">Close</Button>
             <Button variant="primary" onClick={onSubmit}>
               {upd != null ? "Done" : "Submit"}
             </Button>

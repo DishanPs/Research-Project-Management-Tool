@@ -3,9 +3,12 @@ import axios from "axios";
 import FileInput from "../FileInput";
 import styles from "./styles.module.css";
 import swal from 'sweetalert';
+import { useNavigate } from "react-router";
 
 
 const UpForm = () => {
+
+  const navigate = useNavigate();
   
   const [data, setData] = useState({
     name: "",
@@ -26,6 +29,7 @@ const UpForm = () => {
       const url = "http://localhost:5000/uploadDoc";
       const { data: res } = await axios.post(url, data);
       swal("Success!", "uploaded Successfully!", "success"),
+      navigate("/uploadtemp")
       console.log(res);
     } catch (error) {
       swal("Failed!", "Something Went Wrong!", "error");
@@ -35,7 +39,6 @@ const UpForm = () => {
 
   return (
     <div className={styles.container}>
-      {/* <div style={{backgroundImage: `url("https://wallpaperaccess.com/full/958467.jpg")`, backgroundSize: "cover"}}> */}
 
       <form className={styles.form}>
         <h1 className={styles.heading}>Upload Template</h1>
@@ -52,15 +55,6 @@ const UpForm = () => {
         <br />
         <br />
 
-        {/* <input
-              type="text"
-              className={styles.input}
-              placeholder="Artist Name"
-              name="artist"
-              onChange={handleChange}
-              value={data.artist}
-            /> */}
-
         <FileInput
           name="img"
           label="Choose from"
@@ -68,14 +62,6 @@ const UpForm = () => {
           type="image"
           value={data.img}
         />
-
-        {/* <FileInput
-              name="song"
-              label="Choose Song"
-              handleInputState={handleInputState}
-              type="audio"
-              value={data.song}
-            /> */}
 
         <br />
         <br />
