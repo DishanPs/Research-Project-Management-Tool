@@ -38,16 +38,12 @@ const AdminStudentView = () => {
           <h1 style={{ color: "white" }}>Lecturers</h1>
         </center>
 
-        <hr></hr>
-        <center>
-          <Link to="/requestsup">
-            <Button variant="primary">Request Supervisor</Button>{" "}
-          </Link>
-          <Link to="/requestcosup">
-            <Button variant="primary">Request Corsupervisor</Button>{" "}
-          </Link>
-        </center>
-        <hr></hr>
+            <hr></hr>
+            <center>
+            <Link to="/requestsup"><Button   variant="primary">Request Supervisor</Button> </Link>
+            <Link  to="/requestcosup"><Button   variant="primary">Request Co-supervisor</Button> </Link>
+            </center>
+            <hr></hr>
 
         <Table striped bordered hover variant="dark">
           <thead>

@@ -60,8 +60,8 @@ export const panelsidenavbarData = [
 
 export const studentsidenavbarData = [
   {
-    title: "Create Group",
-    path: "/creategroups",
+    title: "Student Groups",
+    path: "/viewgroupsstd",
     icon: <FaUsers />,
     cName: "nav-text",
   },

@@ -33,6 +33,7 @@ import CreateChatChannel from "./component/CreateChatChannel";
 import EvaluateDocument from "./component/EvaluateDocument";
 import EvaluatePresentation from "./component/EvaluatePresentation";
 import CreateMarkingScheme from "./component/CreateMarkingScheme";
+import ResearchGroupsStudents from "./component/ResearchGroupsStudents";
 
 function App(){
 return(
@@ -69,7 +70,8 @@ return(
             <Route path="/subdoc" exact element={<SubDoc/>} />
             <Route path="/uploaddoc" exact element={<UploadDoc/>} />
             <Route path="/uploadtemp" exact element={<UploadTemp/>} />
-            <Route path="/downloadtemp" exact element={<DownloadTemp/>} />     
+            <Route path="/downloadtemp" exact element={<DownloadTemp/>} />    
+            <Route path="/viewgroupsstd" exact element={<ResearchGroupsStudents/>} />  
         </Routes>
       </BrowserRouter>
     </div>
