@@ -98,6 +98,7 @@ const CreateStudentGroups = () => {
                   <Form.Control
                     placeholder="Leader's Student ID"
                     value={lid}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setLeaderID(e.target.value)}
                     required
                   />
@@ -132,8 +133,8 @@ const CreateStudentGroups = () => {
             <Form.Group className="mb-3" controlId="email">
               <Form.Label>Leader's Email</Form.Label>
               <Form.Control
-                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-                placeholder="abc@def.com"
+                pattern="[a-z]{2}\d{8}@my.sliit.lk"
+                placeholder="it12345678@my.sliit.lk"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -148,6 +149,7 @@ const CreateStudentGroups = () => {
                     type="text"
                     placeholder="Member 2 Student ID"
                     value={m2id}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setMember2Id(e.target.value)}
                     required
                   />
@@ -176,6 +178,7 @@ const CreateStudentGroups = () => {
                     type="text"
                     placeholder="Member 3 Student ID"
                     value={m3id}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setMember3Id(e.target.value)}
                     required
                   />
@@ -204,6 +207,7 @@ const CreateStudentGroups = () => {
                     type="text"
                     placeholder="Member 4 Student ID"
                     value={m4id}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setMember4Id(e.target.value)}
                     required
                   />

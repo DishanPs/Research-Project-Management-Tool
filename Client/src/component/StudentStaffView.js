@@ -44,7 +44,7 @@ const AdminStudentView = () => {
             <hr></hr>
             <center>
             <Link to="/requestsup"><Button   variant="primary">Request Supervisor</Button> </Link>
-            <Link  to="/requestcosup"><Button   variant="primary">Request Corsupervisor</Button> </Link>
+            <Link  to="/requestcosup"><Button   variant="primary">Request Co-supervisor</Button> </Link>
             </center>
             <hr></hr>
 
