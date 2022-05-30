@@ -1,77 +1,65 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import React from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
-import StudentSideNavBar from './StudentSideNavBar';
-import swal from 'sweetalert';
-
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import StudentSideNavBar from "./StudentSideNavBar";
+import swal from "sweetalert";
 
 const CreateStudentGroups = () => {
-    const [validated, setvalidated] = useState(false);
-    const [lid, setLeaderID] = useState("");
-    const [lname, setLeaderName] = useState("");
-    const [number, setContactNo] = useState("");
-    const [email, setEmail] = useState("");
-    const [m2id, setMember2Id] = useState("");
-    const [m2name, setMember2Name] = useState("");
-    const [m3id, setMember3Id] = useState("");
-    const [m3name, setMember3Name] = useState("");
-    const [m4id, setMember4Id] = useState("");
-    const [m4name, setMember4Name] = useState("");
-    const [gname, setGroupName] = useState("");
+  const [validated, setvalidated] = useState(false);
+  const [lid, setLeaderID] = useState("");
+  const [lname, setLeaderName] = useState("");
+  const [number, setContactNo] = useState("");
+  const [email, setEmail] = useState("");
+  const [m2id, setMember2Id] = useState("");
+  const [m2name, setMember2Name] = useState("");
+  const [m3id, setMember3Id] = useState("");
+  const [m3name, setMember3Name] = useState("");
+  const [m4id, setMember4Id] = useState("");
+  const [m4name, setMember4Name] = useState("");
+  const [gname, setGroupName] = useState("");
 
+  const checkSubmit = (event) => {
+    const newGroup = {
+      leaderID: lid,
+      leaderName: lname,
+      contactNo: number,
+      email: email,
+      member2ID: m2id,
+      member2Name: m2name,
+      member3ID: m3id,
+      member3Name: m3name,
+      member4ID: m4id,
+      member4Name: m4name,
+      groupName: gname,
+    };
 
-    const checkSubmit = (event) => {
-    
-        const newGroup = {
-            "leaderID": lid,
-            "leaderName": lname,
-            "contactNo": number,
-            "email": email,
-            "member2ID": m2id,
-            "member2Name": m2name,
-            "member3ID": m3id,
-            "member3Name": m3name,
-            "member4ID": m4id,
-            "member4Name": m4name,
-            "groupName": gname,
-        }
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      axios
+        .post("http://localhost:5000/group/register", newGroup)
+        .then(
+          () => swal("Success!", "Details Submitted Successfully!", "success"),
+          navigate("/creategroups")
+        )
+        .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
+    }
+    setvalidated(true);
+  };
 
-    
-
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        else {
-            
-        
-            axios
-                .post("http://localhost:5000/group/register", newGroup)
-                .then(() =>
-                    swal("Success!", "Details Submitted Successfully!", "success"),
-                    navigate('/studentdashboard'))
-                .catch((err) =>
-                    swal("Failed!", "Something Went Wrong!", "error"));
-            
-        }
-        setvalidated(true);
-      };
-
-      const navigate = useNavigate();
-
-
-
+  const navigate = useNavigate();
 
   return (
     <div
       style={{
-        backgroundImage: `url("https://previews.123rf.com/images/pitinan/pitinan1906/pitinan190602138/124697511-team-of-young-students-studying-in-a-group-project-in-the-park-of-university-or-school-happy-learnin.jpg")`,
+        backgroundImage: `url("https://www.printawallpaper.com/wp-content/uploads/2020/07/think_different_detail.jpg")`,
         height: "130vh",
         backgroundSize: "cover",
       }}
@@ -91,6 +79,7 @@ const CreateStudentGroups = () => {
                   <Form.Control
                     placeholder="Leader's Student ID"
                     value={lid}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setLeaderID(e.target.value)}
                     required
                   />
@@ -125,8 +114,8 @@ const CreateStudentGroups = () => {
             <Form.Group className="mb-3" controlId="email">
               <Form.Label>Leader's Email</Form.Label>
               <Form.Control
-                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-                placeholder="abc@def.com"
+                pattern="[a-z]{2}\d{8}@my.sliit.lk"
+                placeholder="it12345678@my.sliit.lk"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -141,6 +130,7 @@ const CreateStudentGroups = () => {
                     type="text"
                     placeholder="Member 2 Student ID"
                     value={m2id}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setMember2Id(e.target.value)}
                     required
                   />
@@ -169,6 +159,7 @@ const CreateStudentGroups = () => {
                     type="text"
                     placeholder="Member 3 Student ID"
                     value={m3id}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setMember3Id(e.target.value)}
                     required
                   />
@@ -197,6 +188,7 @@ const CreateStudentGroups = () => {
                     type="text"
                     placeholder="Member 4 Student ID"
                     value={m4id}
+                    pattern="[A-Z]{2}\d{8}"
                     onChange={(e) => setMember4Id(e.target.value)}
                     required
                   />
@@ -227,7 +219,7 @@ const CreateStudentGroups = () => {
               />
             </Form.Group>
 
-            <Button variant="success" type="submit">
+            <Button variant="primary" type="submit">
               Create Group
             </Button>
           </Form>
@@ -237,6 +229,6 @@ const CreateStudentGroups = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CreateStudentGroups
+export default CreateStudentGroups;

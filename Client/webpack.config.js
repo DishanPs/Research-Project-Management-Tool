@@ -1,6 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const outputDirectory = "dist";
 
@@ -27,8 +27,8 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg|pdf|doc|docx|ppt|pptx)(\?[a-z0-9=.]+)?$/,
-        use: ['url-loader?limit=100000']
-      }
+        use: ["url-loader?limit=100000"],
+      },
     ],
   },
   devServer: {

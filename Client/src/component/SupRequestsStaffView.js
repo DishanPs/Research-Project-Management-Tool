@@ -67,7 +67,7 @@ const SupRequestsStaffView = () => {
       <SupervisorSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
-          <h3>Supervisor Requests </h3>
+          <h3 style={{ color: "white" }}>Supervisor Requests </h3>
         </center>
         <br />
 

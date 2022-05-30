@@ -108,7 +108,6 @@ const UploadTemp = () => {
           </Link>
           <br />
           <br />
-
           <br />
         </div>
       </div>

@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import FileInput from "../FileInput";
 import styles from "./styles.module.css";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import { useNavigate } from "react-router";
 
-
 const UpForm = () => {
-
   const navigate = useNavigate();
-  
+
   const [data, setData] = useState({
     name: "",
     img: "",
@@ -29,7 +27,7 @@ const UpForm = () => {
       const url = "http://localhost:5000/uploadDoc";
       const { data: res } = await axios.post(url, data);
       swal("Success!", "uploaded Successfully!", "success"),
-      navigate("/uploadtemp")
+        navigate("/uploadtemp");
       console.log(res);
     } catch (error) {
       swal("Failed!", "Something Went Wrong!", "error");
@@ -39,7 +37,6 @@ const UpForm = () => {
 
   return (
     <div className={styles.container}>
-
       <form className={styles.form}>
         <h1 className={styles.heading}>Upload Template</h1>
 
@@ -75,7 +72,6 @@ const UpForm = () => {
         </button>
       </form>
     </div>
-    // </div>
   );
 };
 

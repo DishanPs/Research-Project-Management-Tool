@@ -30,14 +30,14 @@ export const supervisorsidenavbarData = [
     cName: "nav-text",
   },
   {
-    title: "Chat with Groups",
+    title: "Chat",
     path: "/chat",
     icon: <AiOutlineWechat />,
     cName: "nav-text",
   },
   {
     title: "Evaluate Documents",
-    path: "#evaluatedocument",
+    path: "/evaluatedocument",
     icon: <HiDocumentText />,
     cName: "nav-text",
   },
@@ -52,7 +52,7 @@ export const panelsidenavbarData = [
   },
   {
     title: "Evaluate Presentations",
-    path: "#evaluatepresentation",
+    path: "/evaluatepresentation",
     icon: <HiPresentationChartBar />,
     cName: "nav-text",
   },
@@ -60,19 +60,25 @@ export const panelsidenavbarData = [
 
 export const studentsidenavbarData = [
   {
-    title: "Create Group",
-    path: "/creategroups",
+    title: "Student Groups",
+    path: "/viewgroupsstd",
     icon: <FaUsers />,
     cName: "nav-text",
   },
   {
-    title: "Request Supervisor",
+    title: "Request Supervisor/Co-supervisor",
+    path: "/Studentstaffview",
+    icon: <MdSupervisorAccount />,
+    cName: "nav-text",
+  },
+  {
+    title: "Supervisor Response",
     path: "/supstudent",
     icon: <MdSupervisorAccount />,
     cName: "nav-text",
   },
   {
-    title: "Ruquest Co-Supervisor",
+    title: "Co-Supervisor Response",
     path: "/cosupstudent",
     icon: <MdOutlineSupervisorAccount />,
     cName: "nav-text",
@@ -87,6 +93,12 @@ export const studentsidenavbarData = [
     title: "Topic Status",
     path: "/studenttopicapproval",
     icon: <MdOutlineTopic />,
+    cName: "nav-text",
+  },
+  {
+    title: "Chat",
+    path: "/chat",
+    icon: <AiOutlineWechat />,
     cName: "nav-text",
   },
   {
@@ -105,8 +117,14 @@ export const studentsidenavbarData = [
 
 export const adminsidenavbarData = [
   {
-    title: "Users",
-    path: "#users",
+    title: "Students",
+    path: "/Adminstudentview",
+    icon: <HiUsers />,
+    cName: "nav-text",
+  },
+  {
+    title: "Staff",
+    path: "/Adminstaffview",
     icon: <HiUsers />,
     cName: "nav-text",
   },
@@ -124,7 +142,7 @@ export const adminsidenavbarData = [
   },
   {
     title: "Marking Schemes",
-    path: "#evaluatedocument",
+    path: "/createmarking",
     icon: <HiDocumentSearch />,
     cName: "nav-text",
   },

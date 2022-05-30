@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useEffect, useState } from "react";
 import { StreamChat } from "stream-chat";
 import {
@@ -11,68 +11,64 @@ import {
   Thread,
   LoadingIndicator,
   ChannelList,
+  ChatContext,
 } from "stream-chat-react";
 import "stream-chat-react/dist/css/index.css";
-import SupervisorSideNavBar from './SupervisorSideNavBar';
-
-const apiKey = "6atn2yf229tr";
-
-const user = {
-  id: "risina",
-  name: "Risina",
-  image:
-    "https://scontent.fcmb2-2.fna.fbcdn.net/v/t39.30808-6/277763655_1126259231493574_9025479624563656838_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=-wpfDl67SpsAX84heVp&_nc_ht=scontent.fcmb2-2.fna&oh=00_AT--hM50bLv2JbDrzC70qngzZTQ6XFoolZe8OO35IcPYMg&oe=62908B87",
-};
-
-const filters = { type: 'messaging', members: { $in: [user.id] } }
-const sort = {last_message_at: -1}
+import "@stream-io/stream-chat-css";
+import ChatOption from "./ChatOption";
+import SupervisorSideNavBar from "./SupervisorSideNavBar";
+import StudentSideNavBar from "./StudentSideNavBar";
 
 const RRChat = () => {
+  const token = JSON.parse(sessionStorage.getItem("token"));
+  const filters = { members: { $in: [token.iD] } };
+  const sort = { last_message_at: -1 };
+  const options = { limit: 10 };
+
+  const apiKey = "6atn2yf229tr";
+
+  const user = {
+    id: token.iD,
+    email: token,
+  };
+  console.log(token);
+  console.log(user.id);
   const [client, setClient] = useState(null);
+  const [option, setOption] = useState(false);
 
   useEffect(() => {
     const init = async () => {
+      console.log(user.id);
       const chatClient = StreamChat.getInstance(apiKey);
       await chatClient.connectUser(user, chatClient.devToken(user.id));
-
-      const channel = chatClient.channel("messaging", "react-talk", {
-        image:
-          "https://static-01.hindawi.com/styles/hindawi_wide/s3/2021-12/Research-Spotlight-Highlights_blog.jpg?itok=i5AKQMuC",
-        name: "Talk About Research Project",
-        members: [user.id],
-      });
-
-      const channel1 = chatClient.channel("messaging", "react-talk", {
-        image:
-          "https://static-01.hindawi.com/styles/hindawi_wide/s3/2021-12/Research-Spotlight-Highlights_blog.jpg?itok=i5AKQMuC",
-        name: "Talk About Project",
-        members: [user.id],
-      });
-
-      await channel.watch();
-      await channel1.watch();
 
       setClient(chatClient);
     };
     init();
-
+    console.log(client);
     if (client) return () => client.disconnectUser();
   }, []);
 
-  if (!client) return <LoadingIndicator/>;
+  if (!client) return <LoadingIndicator />;
 
   return (
     <div>
-      <SupervisorSideNavBar />
+      {token.type == "Staff" ? <SupervisorSideNavBar /> : <StudentSideNavBar />}
       <div
-        style={{ marginLeft: "200px",marginTop:"0px", marginRight: "0px", height:"400px" }}
+        style={{
+          marginLeft: "200px",
+          marginTop: "0px",
+          marginRight: "0px",
+          height: "400px",
+        }}
       >
-        <Chat client={client} theme="messaging dark">
-          <ChannelList filters={filters} sort={sort} />
+        <Chat client={client} theme="messaging light">
+          {token.type == "Staff" ? <ChatOption /> : ""}
+          <ChannelList filters={filters} sort={sort} options={options} />
           <Channel>
             <Window>
               <ChannelHeader />
-              <MessageList />
+              <MessageList hideDeletedMessages />
               <MessageInput />
             </Window>
             <Thread />
