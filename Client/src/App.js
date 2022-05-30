@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SubTypes from "./component/SubTypes";
@@ -38,9 +38,6 @@ import ResearchGroupsStudents from "./component/ResearchGroupsStudents";
 function App(){
 return(
     <div>
-        
-      
-       
         <BrowserRouter>
         <Routes>
             <Route path="/" exact element={<Home />} />

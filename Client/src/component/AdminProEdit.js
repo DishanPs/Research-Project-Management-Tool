@@ -12,7 +12,6 @@ const StudentProEdit = ({ det }) => {
   const [lname, setLastName] = useState(det.lastName);
   const [contactno, setContactNo] = useState(det.contactNo);
   const [nic, setNIC] = useState(det.NIC);
-  
 
   const handleSubmit = (event) => {
     const updateStudent = {
@@ -21,7 +20,6 @@ const StudentProEdit = ({ det }) => {
       lastName: lname,
       contactNo: contactno,
       NIC: nic,
-      
     };
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -30,9 +28,10 @@ const StudentProEdit = ({ det }) => {
     } else {
       axios
         .put(`http://localhost:5000/admin/update/${det._id}`, updateStudent)
-        .then((data) => 
-        console.log(data),
-        swal("Updated!", "Successfully Updated", "success"))
+        .then(
+          (data) => console.log(data),
+          swal("Updated!", "Successfully Updated", "success")
+        )
         .catch((err) => alert(err));
     }
     setvalidated(true);
@@ -94,7 +93,6 @@ const StudentProEdit = ({ det }) => {
             Please enter a valid NIC number.
           </Form.Control.Feedback>
         </Form.Group>
-
 
         <Button variant="primary" type="submit">
           Save Changes

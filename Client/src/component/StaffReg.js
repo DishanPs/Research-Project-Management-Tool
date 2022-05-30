@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 import Header from "./Header";
 import Footer from "./Footer";
 
-
 const bcrypt = require("bcryptjs");
 
 const StaffReg = () => {
@@ -23,32 +22,26 @@ const StaffReg = () => {
   const [password, setPassword] = useState("");
   const [cpassword, setConfirmPassword] = useState();
 
- 
-
   const checkSubmit = (event) => {
-
-    
-
     console.log(password);
     const newUser = {
-      "ID": ids,
-      "email": email,
-      "firstName": fname,
-      "lastName": lname,
-      "contactNo": contactno,
-      "NIC": nic,
-      "researchInterest": interest,
-      "faculty": fclty,
-      "type": "Staff",
-  }
+      ID: ids,
+      email: email,
+      firstName: fname,
+      lastName: lname,
+      contactNo: contactno,
+      NIC: nic,
+      researchInterest: interest,
+      faculty: fclty,
+      type: "Staff",
+    };
 
-  const newLogin = {
-      "iD":ids,
-      "email": email,
-      "type": "Staff",
-      "password": bcrypt.hashSync(password, bcrypt.genSaltSync()),
-      
-  } 
+    const newLogin = {
+      iD: ids,
+      email: email,
+      type: "Staff",
+      password: bcrypt.hashSync(password, bcrypt.genSaltSync()),
+    };
 
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -57,12 +50,12 @@ const StaffReg = () => {
     } else {
       if (cpassword == password) {
         axios
-                .post("http://localhost:5000/staff/register", newUser)
-                .then((data) => 
-                console.log(data),
-                swal("Submitted!", "Successfully Registered", "success"))
-                .catch((err) => alert(err));
-        
+          .post("http://localhost:5000/staff/register", newUser)
+          .then(
+            (data) => console.log(data),
+            swal("Submitted!", "Successfully Registered", "success")
+          )
+          .catch((err) => alert(err));
 
         axios
           .post("http://localhost:5000/login/add", newLogin)
@@ -74,8 +67,6 @@ const StaffReg = () => {
     }
     setvalidated(true);
   };
-
-  
 
   return (
     <div>
@@ -176,25 +167,25 @@ const StaffReg = () => {
                   />
                 </Form.Group>
 
-               <Form.Group className="inputreg">
-                <Form.Label>Faculty</Form.Label>
-                <Form.Select
-                  aria-label="Feedback Type"
-                  value={fclty}
-                  onChange={(e) => setFaculty(e.target.value)}
-                >
-                  <option selected disabled hidden>
-                    Faculty Type
-                  </option>
-                  <option>Select your faculty</option>
-                  <option>Computing</option>
-                  <option>Bussiness</option>
-                  <option>Engineering</option>
-                  <option>Humanaties and sciences</option>
-                  <option>School of Architecture</option>
-                  <option>Graduate studies and reseach</option>
-                  <option>School of Law</option>
-                </Form.Select>
+                <Form.Group className="inputreg">
+                  <Form.Label>Faculty</Form.Label>
+                  <Form.Select
+                    aria-label="Feedback Type"
+                    value={fclty}
+                    onChange={(e) => setFaculty(e.target.value)}
+                  >
+                    <option selected disabled hidden>
+                      Faculty Type
+                    </option>
+                    <option>Select your faculty</option>
+                    <option>Computing</option>
+                    <option>Bussiness</option>
+                    <option>Engineering</option>
+                    <option>Humanaties and sciences</option>
+                    <option>School of Architecture</option>
+                    <option>Graduate studies and reseach</option>
+                    <option>School of Law</option>
+                  </Form.Select>
                 </Form.Group>
 
                 <Row>
