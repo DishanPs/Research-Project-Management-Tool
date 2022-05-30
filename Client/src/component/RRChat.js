@@ -15,8 +15,6 @@ import {
 } from "stream-chat-react";
 import "stream-chat-react/dist/css/index.css";
 import "@stream-io/stream-chat-css";
-import { Button } from "@mui/material";
-import CreateChatChannel from "./CreateChatChannel";
 import ChatOption from "./ChatOption";
 import SupervisorSideNavBar from "./SupervisorSideNavBar";
 import StudentSideNavBar from "./StudentSideNavBar";
@@ -65,12 +63,12 @@ const RRChat = () => {
         }}
       >
         <Chat client={client} theme="messaging light">
-          <ChatOption />
+          {token.type == "Staff" ? <ChatOption /> : ""}
           <ChannelList filters={filters} sort={sort} options={options} />
           <Channel>
             <Window>
               <ChannelHeader />
-              <MessageList />
+              <MessageList hideDeletedMessages />
               <MessageInput />
             </Window>
             <Thread />

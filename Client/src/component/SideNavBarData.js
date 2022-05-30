@@ -30,7 +30,7 @@ export const supervisorsidenavbarData = [
     cName: "nav-text",
   },
   {
-    title: "Chat with Groups",
+    title: "Chat",
     path: "/chat",
     icon: <AiOutlineWechat />,
     cName: "nav-text",
