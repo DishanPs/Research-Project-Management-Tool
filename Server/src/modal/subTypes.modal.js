@@ -6,6 +6,7 @@ const SubTypesSchema = new Schema({
   SubmissionType: { type: String, required: true },
   Date: { type: String, required: true },
   Time: { type: String, required: true },
+  Status: { type: String, required: true },
 });
 
 const SubType = mongoose.model("subtype", SubTypesSchema);
