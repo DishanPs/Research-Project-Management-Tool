@@ -98,8 +98,8 @@ const CreateChatChannel = () => {
               value={chanelName}
               onChange={(e) => setChanenelName(e.target.value)}
             />
-            <hr />
             <Typography svariant="h5">Select Members</Typography>
+            <div style={{ overflow:"auto", height:"300px" }}>
             {users.map((user) => (
               <>
                 <Card
@@ -124,6 +124,7 @@ const CreateChatChannel = () => {
                 </Card>
               </>
             ))}
+            </div>
             <br />
             <Button variant="contained" color="success" onClick={createChanel}>
               Create Group
