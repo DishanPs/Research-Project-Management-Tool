@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import StudentSideNavBar from "./StudentSideNavBar";
 import swal from "sweetalert";
 
+
 const CreateStudentGroups = () => {
   const [validated, setvalidated] = useState(false);
   const [lid, setLeaderID] = useState("");
@@ -24,6 +25,7 @@ const CreateStudentGroups = () => {
   const [gname, setGroupName] = useState("");
 
   const checkSubmit = (event) => {
+    
     const newGroup = {
       leaderID: lid,
       leaderName: lname,
@@ -45,16 +47,14 @@ const CreateStudentGroups = () => {
     } else {
       axios
         .post("http://localhost:5000/group/register", newGroup)
-        .then(
-          () => swal("Success!", "Details Submitted Successfully!", "success"),
-          navigate("/creategroups")
+        .then(() => swal("Success!", "Details Submitted Successfully!", "success"),
         )
         .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
     }
     setvalidated(true);
   };
 
-  const navigate = useNavigate();
+  
 
   return (
     <div

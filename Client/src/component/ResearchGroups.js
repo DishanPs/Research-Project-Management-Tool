@@ -38,7 +38,6 @@ const ResearchGroups = () => {
           <h3 style={{ color: "white" }}>Research Project Groups </h3>
         </center>
         <br />
-
         <div className="grouptable">
           <Table striped bordered hover variant="dark">
             <thead>
@@ -49,28 +48,22 @@ const ResearchGroups = () => {
                 <th>Contact No.</th>
                 <th>Email</th>
                 <th>Member 2 ID</th>
-                <th>Member 2 Name</th>
                 <th>Member 3 ID</th>
-                <th>Member 3 Name</th>
                 <th>Member 4 ID</th>
-                <th>Member 4 Name</th>
                 <th>Assign Panel Members</th>
               </tr>
             </thead>
             {groups.map((group) => (
               <tbody key={group._id}>
                 <tr>
-                  <td>{group._id}</td>
+                  <td>{group.groupID}</td>
                   <td>{group.leaderID}</td>
                   <td>{group.leaderName}</td>
                   <td>{group.contactNo}</td>
                   <td>{group.email}</td>
-                  <td>{group.member2ID}</td>
-                  <td>{group.member2Name}</td>
-                  <td>{group.member3ID}</td>
-                  <td>{group.member3Name}</td>
-                  <td>{group.member4ID}</td>
-                  <td>{group.member4Name}</td>
+                  <td>{group.member2ID}</td>                  
+                  <td>{group.member3ID}</td>                 
+                  <td>{group.member4ID}</td>                 
                   <td>
                     {" "}
                     <Button

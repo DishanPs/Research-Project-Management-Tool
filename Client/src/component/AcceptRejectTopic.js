@@ -6,6 +6,7 @@ import axios from "axios";
 import Badge from "react-bootstrap/Badge";
 import { useNavigate } from "react-router-dom";
 import PanelSideNavBar from "./PanelSideNavBar";
+import SubmitedTopics from "./SubmitedTopics";
 
 const AcceptRejectTopic = () => {
   const [topics, setTopic] = useState([]);
@@ -134,6 +135,13 @@ const AcceptRejectTopic = () => {
             ))}
           </Table>
         </div>
+
+        <hr style = {{color : "black", height: "3px"}} />
+          <div className="doctable"> 
+            <h4> Submitted Topic Details Documents</h4>
+            <br />
+            <SubmitedTopics />
+          </div> 
       </div>
     </div>
   );

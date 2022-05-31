@@ -23,10 +23,10 @@ const Header = () => {
             {token != null ? (
               <Nav className="me-auto">
                 {token.type == "Admin" ? (
-                  <Nav.Link href="/viewgroups">Dashboard</Nav.Link>
+                  <Nav.Link href="/Adminstudentview">Dashboard</Nav.Link>
                 ) : token.type == "Student" ? (
                   <>
-                    <Nav.Link href="/creategroups">Dashboard</Nav.Link>
+                    <Nav.Link href="/viewgroupsstd">Dashboard</Nav.Link>
                     <Nav.Link href="/sublinks">Submission</Nav.Link>
                   </>
                 ) : (
