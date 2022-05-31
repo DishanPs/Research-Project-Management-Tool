@@ -130,7 +130,7 @@ const StaffReg = () => {
                   <Form.Group className="inputreg" controlId="contactno">
                     <Form.Label>Contact No.</Form.Label>
                     <Form.Control
-                      placeholder="Enter Contact No."
+                      placeholder="0123456789"
                       pattern="[0-9]{10}"
                       value={contactno}
                       onChange={(e) => setContactNo(e.target.value)}

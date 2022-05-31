@@ -45,9 +45,9 @@ const StaffProEdit = ({ det }) => {
     <div className="editform">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="inputreg" controlId="iD">
-          <Form.Label>Student ID</Form.Label>
+          <Form.Label>Staff ID</Form.Label>
           <Form.Control
-            placeholder="Enter your student ID"
+            placeholder="Enter your staff ID"
             value={ids}
             onChange={(e) => setId(e.target.value)}
             required
