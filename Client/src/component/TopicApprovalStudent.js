@@ -1,29 +1,26 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import axios from 'axios'
-import Badge from 'react-bootstrap/Badge'
-import StudentSideNavBar from './StudentSideNavBar';
+import Table from "react-bootstrap/Table";
+import axios from "axios";
+import Badge from "react-bootstrap/Badge";
+import StudentSideNavBar from "./StudentSideNavBar";
 
 const TopicApprovalStudent = () => {
-    const [topics, setTopic] = useState([]);
+  const [topics, setTopic] = useState([]);
 
-    useEffect(() => {
-        const getTopics = () => {
-          axios
-            .get("http://localhost:5000/topic")
-            .then((res) => {
-              setTopic(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getTopics();
-    },);
-
-
-
+  useEffect(() => {
+    const getTopics = () => {
+      axios
+        .get("http://localhost:5000/topic")
+        .then((res) => {
+          setTopic(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getTopics();
+  });
 
   return (
     <div
@@ -59,7 +56,7 @@ const TopicApprovalStudent = () => {
                   <td>{topic.supervisorName}</td>
                   <td>{topic.cosupervisorName}</td>
                   <td>
-                    {topic.topic} <Badge bg="info">{topic.status}</Badge>{" "}
+                    {topic.topic} <Badge bg="warning">{topic.status}</Badge>{" "}
                   </td>
                 </tr>
               </tbody>
@@ -69,7 +66,6 @@ const TopicApprovalStudent = () => {
       </div>
     </div>
   );
-  
-}
+};
 
-export default TopicApprovalStudent
+export default TopicApprovalStudent;

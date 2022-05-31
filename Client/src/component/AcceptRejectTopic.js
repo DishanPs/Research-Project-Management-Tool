@@ -1,88 +1,62 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import Table from 'react-bootstrap/Table'
-import Button from 'react-bootstrap/Button'
-import axios from 'axios'
-import Badge from 'react-bootstrap/Badge'
-import { useNavigate } from 'react-router-dom'
-import PanelSideNavBar from './PanelSideNavBar';
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
+import Badge from "react-bootstrap/Badge";
+import { useNavigate } from "react-router-dom";
+import PanelSideNavBar from "./PanelSideNavBar";
+import SubmitedTopics from "./SubmitedTopics";
 
 const AcceptRejectTopic = () => {
-    const [topics, setTopic] = useState([]);
-    
+  const [topics, setTopic] = useState([]);
 
-    useEffect(() => {
-        const getTopics = () => {
-          axios
-            .get("http://localhost:5000/topic")
-            .then((res) => {
-              setTopic(res.data);
-            })
-            .catch((err) => {
-              alert(err.msg);
-            });
-        };
-        getTopics();
-    },);
+  useEffect(() => {
+    const getTopics = () => {
+      axios
+        .get("http://localhost:5000/topic")
+        .then((res) => {
+          setTopic(res.data);
+        })
+        .catch((err) => {
+          alert(err.msg);
+        });
+    };
+    getTopics();
+  });
 
+  const btnClick = (id, val) => {
+    if (val == 1) {
+      const updateStatus = {
+        status: "Accepted",
+      };
 
-      
+      axios
+        .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
+        .then(() => navigate("/viewtopics"))
+        .catch((err) => alert(err));
+    } else if (val == 2) {
+      const updateStatus = {
+        status: "Rejected",
+      };
 
+      axios
+        .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
+        .then(() => navigate("/viewtopics"))
+        .catch((err) => alert(err));
+    } else {
+      const updateStatus = {
+        status: "Pending",
+      };
 
-      const btnClick = (id, val) => {
-        if(val == 1){
-         
-          const updateStatus = {
-            status : "Accepted"
-          }
-  
-          axios
-          .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
-          .then(() => navigate('/viewtopics'))
-          .catch((err) => alert(err));
-          
-          
-        }
+      axios
+        .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
+        .then(() => navigate("/viewtopics"))
+        .catch((err) => alert(err));
+    }
+  };
 
-        else if(val == 2){
-          
-          const updateStatus = {
-            status : "Rejected"
-          }
-  
-          axios
-          .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
-          .then(() => navigate('/viewtopics'))
-          .catch((err) => alert(err));
-           
-        }
-
-        else {
-
-          const updateStatus = {
-            status : "Pending"
-          }
-  
-          axios
-          .put(`http://localhost:5000/topic/update/${id}`, updateStatus)
-          .then(() => navigate('/viewtopics'))
-          .catch((err) => alert(err));
-
-
-        }
-
-      
-      }  
-
-      const navigate = useNavigate();
-      
-      
-
-
-      
-
-     
-
+  const navigate = useNavigate();
 
   return (
     <div
@@ -121,7 +95,7 @@ const AcceptRejectTopic = () => {
                   <td>{topic.supervisorName}</td>
                   <td>{topic.cosupervisorName}</td>
                   <td>
-                    {topic.topic} <Badge bg="info">{topic.status}</Badge>{" "}
+                    {topic.topic} <Badge bg="warning">{topic.status}</Badge>{" "}
                   </td>
                   <td>
                     {" "}
@@ -161,9 +135,16 @@ const AcceptRejectTopic = () => {
             ))}
           </Table>
         </div>
+
+        <hr style = {{color : "black", height: "3px"}} />
+          <div className="doctable"> 
+            <h4> Submitted Topic Details Documents</h4>
+            <br />
+            <SubmitedTopics />
+          </div> 
       </div>
     </div>
   );
-}
+};
 
-export default AcceptRejectTopic
+export default AcceptRejectTopic;

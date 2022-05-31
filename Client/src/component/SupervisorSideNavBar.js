@@ -9,15 +9,15 @@ import UserModaldelete from "./UserModalDelete";
 import { useNavigate } from "react-router-dom";
 
 const SupervisorSideNavBar = () => {
-    const [modalDelete, setModalDelete] = React.useState(false);
-    const [modleType, setModaltype] = useState("");
+  const [modalDelete, setModalDelete] = React.useState(false);
+  const [modleType, setModaltype] = useState("");
   const token = JSON.parse(sessionStorage.getItem("token"));
-    const navigate = useNavigate();
-    
-    const logout = () => {
-      setModalDelete(true);
-      setModaltype("logout");
-    };
+  const navigate = useNavigate();
+
+  const logout = () => {
+    setModalDelete(true);
+    setModaltype("logout");
+  };
 
   return (
     <div>

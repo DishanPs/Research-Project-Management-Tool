@@ -67,7 +67,7 @@ const SupRequestsStaffView = () => {
       <SupervisorSideNavBar />
       <div style={{ marginLeft: "200px" }}>
         <center>
-          <h3 style = {{color : "white"}}>Supervisor Requests </h3>
+          <h3 style={{ color: "white" }}>Supervisor Requests </h3>
         </center>
         <br />
 
@@ -91,7 +91,7 @@ const SupRequestsStaffView = () => {
                   <td>{sup.groupName}</td>
                   <td>{sup.field}</td>
                   <td>
-                    {sup.supervisorName} <Badge bg="info">{sup.status}</Badge>{" "}
+                    {sup.supervisorName} <Badge bg="warning">{sup.status}</Badge>{" "}
                   </td>
                   <td>
                     {" "}

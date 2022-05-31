@@ -30,7 +30,7 @@ const ChatOption = (open) => {
     ) {
       return;
     }
-    console.log("navindu ")
+    console.log("navindu ");
     setState({ ...state, [anchor]: open });
   };
 
@@ -59,14 +59,6 @@ const ChatOption = (open) => {
             <ListItemText primary={"Create Group"} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/createchanel")}>
-            <ListItemIcon>
-              <EditIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Edit Group"} />
-          </ListItemButton>
-        </ListItem>
       </List>
       <Divider />
     </Box>
@@ -78,8 +70,8 @@ const ChatOption = (open) => {
         sx={{ position: "sticky", right: 0, left: 5000 }}
         onClick={toggleDrawer("right", true)}
       >
-        <ChatBubbleIcon />
-        &nbsp;New Chat
+        <SettingsIcon />
+        &nbsp;Chat options
       </Button>
       <SwipeableDrawer
         anchor={"right"}

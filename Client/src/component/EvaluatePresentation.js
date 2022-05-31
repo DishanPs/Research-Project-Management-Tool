@@ -5,6 +5,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import EvaluationForm from "./EvaluationForm";
+import SubmitedPresentations from "./SubmitedPresentations";
 
 const EvaluatePresentation = () => {
   const [presentationmarkings, SetPresentationMarkings] = useState([]);
@@ -81,6 +82,19 @@ const EvaluatePresentation = () => {
                 </tbody>
               ))}
             </Table>
+            <hr style={{ color: "white", height:"3px" }} />
+            <div
+              style={{
+                width: "400px",
+                marginLeft: "0px",
+                marginRight: "20px",
+                overflow: "auto",
+                height: "300px",
+              }}
+            >
+              <h5 style={{ color: "white" }}>Submited Presentations</h5>
+              <SubmitedPresentations />
+            </div>
           </div>
           <div style={{ color: "white" }}>
             <hr style={{ width: "3px", height: "90vh" }} />

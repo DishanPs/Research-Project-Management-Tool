@@ -30,7 +30,7 @@ export const supervisorsidenavbarData = [
     cName: "nav-text",
   },
   {
-    title: "Chat with Groups",
+    title: "Chat",
     path: "/chat",
     icon: <AiOutlineWechat />,
     cName: "nav-text",
@@ -60,8 +60,8 @@ export const panelsidenavbarData = [
 
 export const studentsidenavbarData = [
   {
-    title: "Create Group",
-    path: "/creategroups",
+    title: "Student Groups",
+    path: "/viewgroupsstd",
     icon: <FaUsers />,
     cName: "nav-text",
   },
@@ -103,7 +103,7 @@ export const studentsidenavbarData = [
   },
   {
     title: "Submissions",
-    path: "/subdoc",
+    path: "/sublinks",
     icon: <AiFillFileAdd />,
     cName: "nav-text",
   },

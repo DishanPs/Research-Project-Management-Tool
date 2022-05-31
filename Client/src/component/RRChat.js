@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useEffect, useState } from "react";
 import { StreamChat } from "stream-chat";
 import {
@@ -11,15 +11,13 @@ import {
   Thread,
   LoadingIndicator,
   ChannelList,
-  ChatContext
+  ChatContext,
 } from "stream-chat-react";
 import "stream-chat-react/dist/css/index.css";
 import "@stream-io/stream-chat-css";
-import { Button } from "@mui/material";
-import CreateChatChannel from './CreateChatChannel';
-import ChatOption from './ChatOption';
-import SupervisorSideNavBar from './SupervisorSideNavBar';
-import StudentSideNavBar from './StudentSideNavBar';
+import ChatOption from "./ChatOption";
+import SupervisorSideNavBar from "./SupervisorSideNavBar";
+import StudentSideNavBar from "./StudentSideNavBar";
 
 const RRChat = () => {
   const token = JSON.parse(sessionStorage.getItem("token"));
@@ -33,29 +31,29 @@ const RRChat = () => {
     id: token.iD,
     email: token,
   };
-  console.log(token)
-  console.log(user.id)
+  console.log(token);
+  console.log(user.id);
   const [client, setClient] = useState(null);
   const [option, setOption] = useState(false);
 
   useEffect(() => {
     const init = async () => {
-      console.log(user.id)
+      console.log(user.id);
       const chatClient = StreamChat.getInstance(apiKey);
       await chatClient.connectUser(user, chatClient.devToken(user.id));
 
       setClient(chatClient);
     };
     init();
-    console.log(client)
+    console.log(client);
     if (client) return () => client.disconnectUser();
   }, []);
 
-  if (!client) return <LoadingIndicator/>;
+  if (!client) return <LoadingIndicator />;
 
   return (
     <div>
-      {token.type == "Staff" ? (<SupervisorSideNavBar />) : (<StudentSideNavBar/>)}
+      {token.type == "Staff" ? <SupervisorSideNavBar /> : <StudentSideNavBar />}
       <div
         style={{
           marginLeft: "200px",
@@ -65,12 +63,12 @@ const RRChat = () => {
         }}
       >
         <Chat client={client} theme="messaging light">
-          <ChatOption />
+          {token.type == "Staff" ? <ChatOption /> : ""}
           <ChannelList filters={filters} sort={sort} options={options} />
           <Channel>
             <Window>
               <ChannelHeader />
-              <MessageList />
+              <MessageList hideDeletedMessages />
               <MessageInput />
             </Window>
             <Thread />
