@@ -65,7 +65,7 @@ const ResearchGroupsStudents = () => {
             {groups.map((group) => (
               <tbody key={group._id}>
                 <tr>
-                  <td>{group._id}</td>
+                  <td>{group.groupID}</td>
                   <td>{group.leaderID}</td>
                   <td>{group.leaderName}</td>
                   <td>{group.email}</td>
