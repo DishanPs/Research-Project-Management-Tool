@@ -34,7 +34,7 @@ const SubmitedDocuments = () => {
           .filter(
             (subType) =>
               subType.subType === "Proposal Document" ||
-              subType === "Final Thesis"
+              subType.subType === "Final Thesis"
           )
           .map((submission) => (
             <tbody key={submission._id}>
