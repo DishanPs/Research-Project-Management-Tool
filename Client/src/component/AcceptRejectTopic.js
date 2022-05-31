@@ -94,7 +94,7 @@ const AcceptRejectTopic = () => {
                   <td>{topic.supervisorName}</td>
                   <td>{topic.cosupervisorName}</td>
                   <td>
-                    {topic.topic} <Badge bg="info">{topic.status}</Badge>{" "}
+                    {topic.topic} <Badge bg="warning">{topic.status}</Badge>{" "}
                   </td>
                   <td>
                     {" "}

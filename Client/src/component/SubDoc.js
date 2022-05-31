@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import StudentSideNavBar from "./StudentSideNavBar";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 const SubDoc = () => {
   const [links, setLinks] = useState([]);
@@ -37,24 +38,16 @@ const SubDoc = () => {
     return dateDif;
   };
 
-  const timeDifference = () => {
-    const date1 = new Date();
-    const date2 = new Date(links.Date);
-
-    const timeDif = date1.getTime();
-    const dateDif = Math.floor(timeDif / (3600 * 1000 * 24));
-
-    const time = timeDif - dateDif * 3600 * 1000 * 24;
-
-    console.log(timeDif);
-
-    return time / (3600 * 1000);
-  };
-
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url("https://img.wallpapersafari.com/desktop/1600/900/87/23/UZIQlg.jpg")`,
+        backgroundSize: "cover",
+        height: "100vh",
+      }}
+    >
       <StudentSideNavBar />
-      {/* {details.map((detail) => ( */}
+
       <div
         style={{
           marginLeft: "200px",
@@ -96,7 +89,7 @@ const SubDoc = () => {
             <Row>
               <Col>
                 <Form.Group className="mb-3">
-                  <Form.Label>Time Remaining: </Form.Label>
+                  <Form.Label>Dates Remaining: </Form.Label>
                 </Form.Group>
               </Col>
               <Col>
@@ -104,8 +97,6 @@ const SubDoc = () => {
                   <Form.Label>
                     {dateDifference()}
                     {" days "}
-                    {timeDifference()}
-                    {" hours "}
                   </Form.Label>
                 </Form.Group>
               </Col>
@@ -115,7 +106,7 @@ const SubDoc = () => {
             <br />
             <Row>
               <Link to="/studentsub">
-                <button
+                <Button
                   type="submit"
                   style={{
                     backgroundColor: "green",
@@ -126,7 +117,7 @@ const SubDoc = () => {
                   }}
                 >
                   UPLOAD
-                </button>
+                </Button>
               </Link>
             </Row>
           </Form>

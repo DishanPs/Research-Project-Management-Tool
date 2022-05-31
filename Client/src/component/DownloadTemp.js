@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./UploadDoc";
 import Table from "react-bootstrap/Table";
 import StudentSideNavBar from "./StudentSideNavBar";
+import Button from "react-bootstrap/Button";
 
 const DownloadTemp = () => {
   const [temps, setTemps] = useState([]);
@@ -26,7 +27,13 @@ const DownloadTemp = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url("https://wallpapercave.com/wp/wp2723929.jpg")`,
+        backgroundSize: "cover",
+        height: "120vh",
+      }}
+    >
       <StudentSideNavBar />
       <div
         style={{
@@ -38,31 +45,33 @@ const DownloadTemp = () => {
         </center>
         <hr />
 
-        {/* {temps.map((temp) => (<Templates temp={temp} key={temp._id}/>))} */}
-
-        <Table striped bordered hover size="sm" className="cp3">
+        <Table striped bordered hover variant="dark" size="sm" className="cp3">
           <thead>
             <tr>
-              <th>Template Type</th>
-              <th>Download</th>
+              <th style={{ fontWeight: "bold", fontSize: "24px" }}>
+                Template Type
+              </th>
+              <th style={{ fontWeight: "bold", fontSize: "24px" }}>Download</th>
             </tr>
           </thead>
 
           {temps.map((temp) => (
             <tbody key={temp._id}>
               <tr>
-                <td>{temp.name}</td>
+                <td style={{ color: "white" }}>{temp.name}</td>
                 <td>
-                  <button
-                    style={{
-                      backgroundColor: "#336699",
-                      width: "130px",
-                      height: "35px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    <a href={temp.img}>download</a>
-                  </button>
+                  <a href={temp.img}>
+                    <Button
+                      variant="outline-light"
+                      style={{
+                        width: "130px",
+                        height: "35px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Download
+                    </Button>
+                  </a>
                 </td>
               </tr>
             </tbody>

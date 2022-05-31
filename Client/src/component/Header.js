@@ -27,7 +27,7 @@ const Header = () => {
                 ) : token.type == "Student" ? (
                   <>
                     <Nav.Link href="/creategroups">Dashboard</Nav.Link>
-                    <Nav.Link href="/subdoc">Submission</Nav.Link>
+                    <Nav.Link href="/sublinks">Submission</Nav.Link>
                   </>
                 ) : (
                   <>
