@@ -74,7 +74,7 @@ const SubTypes = ({ upd }) => {
           <Modal.Body>
             <Form noValidate validated={validated}>
               <Form.Group className="mb-3">
-                <Form.Label>Submission link name</Form.Label>
+                <Form.Label>Submission Link Name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Enter name"
@@ -108,7 +108,7 @@ const SubTypes = ({ upd }) => {
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Date</Form.Label>
+                <Form.Label>Due Date</Form.Label>
                 <Form.Control
                   type="date"
                   placeholder="Date"
@@ -123,7 +123,7 @@ const SubTypes = ({ upd }) => {
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Time</Form.Label>
+                <Form.Label>Due Time</Form.Label>
                 <Form.Control
                   type="time"
                   placeholder="Time"

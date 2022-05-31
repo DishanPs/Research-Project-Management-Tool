@@ -27,4 +27,6 @@
 	width:60%;
 	margin-left: 150px;
 	text-align: center;
+  	margin: 0 auto;
+  	border: 2px solid black;
 }

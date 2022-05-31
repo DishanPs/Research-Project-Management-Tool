@@ -4,6 +4,8 @@ import FileInput from "../FileInput";
 import styles from "./styles.module.css";
 import swal from "sweetalert";
 import { useNavigate } from "react-router";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const UpForm = () => {
   const navigate = useNavigate();
@@ -39,15 +41,24 @@ const UpForm = () => {
     <div className={styles.container}>
       <form className={styles.form}>
         <h1 className={styles.heading}>Upload Template</h1>
-
-        <input
+        <br />
+        <br />
+        <Form.Select
           type="text"
           className={styles.input}
           placeholder="Upload Type"
           name="name"
           onChange={handleChange}
           value={data.name}
-        />
+        >
+          <option value="" selected disabled hidden>
+            Template Type
+          </option>
+          <option>Topic Assessment form</option>
+          <option>Proposal Document</option>
+          <option>Presentation slides</option>
+          <option>Final Thesis</option>
+        </Form.Select>
 
         <br />
         <br />
@@ -63,13 +74,9 @@ const UpForm = () => {
         <br />
         <br />
         <br />
-        <button
-          type="submit"
-          className={styles.submit_btn}
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
+        <Button variant="success" type="submit" onClick={handleSubmit}>
+          Upload
+        </Button>
       </form>
     </div>
   );

@@ -54,7 +54,7 @@ const SupRequestsStudentView = () => {
                   <td>{sup.groupName}</td>
                   <td>{sup.field}</td>
                   <td>
-                    {sup.supervisorName} <Badge bg="info">{sup.status}</Badge>{" "}
+                    {sup.supervisorName} <Badge bg="warning">{sup.status}</Badge>{" "}
                   </td>
                 </tr>
               </tbody>

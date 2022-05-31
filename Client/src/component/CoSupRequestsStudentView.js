@@ -55,7 +55,7 @@ const CoSupRequestsStudentView = () => {
                   <td>{cosup.field}</td>
                   <td>
                     {cosup.co_supervisorName}{" "}
-                    <Badge bg="info">{cosup.status}</Badge>{" "}
+                    <Badge bg="warning">{cosup.status}</Badge>{" "}
                   </td>
                 </tr>
               </tbody>
