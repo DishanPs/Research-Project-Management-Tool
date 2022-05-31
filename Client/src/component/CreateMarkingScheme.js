@@ -105,6 +105,7 @@ const CreateMarkingScheme = () => {
             marginRight: "365px",
             backgroundColor: "whitesmoke",
             padding: "15px",
+            borderRadius:"10px"
           }}
         >
           <center>
@@ -130,12 +131,19 @@ const CreateMarkingScheme = () => {
             </Row>
             <Row style={{ marginTop: "5px" }}>
               <Col xs={8}>
-                <Form.Control
-                  placeholder="Document / Presentation Name"
+                <Form.Select
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                />
+                >
+                  <option value="" disabled hidden>
+                    Document / Presentation Name
+                  </option>
+                  <option>Topic Assessment Form</option>
+                  <option>Proposal Document</option>
+                  <option>Final Thesis</option>
+                  <option>Final Presentation</option>
+                </Form.Select>
               </Col>
               <Col>
                 <Form.Control
