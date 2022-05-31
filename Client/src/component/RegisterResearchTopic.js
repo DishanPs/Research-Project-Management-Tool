@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import StudentSideNavBar from "./StudentSideNavBar";
 import swal from "sweetalert";
+import { useNavigate } from "react-router";
 
 const RegisterResearchTopic = () => {
   const [validated, setvalidated] = useState(false);
@@ -32,12 +33,15 @@ const RegisterResearchTopic = () => {
       axios
         .post("http://localhost:5000/topic/add", newRegTopic)
         .then(() =>
-          swal("Success!", "Details Submitted Successfully!", "success")
+          swal("Success!", "Details Submitted Successfully!", "success"),
+          navigate('/studentsub')
         )
         .catch((err) => swal("Failed!", "Something Went Wrong!", "error"));
     }
     setvalidated(true);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div
